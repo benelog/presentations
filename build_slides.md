@@ -78,9 +78,12 @@ npm run dev                       # marp 서버 — 라이브 미리보기
 2. 로컬에서 `npm run build` 로 확인.
 3. commit & push → 몇 분 뒤 Pages URL 의 랜딩 페이지에 자동 등장.
 
-## 테마 커스터마이즈
+## 테마
 
-- 인라인: frontmatter 아래 `<style>...</style>` 또는 `style: |` 블록.
-- 별도 파일: `themes/foo.css` 만든 뒤 `theme: foo` 로 참조 (build.sh 에 `--theme-set themes/` 옵션 추가 필요).
+기본은 `themes/korean.css` (`theme: korean`) — Marp default 테마 + Noto Sans/Serif KR 웹폰트.
+PDF 출력 시 headless Chromium 이 Google Fonts 에서 폰트를 fetch 하므로 시스템에 한글 폰트가 없어도 깨지지 않는다.
+
+- 인라인 오버라이드: frontmatter 아래 `<style>...</style>` 또는 `style: |` 블록.
+- 새 테마 추가: `themes/foo.css` 만들고 `theme: foo` 로 참조 (`build.sh` 가 `--theme-set=themes/` 로 자동 등록).
 
 기본 내장 테마: `default`, `gaia`, `uncover`.

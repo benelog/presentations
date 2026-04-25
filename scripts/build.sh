@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -Eeuo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DIST="$ROOT/dist"
@@ -23,10 +23,10 @@ for slide in "$ROOT"/[0-9]*/slides.md; do
   mkdir -p "$out_dir"
 
   echo "→ building $name"
-  $MARP --html --allow-local-files \
-    "$slide" -o "$out_dir/index.html"
-  $MARP --pdf --allow-local-files \
-    "$slide" -o "$out_dir/slides.pdf" || true
+  $MARP --html --allow-local-files "--theme-set=$ROOT/themes" \
+    -o "$out_dir/index.html" "$slide"
+  $MARP --pdf --allow-local-files "--theme-set=$ROOT/themes" \
+    -o "$out_dir/slides.pdf" "$slide" || true
 
   title="$(grep -m1 '^# ' "$slide" | sed 's/^# *//' || true)"
   [ -z "$title" ] && title="$name"
