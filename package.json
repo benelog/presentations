@@ -1,0 +1,12 @@
+{
+  "name": "presentations",
+  "private": true,
+  "scripts": {
+    "build": "bash scripts/build.sh",
+    "dev": "marp --server .",
+    "watch": "marp --watch ."
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.1.0"
+  }
+}
