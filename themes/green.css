@@ -33,7 +33,7 @@ section {
   line-height: 1.55;
   letter-spacing: -0.01em;
   padding: 64px 84px 72px;
-  justify-content: flex-start;
+  place-content: start;
 }
 
 /* ── Heading hierarchy ────────────────────────────────────────────────── */
