@@ -84,7 +84,7 @@ paginate: true
 ---
 
 ### 모임 통장 입금 내역 관리
-전체 과정을 자동화 : [작업 지시서 모음](https://github.com/benelog/yonsei-donations)
+전체 과정을 자동화 : [작업 계획서 모음](https://github.com/benelog/yonsei-donations)
 
 * 신한은행에서 3개의 모임통장의 입금내역을 HTML로 다운로드
 * [입금내역을 Google Drive](https://drive.google.com/drive/folders/1DykuZXX3ULgCG3mi4ika-gjRZlakoAMb?ths=true)로 업로드
@@ -111,7 +111,7 @@ paginate: true
 
 ### 재상봄 기념집 교열
 * 시작 프롬프트 : @aaa.pdf 파일의 오타를 찾아서 Google Sheet로 올려줘.
-* [작업지시서 모음](https://github.com/benelog/yonsei-publication)
+* [작업 계획서 모음](https://github.com/benelog/yonsei-publication)
 * 결과물
     * [문집 교열표](https://docs.google.com/spreadsheets/d/1fNNcGty2t68T9Q8A1XuXySFgvvhObBw2ejPVPZCKJw4/edit?gid=0#gid=0)
     * PDF에 주석으로 교열 내용을 담음.
