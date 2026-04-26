@@ -21,6 +21,15 @@ paginate: true
 
 ---
 
+### 핵심 메시지
+
+* AI Agent는 질문에 답하는 AI에 그치지 않음
+* 내 컴퓨터와 외부 서비스를 다루며 일을 진행
+* 사람은 목표 설정, 중간 확인, 최종 판단에 집중
+* 반복되는 귀찮은 일을 조금씩 넘기는 방식이 현실적
+
+---
+
 ### LLM Engine
 * 3대장
     * OpenAI GPT 계열
@@ -31,10 +40,10 @@ paginate: true
 
 ---
 
-### AI agent 도구
+### AI Agent 도구
 * Claude Code (Anthropic)
-* Codex (Open AI)
-* OpenClaw (오픈소스, Open AI가 인수)
+* Codex (OpenAI)
+* OpenHands 등 오픈소스 도구
 * Hermes (오픈소스)
 * 기타 아주 많음
 * AI Agent 도구 간에 서로 호출하기도 함
@@ -58,7 +67,7 @@ paginate: true
 * 거의 모든 일
     * 코딩, 문서 작성
     * 데이터 분석
-    * 프로젝트 / 할일 현황 파악, 관리
+    * 프로젝트 / 할 일 현황 파악, 관리
     * 이메일 작성 (특히 영어로)
 
 ---
@@ -77,8 +86,8 @@ paginate: true
 ---
 
 ### 웹 페이지 퍼블리싱
-* 시작  프롬프트
-    * 이북의 URL을 여러개 전달하고 해당 이북들을 책 가판대처럼 배치해서 링크로 연결하는 있는 사이트를 만들어 달라고 함
+* 시작 프롬프트
+    * 이북의 URL을 여러 개 전달하고 해당 이북들을 책 가판대처럼 배치해서 링크로 연결하는 사이트를 만들어 달라고 함
 * 결과물 : https://yonsei.surge.sh/
 
 ---
@@ -86,8 +95,8 @@ paginate: true
 ### 모임 통장 입금 내역 관리
 전체 과정을 자동화 : [작업 계획서 모음](https://github.com/benelog/yonsei-donations)
 
-* 신한은행에서 3개의 모임통장의 입금내역을 HTML로 다운로드
-* [입금내역을 Google Drive](https://drive.google.com/drive/folders/1DykuZXX3ULgCG3mi4ika-gjRZlakoAMb?ths=true)로 업로드
+* 신한은행에서 3개 모임 통장의 입금 내역을 HTML로 다운로드
+* [입금 내역을 Google Drive](https://drive.google.com/drive/folders/1DykuZXX3ULgCG3mi4ika-gjRZlakoAMb?ths=true)로 업로드
     * [학교에 제출할 양식](https://docs.google.com/spreadsheets/d/1HYHYYUM63zIdSpKjFrc94khtau-0FYUFOgd-u_pdvyY/edit?gid=374073609#gid=374073609)으로 변환 ( + 학번 자동 입력)
     * 몇 반인지 분류 : ['정상혁(8반)' 형식으로 넣어달라고 공지](https://yonsei.benelog.net/donation/)했으나 [그렇게 안 한 사람도 있었음](https://github.com/benelog/yonsei-donations/blob/main/deposit-to-donation-form.md)
 * [반별 통계 Sheet](https://docs.google.com/spreadsheets/d/1iRhcKqYleUPMp17JCbagwhEnIT4kvSIkR23w8JCZ7Js/edit?usp=drive_web&ouid=111901368274901882933) 업데이트
@@ -98,9 +107,9 @@ paginate: true
 
 ### 재상봄 기념집 반별 사진 취합
  * 기념집 발간에 들어간 [파일 취합 진도율 리포트](https://docs.google.com/document/d/1o4MaYV7sEi-FBThth-HJCfOrAfD1PY54QgUNL3fVoPA/edit?tab=t.0) 발간 (단과대별 진행율 표시)
-    * 출판에서도 원하는 형식대로 맞춰졌는지의 여부 포함
+    * 출판사에서 원하는 형식에 맞춰졌는지 여부 포함
  * 형식에 맞지 않는 파일명 변환
-    * 사진 파일은 {페이지번호}-{페이지내 사진순번}\_설명.Jpg
+    * 사진 파일은 {페이지 번호}-{페이지 내 사진 순번}\_설명.jpg
         * 예: 1-1\_대성리MT.jpg
     * 사진이 300 DPI 이상인지 검사
     * 파워포인트 내에 사진 파일에 대한 라벨 삽입
@@ -125,7 +134,7 @@ paginate: true
 
 ### 개인 지식 관리
 
-* 개인 지식 관리 사이트 디자인/컨텐츠 개편
+* 개인 지식 관리 사이트 디자인/콘텐츠 개편
     * http://blog.benelog.net
     * http://devnote.benelog.net
     * http://wiki.benelog.net
@@ -134,10 +143,10 @@ paginate: true
 
 ---
 
-* 컨텐츠 정리
+* 콘텐츠 정리
     * [오타 수정](https://github.com/benelog/blog/commit/fc02faa835b5743ab19a101d1dd5d44e396271cd), dead link 제거
     * 태그 분류, 페이지 분리, 통합
-    * 컨텐츠 초안 작성 자동화
+    * 콘텐츠 초안 작성 자동화
         * [정상혁 블로그 글쓰기 가이드](https://github.com/benelog/blog/blob/master/CREATE_POST.md)
         * [독서 감상문 템플릿 skill](https://github.com/benelog/bookshelf/blob/master/.claude/skills/create-post/SKILL.md)
 
@@ -150,19 +159,43 @@ paginate: true
 * Telegram 챗봇
     * 위의 지식관리 사이트의 내용을 바탕으로 대답
     * 할 수 있게 된 질문
-        * '내 일기를 바탕으로 볼 때 나에게 가장 감명깊었던 해는 언제야?'
+        * '내 일기를 바탕으로 볼 때 나에게 가장 감명 깊었던 해는 언제야?'
         * '내가 재미있게 읽은 과학책은?'
 
 ---
 
 ### Excel 변환 도구
 
-다른 사람이 AI 없이 내가 한 작업을  할 수 있도록 프로그램화
+다른 사람이 AI 없이도 내가 한 작업을 할 수 있도록 프로그램화
 
 * [신한은행 모임 통장 내역을 Excel로 다운로드하는 프로그램](https://github.com/yonsei-alumni/bank-sheet)
     * 통장주가 아니면 엑셀다운로드를 할 수 없는 한계 극복
- * [기념품 주문 엑셀파일 형식 변환 프로그램](https://github.com/yonsei-alumni/order-transformer>)
+* [기념품 주문 엑셀 파일 형식 변환 프로그램](https://github.com/yonsei-alumni/order-transformer)
     * 아이웹(주문사이트)의 엑셀을 3PL 배송업체의 형식으로
+
+---
+
+## 공통 패턴
+
+---
+
+### Agent에게 맡기기 좋은 일
+
+* 입력 파일이나 데이터가 있음
+* 반복 규칙이 있음
+* 중간 결과를 검사할 수 있음
+* 최종 판단은 사람이 해도 됨
+* 실패해도 되돌릴 수 있음
+
+---
+
+### 맡긴 일의 흐름
+
+* 파일 수집
+* 정리 / 변환
+* 검사
+* 리포트 작성
+* 사람의 최종 확인
 
 ---
 
@@ -172,13 +205,13 @@ paginate: true
 
 ### 더 시킬 일
 * 가계 재정 관리
-    * 일단 수익/마이너스 통장 관련 보고서 부터
+    * 일단 수익/마이너스 통장 관련 보고서부터
         * 마통 3개에 잔액이 있음
 * 내가 읽은 책을 스캔한 PDF 기반 검색
     * 일단 OCR부터 다시 일괄적으로 할까 검토 중
          * [pdf-refinery](https://github.com/benelog/pdf-refinery)로 개발 중
     * Google Notebook LM 연동
-* 계속 아이디어는 떠 오름
+* 계속 아이디어는 떠오름
     * 구현이 빨라져도 상상의 속도만큼은 아님
 
 ---
@@ -186,10 +219,20 @@ paginate: true
 ### 소감
 * 유익/가성비/재미를 다 충족시키는 취미
     * 레고, 조립식 장난감과 비슷
-    * 지시 -> 결과물의 빠른 싸이클 : 게임 수준의 자극
+    * 지시 → 결과물의 빠른 사이클: 게임 수준의 자극
     * 월 $20 ~ $100면 가능
 * SF스러운 발전 속도
     * 6개월 전의 모델/도구와 지금의 차이는 굉장히 큼
+
+---
+
+### 주의할 점
+
+* 개인정보, 금융정보, 비공개 문서 권한 관리
+* AI가 만든 결과물의 검증 책임은 여전히 사람에게 있음
+* 한 번에 완전 자동화하려 하지 말고 반자동으로 시작
+* 긴 작업은 작업 계획서와 중간 산출물을 남기게 함
+* 입력 파일 구조와 검증 절차가 프롬프트만큼 중요
 
 ---
 
@@ -197,7 +240,7 @@ paginate: true
 * 더 쉬워질 것임
 * 직장에도 빠르게 확산될 것임
     * 보안 조직의 용기가 필요
-    * 사람의 역할/ 관례가 바뀌는데 걸리는 시간은 조직마다 차이가 클 것임
+    * 사람의 역할/관례가 바뀌는 데 걸리는 시간은 조직마다 차이가 클 것임
 * 사람의 남은 역할
     * 업무 방식 설계, 사람 간 협의
     * 회색 영역의 가치 판단, 의사결정, 책임
@@ -212,11 +255,23 @@ paginate: true
 
 
 ---
+
+### 처음 시켜볼 만한 일
+
+* 폴더 안 파일명 규칙 정리
+* 여러 문서에서 표 추출
+* 회의록 요약 후 할 일 목록 만들기
+* CSV / Excel 형식 변환
+* 블로그 초안 만들기
+* dead link 검사
+
+---
+
 ### 초기 설치
 * 아직은 각종 '설치', '설정'이 진입 장벽
     * 특히 Windows 사용자 / 비개발자 직군에게
     * 초기 설치는 AI 채팅 서비스에 물어가면서
-    * AI agent가 설치된 이후에는 추가 설치, 설정은 Agent가 해줌
+    * AI Agent가 설치된 이후에는 추가 설치, 설정은 Agent가 해줌
     * 결국 의지의 문제. 할 수 있다고 생각하면 됨.
 
 
@@ -224,10 +279,10 @@ paginate: true
 
 ### 장비 선택
 
-* 권장: mac 계열
+* 권장: Mac 계열
     * 가장 많은 사용자. 자료도 많음
-    * 맥Mini가 무난. 요즘 재고가 없어서 한참 걸림
-* 차선 : OS 설치 안 된 미니PC + Ubuntu(Linux 계열 설치)
+    * Mac mini가 무난. 요즘 재고가 없어서 한참 걸림
+* 차선: OS 설치 안 된 미니 PC + Ubuntu(Linux 계열 설치)
 * Windows도 의지가 있으면 할 수는 있음.
     * 노력이 더 많이 들어감 (WSL 사용 등)
 
