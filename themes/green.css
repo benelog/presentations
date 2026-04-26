@@ -36,7 +36,8 @@ section {
   place-content: start;
 }
 
-/* Section-break slides (H2 only, no H3) keep Marp's default vertical centering. */
+/* Title (H1, no H2) and section-break (H2, no H3) slides stay vertically centered. */
+section:has(h1):not(:has(h2)),
 section:has(h2):not(:has(h3)) {
   place-content: safe center center;
 }
