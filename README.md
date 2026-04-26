@@ -9,6 +9,8 @@
 | 날짜 | 제목 | 소스 | 슬라이드 | PDF |
 |------|------|------|---------|-----|
 | 2026-04-26 | AI agent에게 사적인 일 시키기 | [`20260426-ai-gent/slides.md`](20260426-ai-gent/slides.md) | [보기](https://benelog.github.io/presentations/20260426-ai-gent/) | [PDF](https://benelog.github.io/presentations/20260426-ai-gent/slides.pdf) |
+| 2022-04-13 | 컴퓨터 프로그래밍과 진로 | [`20220413-yonsei-stats-rc101/slides.md`](20220413-yonsei-stats-rc101/slides.md) | [보기](https://benelog.github.io/presentations/20220413-yonsei-stats-rc101/) | [PDF](https://benelog.github.io/presentations/20220413-yonsei-stats-rc101/slides.pdf) |
+| 2021-09-14 | 네이버 개발자 업무와 기술 플랫폼 | [`20210914-yonsei-stats-bk/slides.md`](20210914-yonsei-stats-bk/slides.md) | [보기](https://benelog.github.io/presentations/20210914-yonsei-stats-bk/) | [PDF](https://benelog.github.io/presentations/20210914-yonsei-stats-bk/slides.pdf) |
 
 ## 빌드 / 배포
 

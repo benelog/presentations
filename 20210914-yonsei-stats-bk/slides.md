@@ -5,7 +5,7 @@ title: 네이버 개발자 업무와 기술 플랫폼
 paginate: true
 ---
 
-![bg](./assets/cover.jpg)
+![bg](cover.jpg)
 
 
 ---
@@ -47,7 +47,7 @@ paginate: true
 
 ### 인터넷 서비스 구성의 예
 
-![backend](assets/service-servers.png)
+![backend](service-servers.png)
 
 ---
 
@@ -85,7 +85,7 @@ paginate: true
 
 ## 공통 기술 플랫폼
 
-![bg](assets/platform-labs.png)
+![bg](platform-labs.png)
 
 ---
 
