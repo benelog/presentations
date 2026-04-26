@@ -80,7 +80,7 @@ npm run dev                       # marp 서버 — 라이브 미리보기
 
 ## 테마
 
-기본은 `themes/korean.css` (`theme: korean`) — Marp default 테마 + Noto Sans/Serif KR 웹폰트.
+기본은 `themes/green.css` (`theme: green`) — Marp default 테마 + Noto Sans/Serif KR 웹폰트, blog.benelog.net 팔레트.
 PDF 출력 시 headless Chromium 이 Google Fonts 에서 폰트를 fetch 하므로 시스템에 한글 폰트가 없어도 깨지지 않는다.
 
 - 인라인 오버라이드: frontmatter 아래 `<style>...</style>` 또는 `style: |` 블록.

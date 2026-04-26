@@ -1,0 +1,6 @@
+{
+  "markdown.marp.themes": [
+    "./themes/green.css"
+  ],
+  "markdown.marp.enableHtml": true
+}

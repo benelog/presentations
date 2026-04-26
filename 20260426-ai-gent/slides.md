@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: korean
+theme: green
 paginate: true
 ---
 
@@ -110,7 +110,7 @@ paginate: true
 ---
 
 ### 재상봄 기념집 교열
-* 시작 프롬프트 : @aaa.pdf 파일의 오타를 찾아서 Google Sheet로 올려줘.
+* 시작 프롬프트 : @문집.pdf 파일을 교열해서 Google Sheet로 올려줘.
 * [작업 계획서 모음](https://github.com/benelog/yonsei-publication)
 * 결과물
     * [문집 교열표](https://docs.google.com/spreadsheets/d/1fNNcGty2t68T9Q8A1XuXySFgvvhObBw2ejPVPZCKJw4/edit?gid=0#gid=0)
@@ -136,8 +136,8 @@ paginate: true
 ---
 
 * 컨텐츠 정리
-    * 오타 수정, dead link 제거
-    * 태그 분류, 페이지 재정리
+    * [오타 수정](https://github.com/benelog/blog/commit/fc02faa835b5743ab19a101d1dd5d44e396271cd), dead link 제거
+    * 태그 분류, 페이지 분리, 통합
     * 컨텐츠 초안 작성 자동화
         * [정상혁 블로그 글쓰기 가이드](https://github.com/benelog/blog/blob/master/CREATE_POST.md)
         * [독서 감상문 템플릿 skill](https://github.com/benelog/bookshelf/blob/master/.claude/skills/create-post/SKILL.md)

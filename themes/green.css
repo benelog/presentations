@@ -1,0 +1,236 @@
+/* @theme green */
+/* Editorial theme, palette mirrors blog.benelog.net (Naver-inspired).         */
+/* Cool light-gray canvas, near-black ink, Naver-green accents on rules/bars.  */
+/* Built on Marp's default layout; overrides typography + heading hierarchy.   */
+
+@import 'default';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  --paper:        #f5f6f8;       /* blog --bg-page */
+  --paper-card:   #ffffff;       /* blog --bg-card */
+  --paper-tint:   #e8f7ef;       /* blog --color-primary-light */
+  --ink:          #080808;       /* blog --text-primary */
+  --ink-soft:     #333333;
+  --ink-mute:     #666666;       /* blog --text-secondary */
+  --ink-fade:     #999999;       /* blog --text-tertiary */
+  --accent:       #03C75A;       /* blog --color-primary (Naver green) */
+  --accent-deep:  #009f47;       /* blog --color-primary-dark */
+  --code-fg:      #e44d2a;       /* blog inline-code color */
+  --code-bg:      #f1f3f5;       /* blog inline-code bg */
+  --rule:         rgba(8, 8, 8, 0.10);
+  --rule-strong:  rgba(8, 8, 8, 0.20);
+}
+
+/* ── Slide canvas ─────────────────────────────────────────────────────── */
+
+section {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  padding: 64px 84px 72px;
+}
+
+/* ── Heading hierarchy ────────────────────────────────────────────────── */
+
+section h1,
+section h2,
+section h3,
+section h4,
+section h5,
+section h6 {
+  font-family: 'Noto Serif KR', 'Noto Sans KR', serif;
+  color: var(--ink);
+  letter-spacing: -0.025em;
+  line-height: 1.22;
+}
+
+/* H1 — title slide. Vertical green bar, heaviest weight. */
+section h1 {
+  font-size: 62px;
+  font-weight: 900;
+  color: var(--ink);
+  margin: 0 0 0.55em;
+  padding: 0.05em 0 0.05em 32px;
+  position: relative;
+}
+section h1::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.18em;
+  bottom: 0.22em;
+  width: 7px;
+  background: var(--accent);
+}
+
+/* H2 — section break. Bold, two-tier underline (ink line + short green accent). */
+section h2 {
+  font-size: 50px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 0.45em;
+  padding-bottom: 0.32em;
+  display: inline-block;
+  border-bottom: 2px solid var(--ink);
+  position: relative;
+}
+section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 72px;
+  height: 5px;
+  background: var(--accent);
+}
+
+/* H3 — content slide title. Bottom rule across the column. */
+section h3 {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 0.7em;
+  padding: 0 0 0.32em;
+  border-bottom: 1px solid var(--rule-strong);
+}
+
+/* H4 — sub-group within a content slide. */
+section h4 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0.9em 0 0.35em;
+  letter-spacing: -0.02em;
+}
+
+/* ── Body text ────────────────────────────────────────────────────────── */
+
+section p {
+  margin: 0 0 0.6em;
+  color: var(--ink-soft);
+}
+
+section strong { color: var(--ink); font-weight: 700; }
+section em     { color: var(--ink-soft); font-style: italic; }
+
+section ul,
+section ol {
+  padding-left: 1.35em;
+  margin: 0.15em 0 0.6em;
+}
+section li {
+  margin: 0.22em 0;
+  color: var(--ink-soft);
+}
+section ul > li::marker { color: var(--accent); font-size: 0.95em; }
+section ol > li::marker { color: var(--accent-deep); font-weight: 600; }
+section ul ul { margin-top: 0.1em; margin-bottom: 0.1em; }
+section ul ul > li::marker { color: var(--ink-fade); }
+
+/* ── Links ────────────────────────────────────────────────────────────── */
+
+section a {
+  color: var(--accent-deep);
+  text-decoration: none;
+  border-bottom: 1px dotted color-mix(in srgb, var(--accent-deep) 55%, transparent);
+  padding-bottom: 1px;
+  transition: color 0.12s ease, border-color 0.12s ease;
+}
+section a:hover {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+
+/* ── Code ─────────────────────────────────────────────────────────────── */
+
+section code {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.86em;
+  background: var(--code-bg);
+  color: var(--code-fg);
+  padding: 0.08em 0.4em;
+  border-radius: 3px;
+}
+section pre {
+  background: #1f2329;
+  color: #ece6d6;
+  padding: 1em 1.25em;
+  border-radius: 6px;
+  border-left: 4px solid var(--accent);
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.78em;
+  line-height: 1.55;
+  overflow-x: auto;
+}
+section pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-size: 1em;
+}
+
+/* ── Quotes & rules ───────────────────────────────────────────────────── */
+
+section blockquote {
+  border-left: 3px solid var(--accent);
+  background: var(--paper-tint);
+  margin: 0.6em 0;
+  padding: 0.4em 1em;
+  color: var(--ink-soft);
+  font-family: 'Noto Serif KR', serif;
+  font-style: italic;
+  border-radius: 0 6px 6px 0;
+}
+section hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 0.8em 0;
+}
+
+/* ── Tables ───────────────────────────────────────────────────────────── */
+
+section table {
+  border-collapse: collapse;
+  font-size: 0.92em;
+  margin: 0.4em 0;
+}
+section th {
+  background: var(--paper-tint);
+  color: var(--ink);
+  font-family: 'Noto Serif KR', serif;
+  font-weight: 700;
+  text-align: left;
+  padding: 0.5em 0.8em;
+  border-bottom: 2px solid var(--accent-deep);
+}
+section td {
+  padding: 0.45em 0.8em;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink-soft);
+}
+
+/* ── Images ───────────────────────────────────────────────────────────── */
+
+section img {
+  display: block;
+  max-width: 100%;
+  margin: 0.6em auto;
+  border-radius: 3px;
+}
+
+/* ── Pagination ───────────────────────────────────────────────────────── */
+
+section::after {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-mute);
+  letter-spacing: 0.12em;
+  bottom: 22px;
+  right: 32px;
+}
