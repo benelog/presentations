@@ -88,8 +88,7 @@ paginate: true
 
 * 신한은행에서 3개의 모임통장의 입금내역을 HTML로 다운로드
 * [입금내역을 Google Drive](https://drive.google.com/drive/folders/1DykuZXX3ULgCG3mi4ika-gjRZlakoAMb?ths=true)로 업로드
-    * [학교에 제출할 양식](https://docs.google.com/spreadsheets/d/1HYHYYUM63zIdSpKjFrc94khtau-0FYUFOgd-u_pdvyY/edit?gid=374073609#gid=374073609)으로 변환
-    * 학번 자동 입력
+    * [학교에 제출할 양식](https://docs.google.com/spreadsheets/d/1HYHYYUM63zIdSpKjFrc94khtau-0FYUFOgd-u_pdvyY/edit?gid=374073609#gid=374073609)으로 변환 ( + 학번 자동 입력)
     * 몇 반인지 분류 : ['정상혁(8반)' 형식으로 넣어달라고 공지](https://yonsei.benelog.net/donation/)했으나 [그렇게 안 한 사람도 있었음](https://github.com/benelog/yonsei-donations/blob/main/deposit-to-donation-form.md)
 * [반별 통계 Sheet](https://docs.google.com/spreadsheets/d/1iRhcKqYleUPMp17JCbagwhEnIT4kvSIkR23w8JCZ7Js/edit?usp=drive_web&ouid=111901368274901882933) 업데이트
 * [일별 모금 리포트](https://docs.google.com/document/d/17N9aQ996So9VbWWMdo4iYagalkOCexZFZOyeURAS188/edit?tab=t.0) 업데이트
