@@ -68,25 +68,15 @@ section h1::before {
   background: var(--accent);
 }
 
-/* H2 — section break. Bold, two-tier underline (ink line + short green accent). */
+/* H2 — section break. Bold, full-width green underline matching the text. */
 section h2 {
   font-size: 50px;
   font-weight: 700;
   color: var(--ink);
   margin: 0 0 0.45em;
-  padding-bottom: 0.32em;
+  padding-bottom: 0.28em;
   display: inline-block;
-  border-bottom: 2px solid var(--ink);
-  position: relative;
-}
-section h2::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 72px;
-  height: 5px;
-  background: var(--accent);
+  border-bottom: 5px solid var(--accent);
 }
 
 /* H3 — content slide title. Bottom rule across the column. */
