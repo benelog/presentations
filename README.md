@@ -8,7 +8,7 @@
 
 | 날짜 | 제목 | 소스 | 슬라이드 | PDF |
 |------|------|------|---------|-----|
-| 2026-04-26 | AI agent로 이것저것 해보기 | [`20260426-ai-gent/slides.md`](20260426-ai-gent/slides.md) | [보기](https://benelog.github.io/presentations/20260426-ai-gent/) | [PDF](https://benelog.github.io/presentations/20260426-ai-gent/slides.pdf) |
+| 2026-04-26 | AI agent에게 사적인 일 시키기 | [`20260426-ai-gent/slides.md`](20260426-ai-gent/slides.md) | [보기](https://benelog.github.io/presentations/20260426-ai-gent/) | [PDF](https://benelog.github.io/presentations/20260426-ai-gent/slides.pdf) |
 
 ## 빌드 / 배포
 

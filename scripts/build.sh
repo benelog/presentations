@@ -28,6 +28,15 @@ for slide in "$ROOT"/[0-9]*/slides.md; do
   $MARP --pdf --allow-local-files "--theme-set=$ROOT/themes" \
     -o "$out_dir/slides.pdf" "$slide" || true
 
+  # Copy assets (images, etc.) referenced by HTML output
+  for asset in "$dir"/*; do
+    [ -f "$asset" ] || continue
+    case "$asset" in
+      *.md|*.drawio|*/.*) continue ;;
+    esac
+    cp "$asset" "$out_dir/"
+  done
+
   title="$(grep -m1 '^# ' "$slide" | sed 's/^# *//' || true)"
   [ -z "$title" ] && title="$name"
   entries+=("$name|$title")
