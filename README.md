@@ -1,6 +1,4 @@
-# presentations
-
-발표 슬라이드 모음. [Marp](https://marp.app/) 마크다운으로 작성하고 GitHub Pages 로 배포.
+# 발표 슬라이드 모음
 
 **배포 URL**: <https://benelog.github.io/presentations/>
 
@@ -14,6 +12,7 @@
 | 2020-05-07 | 엔티티 클래스 설계와 퍼시스턴스 프레임워크 | [`20200507-entity-design/slides.md`](20200507-entity-design/slides.md) | [보기](https://benelog.github.io/presentations/20200507-entity-design/) | [PDF](https://benelog.github.io/presentations/20200507-entity-design/slides.pdf) |
 
 ## 빌드 / 배포
+[Marp](https://marp.app/) 마크다운으로 작성하고 GitHub Pages 로 배포.
 
 ```bash
 npm install      # 최초 1회
@@ -21,6 +20,6 @@ npm run build    # dist/ 에 전체 빌드
 npm run dev      # 라이브 미리보기 서버
 ```
 
-main 에 push 하면 GitHub Actions 가 자동으로 빌드 후 GitHub Pages 에 배포한다.
+main 에 push 하면 GitHub Actions 가 자동으로 빌드 후 GitHub Pages로 배포됨.
 
 자세한 작성 규칙·파이프라인은 [`build_slides.md`](build_slides.md) 참고.
