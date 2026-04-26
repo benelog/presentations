@@ -249,10 +249,10 @@ section.title-meta-right p { text-align: right; }
 
 ### Agent 도구 선택
 
-* OpenClaw, Hermes를 쓰기에 유리한 경우
+* OpenClaw, Hermes를 쓰는 것이 유리한 경우
     * Telegram 챗봇 등으로 활용할 경우
-    * 다양한 모델을 돌아가면서 쓸 경우
+    * 다양한 제공처의 모델을 쓰고 싶을 때
         * Claude Code도 Claude 계열 외의 모델 연동도 가능은 하지만 설정 난이도가 더 높음
-* Claude Code, Codex 위주의 활용법
-    * 회사에서 쓰는 사용법과 유사
+* Claude Code, Codex 위주의 활용
+    * 큰 회사에서 사용 형태
     * 다양한 LLM 모델보다 해당 제공사의 모델과 Agent의 결합을 주로 사용함
