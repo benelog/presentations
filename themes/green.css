@@ -95,14 +95,32 @@ section h3 {
   padding: 0 0 0.32em;
   border-bottom: 1px solid var(--rule-strong);
 }
+/* Extra breathing room when an H3 follows body content on the same slide. */
+section :is(p, ul, ol, blockquote, pre, table, img) + h3 {
+  margin-top: 1.1em;
+}
 
-/* H4 — sub-group within a content slide. */
+/* H4 — sub-group within a content slide. Green leading bar marks a new block. */
 section h4 {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--ink);
-  margin: 0.9em 0 0.35em;
+  margin: 1em 0 0.4em;
+  padding-left: 14px;
   letter-spacing: -0.02em;
+  border-left: 4px solid var(--accent);
+  line-height: 1.2;
+}
+
+/* H5 — finer subdivision. Smaller, lighter, uppercase tracking for clear demotion. */
+section h5 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink-mute);
+  margin: 0.8em 0 0.25em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* ── Body text ────────────────────────────────────────────────────────── */
