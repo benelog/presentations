@@ -56,8 +56,15 @@ paginate: true
 
 ### 상경계열 선택
 
+<<<<<<< HEAD
 * 고등학교 때까지 공대 지망생
     * 중고등학교 시절 프로그래밍이 꾸준한 취미
+=======
+* 고등학교 때 공대 지망생
+    * 어릴 때부터 과학자가 꿈
+        * 그 시절에는 전형적. 로봇만화의 영향으로 추정
+    * 중고등학교 때 프로그래밍이 꾸준한 취미
+>>>>>>> 8147e32 (슬라이드 보강)
     * 고1때 희망학과는 '전자공학과'
 * 집안 사정으로 문과로 오게 되었음.
 * 문과에서는 딱히 관심가는 전공이 없었음.
@@ -65,7 +72,7 @@ paginate: true
 
 ---
 
-### 응용 통계학과 선택
+### 응용통계학과 선택
 * 당시 상경계열에는 경영/경제/응용통계학 3개의 전공 중 선택 가능
     * 경영대학 분리 이전
     * 이중 전공 권장 분위기
@@ -278,12 +285,13 @@ AI 에이전트는 사람의 작업을 대리함
 
 ---
 
-### 발표자의 관련 글/ 과거 발표
+### 발표자의 관련 글
 * [다시 4학년, 아마도 계속](https://diary.benelog.net/2026/college-senior-again/) (2026년 졸업 25주년 재상봉 기념문집 기고문)
 * ['먼저 온 미래' 감상문](https://diary.benelog.net/2025/future-came-first/)
-* [프로그래밍과 진로](https://benelog.github.io/presentations/20220413-yonsei-stats-rc101/slides.pdf) (2022년 4월 13일 연세대학교 RC101 초청세미나)
-    * [질의&응답](https://github.com/benelog/presentations/blob/main/20220413-yonsei-stats-rc101/qna.md)
 
+### 과거 발표
+* [프로그래밍과 진로](https://benelog.github.io/presentations/20220413-yonsei-stats-rc101/slides.pdf) (2022년 4월 13일 연세대학고 RC101 초청세미나)
+    * [질의&응답](https://github.com/benelog/presentations/blob/main/20220413-yonsei-stats-rc101/qna.md)
 * [네이버 개발자 업무와 기술 플랫폼](https://benelog.github.io/presentations/20210914-yonsei-stats-bk/slides.pdf) (2021년 09월 14일 연세대학교 통계데이터사이언스학과 BK산학 세미나)
 
 ---
@@ -325,7 +333,7 @@ AI 에이전트는 사람의 작업을 대리함
 
 ---
 
-##### AI시대에 네이버만의 전략 : [네이버 검색 결과](https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&ssc=tab.nx.all&query=%EB%84%A4%EC%9D%B4%EB%B2%84+AI+%EC%A0%84%EB%9E%B5&oquery=%EB%84%A4%EC%9D%B4%EB%B2%84%EC%9D%98+AI+%EC%A0%84%EB%9E%B5&tqi=jmhCblqX6IRssie%2BLwR-195166&ackey=vp5i9hp7)
+#### AI시대 네이버 전략 : [네이버 검색 결과](https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&ssc=tab.nx.all&query=%EB%84%A4%EC%9D%B4%EB%B2%84+AI+%EC%A0%84%EB%9E%B5&oquery=%EB%84%A4%EC%9D%B4%EB%B2%84%EC%9D%98+AI+%EC%A0%84%EB%9E%B5&tqi=jmhCblqX6IRssie%2BLwR-195166&ackey=vp5i9hp7)
 
 ![height:700px](naver-ai.png)
 
