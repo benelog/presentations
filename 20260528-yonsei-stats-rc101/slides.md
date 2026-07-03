@@ -1,7 +1,6 @@
 ---
 theme: ../themes/green
 title: 컴퓨터 프로그래밍과 진로
-record: true
 ---
 
 # 25년 전의 진로 선택과 AI 시대의 변화

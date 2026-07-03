@@ -11,7 +11,8 @@
       "aspectRatio": "16/9",
       "canvasWidth": 1280,
       "lineNumbers": false,
-      "routerMode": "hash"
+      "routerMode": "hash",
+      "record": true
     }
   }
 }
