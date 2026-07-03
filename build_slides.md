@@ -81,6 +81,17 @@ npm run dev -- YYYYMMDD-slug/slides.md   # 라이브 미리보기 서버
 
 PDF export는 `playwright-chromium` 을 사용한다 (devDependency로 설치됨).
 
+### 버전 고정 주의
+
+`@slidev/cli` 는 **52.15.2 로 정확히 고정**되어 있다. 52.16.0 은 sub-path 배포(`--base`) 시 슬라이드 이동마다 base 경로가 URL에 중복으로 붙는 회귀가 있다
+(슬라이드 넘김 시 `/presentations/x/presentations/x/2` 형태가 되면서 404 발생. [slidevjs/slidev#2630](https://github.com/slidevjs/slidev/pull/2630) 으로 수정됨).
+52.16.0 이후 fix가 포함된 릴리스가 나오면 업그레이드해도 된다.
+
+### Router mode
+
+테마 defaults 에 `routerMode: hash` 가 설정되어 있다 (`themes/green/package.json`).
+GitHub Pages 는 SPA rewrite 를 지원하지 않아 history 모드에서는 `/2` 같은 딥링크·새로고침이 404 가 되므로, `#/2` 형식의 hash 라우팅을 쓴다.
+
 ## GitHub Pages 배포
 
 `.github/workflows/deploy.yml` 가 main 브랜치 push 마다:

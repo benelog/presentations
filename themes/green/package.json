@@ -10,7 +10,8 @@
     "defaults": {
       "aspectRatio": "16/9",
       "canvasWidth": 1280,
-      "lineNumbers": false
+      "lineNumbers": false,
+      "routerMode": "hash"
     }
   }
 }
