@@ -256,3 +256,10 @@
   color: var(--ink-mute);
   letter-spacing: 0.12em;
 }
+
+/* ── Nav controls: move Slidev's default bar bottom-left → bottom-right ── */
+/* Slidev renders NavControls in a wrapper pinned `bottom-0 left-0`; re-pin it right. */
+div.absolute.bottom-0.left-0:has(> nav) {
+  left: auto !important;
+  right: 0 !important;
+}
