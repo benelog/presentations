@@ -1,11 +1,9 @@
 ---
-marp: true
-theme: green
+theme: ../themes/green
 title: 컴퓨터 프로그래밍과 진로
-paginate: true
+layout: image
+image: ./cover.jpg
 ---
-
-![bg cover](cover.jpg)
 
 ---
 
@@ -84,13 +82,14 @@ paginate: true
 * 삼성SDS 지원/합격후 다른곳에는 지원하지 않음.
 
 ---
+layout: image-right
+image: https://image.yes24.com/momo/TopCate06/MidCate08/575731.jpg
+backgroundSize: contain
+---
 
 ### 진로에 확신을 더한 계기 : 책 '앞으로 50년'
 * 4학년 '중급경영통계학' 수업 때 교수님이 권장해주신 책
 * 2002년 출판되었으니 20년 지났음.
-
-![bg right:50% 70%](https://image.yes24.com/momo/TopCate06/MidCate08/575731.jpg
-)
 
 ---
 
@@ -214,46 +213,54 @@ paginate: true
     * 쉬운 내용부터 시작해서 성취감 느끼기
 
 ---
+layout: image-right
+image: https://image.yes24.com/goods/56849149/XL
+backgroundSize: contain
+---
 
 ### 추천 도서
 - [모두의 엔트리 with 엔트리파이선 ](http://www.yes24.com/product/goods/56849149) : 블록 코딩에서 문자 코딩으로
 
-![bg right:50% 80%](https://image.yes24.com/goods/56849149/XL)
-
+---
+layout: image-right
+image: https://image.yes24.com/goods/66531799/XL
+backgroundSize: contain
 ---
 
 - [모두의 파이썬 2](http://image.yes24.com/goods/66531799/XL) : 쉬운 파이썬 입문서
 
-![bg right:50% 80%](https://image.yes24.com/goods/66531799/XL)
-
+---
+layout: image-right
+image: https://image.yes24.com/momo/TopCate463/MidCate008/46275165.jpg
+backgroundSize: contain
 ---
 
 - [CODE](http://www.yes24.com/Product/Goods/16667186) : 컴퓨터 H/W, S/W의 원리를 단계적으로 설명
 
-
-![bg right:50% 70%](https://image.yes24.com/momo/TopCate463/MidCate008/46275165.jpg)
-
-
+---
+layout: image-right
+image: https://image.yes24.com/momo/TopCate259/MidCate003/25541545.jpg
+backgroundSize: contain
 ---
 
 - [미래를 바꾼 아홉 가지 알고리즘](http://www.yes24.com/Product/Goods/8921236) :  이야기로 풀어낸 알고리즘
 
-
-![bg right:50% 70%](https://image.yes24.com/momo/TopCate259/MidCate003/25541545.jpg)
-
+---
+layout: image-right
+image: https://image.yes24.com/goods/105122143/XL
+backgroundSize: contain
 ---
 
 - [누구나 자료 구조와 알고리즘](http://www.yes24.com/Product/Goods/105122143)
 : 친절한 설명의 알고리즘 입문서
 
-![bg right:50% 80%](https://image.yes24.com/goods/105122143/XL)
-
+---
+layout: image-right
+image: https://image.yes24.com/goods/37885448/XL
+backgroundSize: contain
 ---
 
 - [Hello Coding 그림으로 개념을 이해하는 알고리즘](http://www.yes24.com/Product/Goods/37885448) : 그림과 함께 설명한 알고리즘 입문서
-
-
-![bg right:50% 80%](https://image.yes24.com/goods/37885448/XL)
 
 ---
 

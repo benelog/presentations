@@ -1,18 +1,17 @@
 ---
-marp: true
-theme: green
-paginate: true
+theme: ../themes/green
+title: AI agent에게 개인적인 일 시키기
 ---
-
-<!-- _class: title-meta-right -->
-<style scoped>
-section.title-meta-right p { text-align: right; }
-</style>
 
 # AI agent에게 개인적인 일 시키기
 
 2026-04-26
+
 정상혁
+
+<style>
+p { text-align: right; }
+</style>
 
 ---
 
@@ -22,7 +21,7 @@ section.title-meta-right p { text-align: right; }
 
 ### AI 채팅 서비스 vs AI Agent
 
-![](ai-gent-flow.png)
+![](./ai-gent-flow.png)
 
 ---
 
@@ -124,7 +123,7 @@ section.title-meta-right p { text-align: right; }
 
 ---
 
-![](pdf-annoation.png)
+![](./pdf-annoation.png)
 
 ---
 

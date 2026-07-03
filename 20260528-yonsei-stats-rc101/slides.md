@@ -1,8 +1,6 @@
 ---
-marp: true
-theme: green
+theme: ../themes/green
 title: 컴퓨터 프로그래밍과 진로
-paginate: true
 ---
 
 # 25년 전의 진로 선택과 AI 시대의 변화
@@ -29,7 +27,7 @@ paginate: true
 
 얼마 전 졸업 25주년 재상봉 행사에 참여
 
-![](reunion.jpg)
+![](./reunion.jpg)
 
 ---
 
@@ -96,11 +94,12 @@ paginate: true
     * 통계적 이론이 기반에 깔린 경우가 많음
 
 ---
+
 * 예시: 대학 때 계량경영학 책에 나온 '벨만방정식'
     * 강화학습에서 최적의 행동을 결정하는 핵심 도구
     * 당시에 이해 못했음
 
-![height:550px](bellman.jpg)
+<img src="./bellman.jpg" style="height:550px" />
 
 ---
 
@@ -128,6 +127,10 @@ paginate: true
 * 삼성SDS 지원/합격 후 다른곳에는 지원하지 않음.
 
 ---
+layout: image-right
+image: https://image.yes24.com/momo/TopCate06/MidCate08/575731.jpg
+backgroundSize: contain
+---
 
 ### 진로에 확신을 더한 계기
 
@@ -136,10 +139,8 @@ paginate: true
 * 4학년 '중급경영통계학' 수업 때 교수님이 권장해주신 책
 * 2002년 출판되었으니 24년 지났음.
 
-![bg right:50% 70%](https://image.yes24.com/momo/TopCate06/MidCate08/575731.jpg
-)
-
 ---
+
 ( 제이런 래니어(Jaron Lanier) 가 쓴 ‘복잡성의 절정(The Complexity Ceiling)’ 챕터 중 )
 
 
@@ -164,16 +165,16 @@ paginate: true
 ## AI 시대 변화
 
 ---
+layout: image-right
+image: https://image.yes24.com/goods/148032297/XL
+backgroundSize: contain
+---
 
 ### 바둑계에 먼저 온 미래
 
 [먼저 온 미래](https://www.yes24.com/product/goods/148032297) 책 중
 
 > (p25) 나는 바둑계에 미래가 먼저 왔다고 생각한다. 2016년부터 몇 년간 바둑계에서 벌어진 일들이 앞으로 여러 업계에서 벌어질 것이다. 사람들이 거기에 어떤 가치가 있다고 믿으며 수십 년의 시간을 들여 헌신한 일을 더 잘해내는 인공지능이 어느 순간 갑자기 등장하는 것. 그 인공지능이 싼 가격에 보급되는 것. 그 인공지능과의 ‘공존’을 강요당하는 것. 인공지능이 만드는 새로운 질서를 따라야 하는 것. 당신이 알던 개념을 인공지능이 재정의하고, 당신은 그것을 다시 배워야 하는 것. 인공지능은 타자기나 워드프로세서와는 다르다.
-
-
-![bg right:40% 80%](https://image.yes24.com/goods/148032297/XL)
-
 
 ---
 
@@ -194,7 +195,7 @@ paginate: true
 ### AI 채팅 서비스 vs AI 에이전트
 AI 에이전트는 사람의 작업을 대리함
 
-![](ai-gent-flow.png)
+![](./ai-gent-flow.png)
 
 ---
 
@@ -202,7 +203,7 @@ AI 에이전트는 사람의 작업을 대리함
 * 과거의 실무자의 일은 현재 컴퓨터가 하는 일
 예: CAD 도입전 General Motors의 기술자들이 작업하는 모습 ( [자료 출처 : archdaily](https://www.archdaily.com/940493/etheral-luminosity-from-above-general-motors-technical-center) )
 
-![height:350px](https://images.adsttc.com/media/images/5ece/383e/b357/65c6/7300/017b/newsletter/General_Motors_Technical_Center_D-C2537.jpg?1590573098)
+<img src="https://images.adsttc.com/media/images/5ece/383e/b357/65c6/7300/017b/newsletter/General_Motors_Technical_Center_D-C2537.jpg?1590573098" style="height:350px" />
 
 
 * 기술이 발전하면서 지식근로자의 역할은 그 전 시대의 관리자의 역할과 유사하게 변화해왔음
@@ -219,7 +220,7 @@ AI 에이전트는 사람의 작업을 대리함
     * 작업자별 장점을 고려하여
 * 작업 결과에 대한 최종 승인
 
-![height:250px](confirm.jpeg)
+<img src="./confirm.jpeg" style="height:250px" />
 
 ---
 
@@ -253,6 +254,10 @@ AI 에이전트는 사람의 작업을 대리함
 ## 추천 자료
 
 ---
+layout: image-right
+image: https://image.yes24.com/goods/181119990/XL
+backgroundSize: contain
+---
 
 ### 추천 도서
 
@@ -262,24 +267,25 @@ AI 에이전트는 사람의 작업을 대리함
 
 * [소개된 책 구매 링크 모음](https://gist.github.com/benelog/91789a9abd9bea1ef3f33be7bcbf54df)
 
-![bg right:40% 80%](https://image.yes24.com/goods/181119990/XL)
-
+---
+layout: image-right
+image: https://image.yes24.com/goods/97684576/XL
+backgroundSize: contain
 ---
 
 [탤런트 코드](https://www.yes24.com/Product/Goods/97684576)
 
 > (p31) 바보 같아 보일 만큼 수없이 실수를 허용할수록, 즉 정확히 목적에 맞는 노력을 기울이면서 끈질기게 물고 늘어질수록 더 많이 향상된다. 혹은 약간 다르게 표현하자면, 속도를 늦추고 실수를 하면서 그 실수를 교정하는 의도적인 과정을 되풀이할수록 결국은 본인도 깨닫지 못하는 사이에 점점 더 민첩하고 우아한 스킬을 습득한다.
 
-![bg right:40% 80%](https://image.yes24.com/goods/97684576/XL
-)
-
+---
+layout: image-right
+image: https://image.yes24.com/goods/124187392/XL
+backgroundSize: contain
 ---
 
 [데이터는 예측하지 않는다](https://www.yes24.com/Product/Goods/124187392)
 
 > (p33) 데이터 사이언스를 사용한다(혹은 학습한다)는 것은 데이터를 이용해 내가 일하는 분야에서 발생한 특정 문제를 해결하고자 하는 목적일 가능성이 높다. 이때 가장 중요한 것은 문제의 본질을 얼마나 제대로 파악하고 있는가이다. 문제의 본질은 데이터 사이언스를 통해 알려고 하는 것, 데이터 사이언스를 통해서 하려는 정확한 의사결정이 무엇인가 파악하는 것이다.
-
-![bg right:40% 80%](https://image.yes24.com/goods/124187392/XL)
 
 ---
 
@@ -333,7 +339,7 @@ AI 에이전트는 사람의 작업을 대리함
 
 #### AI시대 네이버 전략 : [네이버 검색 결과](https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&ssc=tab.nx.all&query=%EB%84%A4%EC%9D%B4%EB%B2%84+AI+%EC%A0%84%EB%9E%B5&oquery=%EB%84%A4%EC%9D%B4%EB%B2%84%EC%9D%98+AI+%EC%A0%84%EB%9E%B5&tqi=jmhCblqX6IRssie%2BLwR-195166&ackey=vp5i9hp7)
 
-![height:700px](naver-ai.png)
+<img src="./naver-ai.png" style="height:700px" />
 
 ---
 

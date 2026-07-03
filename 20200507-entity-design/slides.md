@@ -1,13 +1,12 @@
 ---
-marp: true
-theme: green
+theme: ../themes/green
 title: 엔티티 클래스 설계와 퍼시스턴스 프레임워크
-paginate: true
 ---
 
 # 엔티티 클래스 설계와 퍼시스턴스 프레임워크
 
 2020-05-07
+
 정상혁
 
 ---
@@ -715,7 +714,7 @@ class AccountSqls {
 
 ### IntelliJ Enum 자동완성
 
-![](groovy-auto-complete.png)
+![](./groovy-auto-complete.png)
 
 ---
 
@@ -734,7 +733,7 @@ class AccountSqls {
 
 ### IntelliJ Kotlin 문법 경고
 
-![](kotlin-warning.jpg)
+![](./kotlin-warning.jpg)
 
 ---
 
@@ -872,7 +871,7 @@ class AccountSqls {
 
 (구글 검색으로 찾은 비슷한 느낌의 화면)
 
-![](complex-search.png)
+![](./complex-search.png)
 
 ---
 
@@ -893,7 +892,7 @@ class AccountSqls {
 
 ### 복잡한 조회를 담당하는 API 서버 분리
 
-![](architecure-case.png)
+![](./architecure-case.png)
 
 ---
 

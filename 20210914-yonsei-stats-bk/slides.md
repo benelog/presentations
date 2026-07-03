@@ -1,12 +1,9 @@
 ---
-marp: true
-theme: green
+theme: ../themes/green
 title: 네이버 개발자 업무와 기술 플랫폼
-paginate: true
+layout: image
+image: ./cover.jpg
 ---
-
-![bg](cover.jpg)
-
 
 ---
 
@@ -47,7 +44,7 @@ paginate: true
 
 ### 인터넷 서비스 구성의 예
 
-![backend](service-servers.png)
+![backend](./service-servers.png)
 
 ---
 
@@ -82,10 +79,11 @@ paginate: true
 - https://www.naver-recruit.com/ : 신입공채 안내 페이지
 
 ---
+layout: image
+image: ./platform-labs.png
+---
 
 ## 공통 기술 플랫폼
-
-![bg](platform-labs.png)
 
 ---
 

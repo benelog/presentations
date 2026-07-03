@@ -3,13 +3,15 @@ set -Eeuo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DIST="$ROOT/dist"
+BASE_PATH="${BASE_PATH:-/presentations}"
 
 rm -rf "$DIST"
 mkdir -p "$DIST"
 
-MARP="${MARP:-marp}"
-if ! command -v "$MARP" >/dev/null 2>&1; then
-  MARP="npx --yes @marp-team/marp-cli"
+SLIDEV="$ROOT/node_modules/.bin/slidev"
+if [ ! -x "$SLIDEV" ]; then
+  echo "slidev not found. Run 'npm install' first." >&2
+  exit 1
 fi
 
 shopt -s nullglob
@@ -20,15 +22,12 @@ for slide in "$ROOT"/[0-9]*/slides.md; do
   dir="$(dirname "$slide")"
   name="$(basename "$dir")"
   out_dir="$DIST/$name"
-  mkdir -p "$out_dir"
 
   echo "→ building $name"
-  $MARP --html --allow-local-files "--theme-set=$ROOT/themes" \
-    -o "$out_dir/index.html" "$slide"
-  $MARP --pdf --allow-local-files "--theme-set=$ROOT/themes" \
-    -o "$out_dir/slides.pdf" "$slide" || true
+  "$SLIDEV" build "$slide" --base "$BASE_PATH/$name/" --out "$out_dir"
+  "$SLIDEV" export "$slide" --output "$out_dir/slides.pdf" || true
 
-  # Copy assets (images, etc.) referenced by HTML output
+  # Copy assets referenced at runtime (frontmatter images 등은 번들되지 않음)
   for asset in "$dir"/*; do
     [ -f "$asset" ] || continue
     case "$asset" in

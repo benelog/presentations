@@ -3,10 +3,11 @@
   "private": true,
   "scripts": {
     "build": "bash scripts/build.sh",
-    "dev": "marp --server .",
-    "watch": "marp --watch ."
+    "dev": "slidev",
+    "export": "slidev export"
   },
   "devDependencies": {
-    "@marp-team/marp-cli": "^4.1.0"
+    "@slidev/cli": "^52.16.0",
+    "playwright-chromium": "^1.61.1"
   }
 }
