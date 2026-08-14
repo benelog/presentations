@@ -28,7 +28,7 @@ event: 연세대학교 응용통계학과 신입생 세미나
 
 얼마 전 졸업 25주년 재상봉 행사에 참여
 
-![](./reunion.jpg)
+<img src="./reunion.jpg" style="height:500px" />
 
 ---
 
@@ -99,7 +99,7 @@ event: 연세대학교 응용통계학과 신입생 세미나
     * 강화학습에서 최적의 행동을 결정하는 핵심 도구
     * 당시에 이해 못했음
 
-<img src="./bellman.jpg" style="height:550px" />
+<img src="./bellman.jpg" style="height:380px" />
 
 ---
 
@@ -111,6 +111,10 @@ event: 연세대학교 응용통계학과 신입생 세미나
     * 역인과관계 : 예) 퇴사자가 적은 회사가 성공한다? - 성공한 회사라서 퇴사자가 적은 것일 수도 있음.
     * 그렇다면 인과관계는 어떻게 판단할 수 있을까?
         * 데이터의 대상이 되는 분야에서 이를 설명할 수 있는 논리나 이론 등이 있어야 함
+
+---
+
+### 전공별로 배운 것을 1가지씩만 꼽는다면?
 
 #### 경영학과
 * 분권의 시대. 조직의 권한은 분산되고 있다.
@@ -199,7 +203,7 @@ layout: quote
 ### AI 채팅 서비스 vs AI 에이전트
 AI 에이전트는 사람의 작업을 대리함
 
-![](./ai-gent-flow.png)
+<img src="./ai-gent-flow.png" style="height:380px" />
 
 ---
 
@@ -207,7 +211,7 @@ AI 에이전트는 사람의 작업을 대리함
 * 과거의 실무자의 일은 현재 컴퓨터가 하는 일
 예: CAD 도입 전 General Motors의 기술자들이 작업하는 모습 ( [자료 출처 : archdaily](https://www.archdaily.com/940493/etheral-luminosity-from-above-general-motors-technical-center) )
 
-<img src="https://images.adsttc.com/media/images/5ece/383e/b357/65c6/7300/017b/newsletter/General_Motors_Technical_Center_D-C2537.jpg?1590573098" style="height:350px" />
+<img src="https://images.adsttc.com/media/images/5ece/383e/b357/65c6/7300/017b/newsletter/General_Motors_Technical_Center_D-C2537.jpg?1590573098" style="height:280px" />
 
 
 * 기술이 발전하면서 지식근로자의 역할은 그 전 시대의 관리자의 역할과 유사하게 변화해왔음
@@ -224,7 +228,7 @@ AI 에이전트는 사람의 작업을 대리함
     * 작업자별 장점을 고려하여
 * 작업 결과에 대한 최종 승인
 
-<img src="./confirm.jpeg" style="height:250px" />
+<img src="./confirm.jpeg" style="height:160px" />
 
 ---
 
@@ -270,6 +274,10 @@ backgroundSize: contain
 > (p54) 어떤 일을 할 때, 우리는 경합하는 논리를 종합해서 선택을 내려야 하고, 그 선택에는 책임이 따릅니다. 인간이 주인인 세상에서 그 책임을 지는 일만큼은 AI가 아닌 인간이 맡을 것이고, 우리는 여러 논리를 검토하고 종합하는 능력이 있는 사람을 책임자로 뽑게 됩니다.
 
 * [소개된 책 구매 링크 모음](https://gist.github.com/benelog/91789a9abd9bea1ef3f33be7bcbf54df)
+
+<style>
+blockquote { font-size: 0.9em; }
+</style>
 
 ---
 layout: image-right
@@ -343,7 +351,7 @@ backgroundSize: contain
 
 #### AI 시대 네이버 전략 : [네이버 검색 결과](https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&ssc=tab.nx.all&query=%EB%84%A4%EC%9D%B4%EB%B2%84+AI+%EC%A0%84%EB%9E%B5&oquery=%EB%84%A4%EC%9D%B4%EB%B2%84%EC%9D%98+AI+%EC%A0%84%EB%9E%B5&tqi=jmhCblqX6IRssie%2BLwR-195166&ackey=vp5i9hp7)
 
-<img src="./naver-ai.png" style="height:700px" />
+<img src="./naver-ai.png" style="height:470px" />
 
 ---
 

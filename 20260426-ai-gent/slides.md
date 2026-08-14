@@ -22,7 +22,7 @@ p { text-align: right; }
 
 ### AI 채팅 서비스 vs AI Agent
 
-![](./ai-gent-flow.png)
+<img src="./ai-gent-flow.png" style="height:420px" />
 
 ---
 
@@ -124,7 +124,7 @@ p { text-align: right; }
 
 ---
 
-![](./pdf-annotation.png)
+<img src="./pdf-annotation.png" style="height:520px" />
 
 ---
 
@@ -203,6 +203,10 @@ p { text-align: right; }
 * 직장에도 빠르게 확산될 것임
     * 보안 조직의 결단이 필요
     * 사람의 역할/관례가 바뀌는 데 걸리는 시간은 조직마다 차이가 클 것임
+---
+
+### 전망
+
 * 사람의 남은 역할
     * 업무 방식 설계, 사람 간 협의
     * 회색 영역의 가치 판단, 의사결정, 책임

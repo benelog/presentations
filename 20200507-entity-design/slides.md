@@ -78,6 +78,13 @@ public class Application extends WebMvcConfigurerAdapter {
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.Map"%>
 <%@ page import="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate"%>
+```
+
+---
+
+### `repos.jsp` (이어서)
+
+```html
 <c:set var="sql">
     SELECT r.name, r.description, a.name AS creator_name ,  a.email
     FROM repo r
@@ -118,7 +125,13 @@ public class Application extends WebMvcConfigurerAdapter {
         <input type="text" name="email" size="40" value="${email}"> <input type="submit" value="조회">
     </p>
     </form>
+```
 
+---
+
+### `repos.jsp` (이어서)
+
+```html
     <h2>조회 결과</h2>
     <table border="1">
         <tr>
@@ -714,7 +727,7 @@ class AccountSqls {
 
 ### IntelliJ Enum 자동완성
 
-![](./groovy-auto-complete.png)
+<img src="./groovy-auto-complete.png" style="height:440px" />
 
 ---
 
@@ -766,6 +779,12 @@ class AccountSqls {
 * ORM적인 특성
     * First level cache, Lazy loading
     * 1대 다 매핑, N+1 쿼리 가능성 등
+
+---
+
+### MyBatis
+
+* ORM적인 특성
     * JDBC API보다 추상화된 동작
         * batchUpdate 를 유도하기 위해서는 executorType을 BATCH로 설정해서 sqlSession을 따로 분리해야 함.
         * executorType이 batch일 때는 UPDATE, UPDATE, SELECT 순서로 쿼리가 호출되면 UPDATE 쿼리를 몰아서 날리기도 함.
@@ -871,7 +890,7 @@ class AccountSqls {
 
 (구글 검색으로 찾은 비슷한 느낌의 화면)
 
-![](./complex-search.png)
+<img src="./complex-search.png" style="height:410px" />
 
 ---
 
