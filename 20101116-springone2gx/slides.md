@@ -50,7 +50,7 @@ event: KSUG(한국 스프링 사용자 모임) 세미나
     - Spring, Aspect J, Groovy-Grails
     - Tomcat, Apache Httpd의 핵심 Commiter
 
-<img src="./springone2gx-banner.png" style="height:180px" />
+<img src="./springone2gx-banner.png" style="height:150px" />
 
 ---
 
@@ -60,7 +60,7 @@ event: KSUG(한국 스프링 사용자 모임) 세미나
 
 - 여행정보 관리 사이트
 
-<img src="./tripit-trip.png" style="height:380px" />
+<img src="./tripit-trip.png" style="height:340px" />
 
 ---
 
@@ -85,7 +85,7 @@ event: KSUG(한국 스프링 사용자 모임) 세미나
 
 <div style="display:flex; gap:30px; align-items:flex-start">
   <img src="./tripit-share.png" style="height:280px" />
-  <img src="./tripit-android.png" style="height:320px" />
+  <img src="./tripit-android.png" style="height:300px" />
 </div>
 
 ---
@@ -97,7 +97,7 @@ event: KSUG(한국 스프링 사용자 모임) 세미나
 - 컨퍼런스 공식 사이트에서도 Twitter를 프레임으로 연결
 - 참석자들간의 실시간 정보 공유
 
-<img src="./twitter-s2gx.png" style="height:340px" />
+<img src="./twitter-s2gx.png" style="height:300px" />
 
 ---
 
@@ -143,7 +143,7 @@ List<Trip> trips = ti.getTrips();
 
 - [https://jira.springframework.org/browse/ANDROID](https://jira.springframework.org/browse/ANDROID)
 
-<img src="./spring-mobile-android-jira.png" style="height:380px" />
+<img src="./spring-mobile-android-jira.png" style="height:340px" />
 
 ---
 
@@ -544,7 +544,7 @@ class UserService{
 
 **공존(co-located) 아키텍처**
 
-<img src="./colocated-architecture.png" style="height:400px" />
+<img src="./colocated-architecture.png" style="height:370px" />
 
 <p style="font-size:0.7em">이미지 출처: 월간마이크로소프트웨어2005년5월,EJB없는 J2EE개발과 오픈소스의 경쟁력</p>
 
@@ -563,7 +563,7 @@ class UserService{
 
 </div>
 <div>
-  <img src="./ejb-remote-architecture.png" style="height:400px" />
+  <img src="./ejb-remote-architecture.png" style="height:350px" />
   <p style="font-size:0.7em">이미지 출처: 월간마이크로소프트웨어2005년5월,EJB없는 J2EE개발과 오픈소스의 경쟁력</p>
 </div>
 </div>
@@ -713,8 +713,8 @@ class RoboWay extends GuiceActivity {
 - CP 업자에게 돈이나 트래픽 제공
 
 <div style="display:flex; gap:30px; align-items:flex-start">
-  <img src="./naver-oil-price.png" style="height:280px" />
-  <img src="./opinet.png" style="height:280px" />
+  <img src="./naver-oil-price.png" style="height:250px" />
+  <img src="./opinet.png" style="height:250px" />
 </div>
 
 ---
@@ -730,12 +730,12 @@ class RoboWay extends GuiceActivity {
   - 표준보다 넓은 영역, 빠른 피드백 싸이클
 
 <div style="display:flex; gap:30px; align-items:center; flex-wrap:wrap">
-  <img src="./logo-redis.png" style="height:80px" />
-  <img src="./logo-solr.jpg" style="height:70px" />
-  <img src="./logo-neo4j.png" style="height:70px" />
-  <img src="./logo-salesforce.png" style="height:80px" />
-  <img src="./logo-gwt.png" style="height:70px" />
-  <img src="./logo-gae.gif" style="height:70px" />
-  <img src="./logo-terracotta.png" style="height:40px" />
-  <img src="./logo-rabbitmq.png" style="height:50px" />
+  <img src="./logo-redis.png" style="height:68px" />
+  <img src="./logo-solr.jpg" style="height:60px" />
+  <img src="./logo-neo4j.png" style="height:60px" />
+  <img src="./logo-salesforce.png" style="height:68px" />
+  <img src="./logo-gwt.png" style="height:60px" />
+  <img src="./logo-gae.gif" style="height:60px" />
+  <img src="./logo-terracotta.png" style="height:34px" />
+  <img src="./logo-rabbitmq.png" style="height:42px" />
 </div>

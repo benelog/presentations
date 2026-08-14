@@ -219,6 +219,15 @@ event: KSUG(한국 스프링 사용자 모임) 세미나
 | --- | --- | --- | --- | --- |
 | DB | JdbcCursorItemReader | datasource | sql | rowMapper |
 | DB | JdbcBatchItemWriter | datasource | sql | itemSqlSourceProvider |
+
+---
+
+### 2.2 개별 작업 영역
+
+**대표적인 ItemReader, ItemWriter**
+
+| 자원 종류 | read/writer | 자원 위치 지정 | | Raw data <-> Object |
+| --- | --- | --- | --- | --- |
 | flat file | FlatFileItemReader | resource | | lineMapper |
 | flat file | FlatFileItemWriter | resource | | lineAggregator |
 | XML | StaxEventItemReader | resource | fragmentRootElementName | unmarshaller |
@@ -247,6 +256,13 @@ ER 다이어그램:
 - BATCH_JOB_INSTANCE — PK: JOB_INSTANCE_ID / VERSION, JOB_NAME, JOB_KEY
 - BATCH_JOB_PARAMS — FK1: JOB_INSTANCE_ID / TYPE_CD, KEY_NAME, STRING_VAL, DATE_VAL, LONG_VAL, DOUBLE_VAL
 - BATCH_JOB_EXECUTION — PK: JOB_EXECUTION_ID / VERSION, FK1: JOB_INSTANCE_ID, CREATE_TIME, START_TIME, END_TIME, STATUS, EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED
+
+---
+
+### 2.3 작업 처리 인프라
+
+**JobRepository 테이블스키마**
+
 - BATCH_STEP_EXECUTION — PK: STEP_EXECUTION_ID / VERSION, STEP_NAME, FK1: JOB_EXECUTION_ID, START_TIME, END_TIME, STATUS, COMMIT_COUNT, READ_COUNT, FILTER_COUNT, WRITE_COUNT, READ_SKIP_COUNT, WRITE_SKIP_COUNT, PROCESS_SKIP_COUNT, ROLLBACK_COUNT, EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED
 - BATCH_JOB_EXECUTION_CONTEXT — PK,FK1: JOB_EXECUTION_ID / SHORT_CONTEXT, SERIALIZED_CONTEXT
 - BATCH_STEP_EXECUTION_CONTEXT — PK,FK1: STEP_EXECUTION_ID / SHORT_CONTEXT, SERIALIZED_CONTEXT

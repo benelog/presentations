@@ -65,6 +65,13 @@ event: 제4회 NHN 오픈세미나 (NHN 오픈 API 특집)
   - 파일로 파싱 테스트
 - SearchApiClientIntegationTest
   - 실제 API 서버와 연결해서 테스트
+
+---
+
+### 1.3 검색 API
+
+## RSS 라이브러리 ROME 활용
+
 - Spring RestTemplate + ROME 활용
   - NaverSearchHttpMessageConverter.java
     - 메시지 파싱 모듈
@@ -275,6 +282,13 @@ this.httpClient = client;
   - HttpMethod, HttpState, HostConfigureation
 - HttpComponent 4.x
   - HttpGet, HttpPost
+
+---
+
+### 2.4 쓰레드 안정성을 늘 의식해라
+
+## 쓰레드 안정하지 않은 객체를 파악하라
+
 - Jaxb2
   - Marshaller, Unmarshaller
 - JacksonJson
@@ -291,6 +305,13 @@ this.httpClient = client;
 - Apache HttpComponent 4.x
   - DefaultHttpClient
   - SingleClientConnManager, ThreadSafeClientConnManager
+
+---
+
+### 2.4 쓰레드 안정성을 늘 의식해라
+
+## 쓰레드 안전한 객체는 매번 생성하지 말라.
+
 - Jaxb2
   - JAXBContext
 - JacksonJson
@@ -335,6 +356,13 @@ at org.springframework.http.converter.StringHttpMessageConverter.
 
 - 문서에 스레드 안정성에 대한 언급이 없으면 안전하지 않다고 가정해라.
 - 먼저 검색해봐라.
+
+---
+
+### 2.4 쓰레드 안정성을 늘 의식해라
+
+## 라이브러리를 늘 의심해라
+
 - 사례 : XStream 1.3.1의 버그
   - 'Infinite loop due to unsafe collection usage'
     - [http://jira.codehaus.org/browse/XSTR-584](http://jira.codehaus.org/browse/XSTR-584)
@@ -514,6 +542,13 @@ public class SingleClientConnManager implements ClientConnectionManager {
   - Stream활용, Connection pool,  Async 검토
 - 유연하게
   - 역할과 책임 구분, 추상화 계층
+
+---
+
+### 정리
+
+## 검증된 라이브러리로 안전하게, 효율적으로, 유연하게
+
 - 추천 라이브러리
   - Http Component 4.x, Jetty HttpClient
   - Spring RestTemplate

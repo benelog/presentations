@@ -337,7 +337,7 @@ ORM 의 확산
 
 - It job trend
 
-<img src="./hibernate-ibatis-job-trends.png" style="height:380px" />
+<img src="./hibernate-ibatis-job-trends.png" style="height:280px" />
 
 출처 : [http://www.indeed.com/jobtrends](http://www.indeed.com/jobtrends)
 

@@ -42,11 +42,17 @@ event: KSUG(한국 스프링 사용자 모임) 세미나
 
 <img src="./mvc-roles.png" style="height:280px" />
 
+그림출처 : [http://www.troika-asp.com/images/mvc.gif](http://www.troika-asp.com/images/mvc.gif)
+
+---
+
+### 1.1 MVC 동상이몽?
+
+#### MVC의 역할
+
 - Controller : 사용자의 입력을 받아서 Model의 상태를 변경, View에 전달
 - Model : 도메인에 대한 정보
 - View : Model을 UI에 나타냄
-
-그림출처 : [http://www.troika-asp.com/images/mvc.gif](http://www.troika-asp.com/images/mvc.gif)
 
 ---
 
@@ -54,7 +60,7 @@ event: KSUG(한국 스프링 사용자 모임) 세미나
 
 #### 처리 흐름
 
-<img src="./mvc-sequence.png" style="height:420px" />
+<img src="./mvc-sequence.png" style="height:400px" />
 
 ---
 
@@ -64,7 +70,7 @@ event: KSUG(한국 스프링 사용자 모임) 세미나
 
 동의하십니까?
 
-<img src="./webapp-mvc-layers.png" style="height:380px" />
+<img src="./webapp-mvc-layers.png" style="height:250px" />
 
 그림출처 : [http://www.oracle.com/technology/products/jdev/collateral/papers/10g/adftoystore/readme.html](http://www.oracle.com/technology/products/jdev/collateral/papers/10g/adftoystore/readme.html)
 
@@ -492,6 +498,13 @@ public String list(@PathVariable
   - HttpServletRequest, Response
   - Input/OutputStream, Reader, Writer
   - BindingResult
+
+---
+
+### 2.1 Spring MVC의 방식들
+
+#### Web parameter 전달
+
 - @ModelAttribute : 모델객체를 바로 파라미터로
 - @SessionAttribute : 웹세션에 담겨있는 값을
 - @RequestHeader, @RequestBody
@@ -671,6 +684,12 @@ method="getRegion">
 > To me a framework is a way of thinking about a particular family of problems, and code to back it up.
 >
 > \- Kent Beck
+
+---
+
+### 3.2 플랫폼
+
+#### 라이브러리 vs 프레임워크 vs 플랫폼 ?
 
 - 플랫폼은 공통의 기술기반, 실행환경
   - Virtual Machine, Container, 미들웨어..

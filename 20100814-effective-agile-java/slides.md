@@ -281,6 +281,13 @@ event: 소프트웨어 마에스트로 멘토링
     - 시장 대응 속도 결정
 - 소프트웨어 키워가기
   - '앞으로 60년 후에는 대부분의 개발자는 자기의 나이보다 더 많은 시스템을 유지보수하고 있을 것이다' 랄프 E 존슨
+
+---
+
+### 2.6 기업, 씀씀이를 되돌아보다
+
+**언제나 '차세대'를 개발할 수는 없다**
+
 - 완성도 있는 코드의 가치가 커짐
   - 좋은 설계, Testablility, 리팩토링
   - 사람에 가까운 코드, High level의 가치
@@ -471,6 +478,13 @@ backgroundSize: contain
 - 문제지향성 (Problem orientation)
   - '어떻게'보다 '무엇'을 표현
   - 역할 제시형 작명 (result,each, count)
+
+---
+
+### 4.1 이름 짓기
+
+**이름 짓기의 원칙**
+
 - 의도제시형 이름
   - Customer.linearCustomerSearch -> Customer.find
 - 쓰는 사람의 입장에서
@@ -513,6 +527,10 @@ backgroundSize: contain
 - 코드의 표현력이 높아짐
   - 메서드 시그니처만 봐도 어떤 형이 들어 있는지 파악
 
+---
+
+### 4.2 Generics
+
 **Generics 주의할 점**
 
 - `List<String>`은 `List<Object>`의 하위 클래스가 아니다.
@@ -534,6 +552,12 @@ backgroundSize: contain
   - `@SuppressWarnings("unchecked")`
 - 지정범위는 최대한 좁게
   - 메소드 범위나 Class 범위의 지정은 자제
+
+---
+
+### 4.2 Generics
+
+**활용 원칙**
 
 ```java
 public String intercept(ActionInvocation invocation) throws Exception {
@@ -581,7 +605,7 @@ Map<String, String[]> requestMap = request.getParameterMap()
 - Eclipse 설정으로 warning 제외
   - Project – Properties - Java Compile -Errors/Warnings
 
-<img src="./eclipse-warning-settings.png" style="height:380px" />
+<img src="./eclipse-warning-settings.png" style="height:300px" />
 
 ---
 
@@ -776,6 +800,12 @@ static int countOfIncluded(List<String> lines,
 - 정말 그 객체의 멤버로써 의미가 있을 때만
   - Person의 속성으로서 temp는 무슨 의미?
 
+---
+
+### 4.4 변수의 범위
+
+**멤버 변수 남용 않기**
+
 ```java
 Class Person{
   String  temp;
@@ -841,6 +871,13 @@ for(String userId : userIdList){
   - 11장 적절한 자료구조와 알고리즘
   - 질의 최적화 - 불필요한 반복적 메소드 호출 제거
   - 6장 예외 단언, 캐스팅, 변수 - 변수
+
+---
+
+### 4.4 변수의 범위
+
+**참고자료**
+
 - Code completed 2nd Edtion, Streve McConnell 저 서우석 역
   - 10장 변수사용 시 일반적인 문제
   - 10.3 변수의 초기화에 대한 지침
@@ -857,6 +894,11 @@ for(String userId : userIdList){
 - Checked Exception을 남용하지 않기
   - Alternative return value 로서의 가치가 있을 때만
   - [http://benelog.egloos.com/1901121](http://benelog.egloos.com/1901121) 참조
+
+---
+
+### 4.5 Exception 처리
+
 - Java.lang.Exception 보다는 되도록 구체적인 Exception으로
   - throws Exception은 최후의 수단
 - 기본 Exception 잘 활용하기
@@ -873,6 +915,13 @@ for(String userId : userIdList){
 - Item 59 : Avoid unnecessary use of checked exceptions
 - Item 60 : Favor the use of standard exceptions
 - Item 61 : Throw exceptions appropriate to the abstraction
+
+---
+
+### 4.5 Exception 처리
+
+**Effective Java 2nd Edition**
+
 - Item 62: Document all exceptions thrown by each method
 - Item 63 : Include failure-capture information in detail message
 - Item 64 : Strive for failure atomicity
@@ -888,6 +937,11 @@ for(String userId : userIdList){
     - Refactoring( 마틴파울러 ) chapter 6
     - 한 메서드는 한 화면에 들어올 정도로 정리
 - 3번 이상 중복이면 리팩토링 대상
+
+---
+
+### 4.6 중복 제거
+
 - 작은 리팩토링의 예
 
 ```java

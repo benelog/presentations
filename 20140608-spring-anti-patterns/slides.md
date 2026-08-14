@@ -352,6 +352,10 @@ XXE = XML External Entity
 
 ( Spring MVC에서 @RequestBody로 자동 파싱하는 경우도 포함 )
 
+---
+
+### XXE Injection 취약점 노출
+
 ```java
 @RequestMapping("/update")
 @ResponseBody
@@ -509,8 +513,6 @@ Spring 3.1.x 버전 이상 사용
 
 ResponseEntity등 Spring의 API를 활용하지 않는다.
 
-헤더를 조작해야 할 때도 ResponseEntity는 Type-safe한 API를 제공한다.
-
 ```java
 @RequestMapping(value="/product1")
 public void product1(HttpServletResponse res) throws IOException {
@@ -522,6 +524,12 @@ public void product1(HttpServletResponse res) throws IOException {
     mapper.writeValue(output, product);
 }
 ```
+
+---
+
+### HttpServletRequest, Response 애착
+
+헤더를 조작해야 할 때도 ResponseEntity는 Type-safe한 API를 제공한다.
 
 ⬇
 
