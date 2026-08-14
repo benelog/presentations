@@ -2,6 +2,7 @@
 theme: ../themes/green
 title: HTTP/2 세대의 Java
 event: KSUG(한국 스프링 사용자 모임) 세미나
+event_type: public
 ---
 
 # HTTP/2 세대의 Java

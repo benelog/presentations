@@ -2,6 +2,7 @@
 theme: ../themes/green
 title: Spring Roo와 함께 하는 쾌속 웹개발
 event: KSUG(한국 스프링 사용자 모임) 세미나
+event_type: public
 ---
 
 # Spring Roo와 함께 하는 쾌속 웹개발

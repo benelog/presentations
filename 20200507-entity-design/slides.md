@@ -2,6 +2,7 @@
 theme: ../themes/green
 title: 엔티티 클래스 설계와 퍼시스턴스 프레임워크
 event: 우아한형제들 세미나
+event_type: public
 ---
 
 # 엔티티 클래스 설계와 퍼시스턴스 프레임워크

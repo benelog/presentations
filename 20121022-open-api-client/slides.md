@@ -3,6 +3,7 @@ theme: ../themes/green
 title: Open API Client 개발
 event: 제4회 NHN 오픈세미나 (NHN 오픈 API 특집)
 event_url: https://d2.naver.com/helloworld/172098
+event_type: public
 ---
 
 # Open API Client 개발

@@ -3,7 +3,7 @@ theme: ../themes/green
 title: Spring 3.0 -> 3.1 -> 3.2 따라잡기
 event: 제5회 hello world 오픈 세미나
 event_url: https://d2.naver.com/helloworld/416268
-source: https://d2.naver.com/helloworld/416268
+event_type: public
 ---
 
 # Spring 3.0 -> 3.1 -> 3.2 따라잡기

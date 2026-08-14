@@ -2,6 +2,7 @@
 theme: ../themes/green
 title: 25년 전의 진로 선택과 AI 시대의 변화
 event: 연세대학교 응용통계학과 신입생 세미나
+event_type: public
 ---
 
 # 25년 전의 진로 선택과 AI 시대의 변화
