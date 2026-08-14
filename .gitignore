@@ -3,4 +3,7 @@ node_modules/
 .vite/
 .DS_Store
 *.log
-.claude/
+.claude/*
+!.claude/skills/
+.claude/skills/*
+!.claude/skills/sync-activities/
