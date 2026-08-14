@@ -2,6 +2,7 @@
 theme: ../themes/green
 title: 네이버 개발자 업무와 기술 플랫폼
 event: 연세대학교 응용통계학과 대학원생 세미나
+event_url: http://bk21-bigdata.yonsei.ac.kr/bbs/board.php?bo_table=industry&wr_id=11&page=3
 event_type: public
 layout: image
 image: ./cover.jpg
