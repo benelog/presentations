@@ -1,6 +1,7 @@
 ---
 theme: ../themes/green
 title: 컴퓨터 프로그래밍과 진로
+event: 연세대학교 응용통계학과 신입생 세미나
 layout: image
 image: ./cover.jpg
 ---

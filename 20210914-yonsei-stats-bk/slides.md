@@ -1,6 +1,7 @@
 ---
 theme: ../themes/green
 title: 네이버 개발자 업무와 기술 플랫폼
+event: 연세대학교 응용통계학과 대학원생 세미나
 layout: image
 image: ./cover.jpg
 ---

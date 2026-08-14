@@ -1,6 +1,7 @@
 ---
 theme: ../themes/green
 title: 스프링 어플리케이션의 문제해결 사례 & 안티 패턴
+event: Spring Camp 2014
 ---
 
 # 스프링 어플리케이션의 문제해결 사례 & 안티 패턴

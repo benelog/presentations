@@ -1,6 +1,7 @@
 ---
 theme: ../themes/green
 title: Effective & Agile Java
+event: 소프트웨어 마에스트로 멘토링
 ---
 
 # Effective & Agile Java

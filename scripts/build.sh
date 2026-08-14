@@ -18,7 +18,11 @@ shopt -s nullglob
 
 declare -a entries=()
 
-for slide in "$ROOT"/[0-9]*/slides.md; do
+# 최신 발표가 먼저 오도록 시간 역순으로 빌드/나열
+mapfile -t slides < <(printf '%s\n' "$ROOT"/[0-9]*/slides.md | sort -r)
+
+for slide in "${slides[@]}"; do
+  [ -f "$slide" ] || continue
   dir="$(dirname "$slide")"
   name="$(basename "$dir")"
   out_dir="$DIST/$name"
@@ -38,7 +42,9 @@ for slide in "$ROOT"/[0-9]*/slides.md; do
 
   title="$(grep -m1 '^# ' "$slide" | sed 's/^# *//' || true)"
   [ -z "$title" ] && title="$name"
-  entries+=("$name|$title")
+  # headmatter(첫 --- 쌍 사이)의 event: 필드 = 발표한 행사
+  event="$(awk '/^---$/{c++; next} c==1 && sub(/^event: */, ""){print; exit} c>=2{exit}' "$slide")"
+  entries+=("$name|$event|$title")
 done
 
 cat > "$DIST/index.html" <<HTML
@@ -70,14 +76,18 @@ HTML
 
 for entry in "${entries[@]}"; do
   name="${entry%%|*}"
-  title="${entry#*|}"
+  rest="${entry#*|}"
+  event="${rest%%|*}"
+  title="${rest#*|}"
   date="${name%%-*}"
   pretty_date="${date:0:4}-${date:4:2}-${date:6:2}"
+  meta="$pretty_date"
+  [ -n "$event" ] && meta="$pretty_date · $event"
   cat >> "$DIST/index.html" <<HTML
   <li>
     <a href="./$name/">$title</a>
     <a class="pdf" href="./$name/slides.pdf">PDF</a>
-    <span class="meta">$pretty_date · $name</span>
+    <span class="meta">$meta</span>
   </li>
 HTML
 done

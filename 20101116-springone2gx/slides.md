@@ -1,6 +1,7 @@
 ---
 theme: ../themes/green
 title: SpringOne2GX 2010 참석 후기
+event: KSUG(한국 스프링 사용자 모임) 세미나
 ---
 
 # SpringOne2GX 2010 참석 후기

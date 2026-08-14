@@ -1,6 +1,7 @@
 ---
 theme: ../themes/green
 title: 웹 프레임워크의 Web tier 처리방식과 SpringMVC
+event: KSUG(한국 스프링 사용자 모임) 세미나
 ---
 
 # 웹 프레임워크의 Web tier 처리방식과 Spring MVC
