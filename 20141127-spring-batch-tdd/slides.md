@@ -2,6 +2,7 @@
 theme: ../themes/green
 title: Spring Batch와 함께 하는 TDD
 event: KSUG(한국 스프링 사용자 모임) 세미나
+source: https://www.slideshare.net/benelog/spring-batch-tdd
 ---
 
 # Spring Batch와 함께 하는 TDD

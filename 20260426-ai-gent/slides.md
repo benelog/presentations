@@ -1,6 +1,7 @@
 ---
 theme: ../themes/green
 title: AI agent에게 개인적인 일 시키기
+event: 대학 동창 모임
 ---
 
 # AI agent에게 개인적인 일 시키기
