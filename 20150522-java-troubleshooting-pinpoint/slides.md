@@ -2,6 +2,7 @@
 theme: ../themes/green
 title: Java 애플리케이션 트러블 슈팅 사례 & Pinpoint
 event: 제11회 D2 오픈세미나 (Java 애플리케이션 트러블 슈팅 편)
+event_url: https://d2.naver.com/helloworld/1286587
 source: https://www.slideshare.net/slideshow/d2-java-pinpoint/48473101
 ---
 

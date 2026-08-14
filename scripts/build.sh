@@ -61,7 +61,9 @@ for slide in "${slides[@]}"; do
   [ -z "$title" ] && title="$name"
   # headmatter(첫 --- 쌍 사이)의 event: 필드 = 발표한 행사
   event="$(awk '/^---$/{c++; next} c==1 && sub(/^event: */, ""){print; exit} c>=2{exit}' "$slide")"
-  entries+=("$name|$event|$title")
+  # event_url: 필드가 있으면 행사 소개 페이지로 링크를 건다
+  event_url="$(awk '/^---$/{c++; next} c==1 && sub(/^event_url: */, ""){print; exit} c>=2{exit}' "$slide")"
+  entries+=("$name|$event|$event_url|$title")
 done
 
 # 소스에서 사라진 덱은 dist 에서도 제거
@@ -91,6 +93,7 @@ cat > "$DIST/index.html" <<HTML
   li a:hover { text-decoration: underline; }
   .meta { display: block; font-size: 0.85rem; opacity: 0.65; margin-top: 0.25rem; }
   .pdf { font-size: 0.85rem; margin-left: 0.5rem; opacity: 0.7; }
+  .meta a.event { font-weight: 400; color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 </style>
 </head>
 <body>
@@ -102,11 +105,19 @@ for entry in "${entries[@]}"; do
   name="${entry%%|*}"
   rest="${entry#*|}"
   event="${rest%%|*}"
+  rest="${rest#*|}"
+  event_url="${rest%%|*}"
   title="${rest#*|}"
   date="${name%%-*}"
   pretty_date="${date:0:4}-${date:4:2}-${date:6:2}"
   meta="$pretty_date"
-  [ -n "$event" ] && meta="$pretty_date · $event"
+  if [ -n "$event" ]; then
+    if [ -n "$event_url" ]; then
+      meta="$pretty_date · <a class=\"event\" href=\"$event_url\">$event</a>"
+    else
+      meta="$pretty_date · $event"
+    fi
+  fi
   cat >> "$DIST/index.html" <<HTML
   <li>
     <a href="./$name/">$title</a>

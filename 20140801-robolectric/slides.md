@@ -2,6 +2,7 @@
 theme: ../themes/green
 title: Robolectric을 활용한 안드로이드 테스팅
 event: 제9회 D2 오픈세미나 in 대구
+event_url: https://d2.naver.com/helloworld/870369
 source: https://www.slideshare.net/slideshow/5robolectric/37628614
 ---
 
