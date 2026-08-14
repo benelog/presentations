@@ -31,6 +31,15 @@ jobs:
       - name: Install Chromium for PDF export
         run: ./node_modules/.bin/playwright install --with-deps chromium
 
+      # 이전 빌드 결과를 복원해서 바뀐 덱만 다시 빌드 (build.sh 가 .build-hash 로 판단)
+      - name: Restore previous dist
+        uses: actions/cache@v4
+        with:
+          path: dist
+          key: dist-${{ github.sha }}
+          restore-keys: |
+            dist-
+
       - name: Build slides
         run: bash scripts/build.sh
 

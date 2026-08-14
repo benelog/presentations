@@ -5,7 +5,8 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DIST="$ROOT/dist"
 BASE_PATH="${BASE_PATH:-/presentations}"
 
-rm -rf "$DIST"
+# 증분 빌드: dist/ 를 지우지 않고, 소스가 바뀐 덱만 다시 빌드한다.
+# (덱 디렉터리 + themes/ + build.sh + package-lock.json 의 해시를 dist/<덱>/.build-hash 에 기록)
 mkdir -p "$DIST"
 
 SLIDEV="$ROOT/node_modules/.bin/slidev"
@@ -21,30 +22,53 @@ declare -a entries=()
 # 최신 발표가 먼저 오도록 시간 역순으로 빌드/나열
 mapfile -t slides < <(printf '%s\n' "$ROOT"/[0-9]*/slides.md | sort -r)
 
+deck_hash() {
+  {
+    sha256sum "$ROOT/scripts/build.sh" "$ROOT/package-lock.json"
+    find "$1" "$ROOT/themes" -type f -not -path '*/node_modules/*' -not -path '*/.*' -print0 \
+      | sort -z | xargs -0 sha256sum
+  } | sha256sum | cut -d' ' -f1
+}
+
 for slide in "${slides[@]}"; do
   [ -f "$slide" ] || continue
   dir="$(dirname "$slide")"
   name="$(basename "$dir")"
   out_dir="$DIST/$name"
 
-  echo "→ building $name"
-  "$SLIDEV" build "$slide" --base "$BASE_PATH/$name/" --out "$out_dir"
-  "$SLIDEV" export "$slide" --output "$out_dir/slides.pdf" || true
+  hash="$(deck_hash "$dir")"
+  if [ -f "$out_dir/index.html" ] && [ -f "$out_dir/.build-hash" ] \
+     && [ "$(cat "$out_dir/.build-hash")" = "$hash" ]; then
+    echo "→ skipping $name (unchanged)"
+  else
+    echo "→ building $name"
+    rm -rf "$out_dir"
+    "$SLIDEV" build "$slide" --base "$BASE_PATH/$name/" --out "$out_dir"
+    "$SLIDEV" export "$slide" --output "$out_dir/slides.pdf" || true
 
-  # Copy assets referenced at runtime (frontmatter images 등은 번들되지 않음)
-  for asset in "$dir"/*; do
-    [ -f "$asset" ] || continue
-    case "$asset" in
-      *.md|*.drawio|*/.*) continue ;;
-    esac
-    cp "$asset" "$out_dir/"
-  done
+    # Copy assets referenced at runtime (frontmatter images 등은 번들되지 않음)
+    for asset in "$dir"/*; do
+      [ -f "$asset" ] || continue
+      case "$asset" in
+        *.md|*.drawio|*/.*) continue ;;
+      esac
+      cp "$asset" "$out_dir/"
+    done
+    printf '%s' "$hash" > "$out_dir/.build-hash"
+  fi
 
   title="$(grep -m1 '^# ' "$slide" | sed 's/^# *//' || true)"
   [ -z "$title" ] && title="$name"
   # headmatter(첫 --- 쌍 사이)의 event: 필드 = 발표한 행사
   event="$(awk '/^---$/{c++; next} c==1 && sub(/^event: */, ""){print; exit} c>=2{exit}' "$slide")"
   entries+=("$name|$event|$title")
+done
+
+# 소스에서 사라진 덱은 dist 에서도 제거
+for built in "$DIST"/[0-9]*/; do
+  [ -d "$built" ] || continue
+  name="$(basename "$built")"
+  [ -f "$ROOT/$name/slides.md" ] || rm -rf "$built"
 done
 
 cat > "$DIST/index.html" <<HTML

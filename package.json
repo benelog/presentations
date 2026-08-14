@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "bash scripts/build.sh",
+    "check": "node scripts/check_overflow.js",
     "dev": "slidev",
     "export": "slidev export"
   },
