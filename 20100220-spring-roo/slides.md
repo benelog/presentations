@@ -82,7 +82,7 @@ Java 환경의 지원 도구들
 - Eclipse
   - Spring Tools Suite
   - M2Eclipse
-  - AJDT (Aspect J 지원 Plug-in)
+  - AJDT (AspectJ 지원 Plug-in)
 
 ---
 
@@ -144,7 +144,7 @@ public class Guest {
     @Size(max = 30)
     private String name;
     private Integer price;
-    private Boolean speical;
+    private Boolean special;
 }
 ```
 
@@ -188,7 +188,7 @@ public class GuestIntegrationTest {
 
 ## 3. Application
 
-- 3.1 구성 기술와 구조
+- 3.1 구성기술과 구조
 - 3.2 Spring 3.0
 - 3.3 AOP
 - 3.4 ORM
@@ -242,7 +242,7 @@ Spring 3.0 기능활용
   - [http://shopping.com/shop/product/](http://shopping.com/shop/product/)
   - [http://shopping.com/shop/product/1](http://shopping.com/shop/product/1)
   - [http://shopping.com/shop/product/1/form](http://shopping.com/shop/product/1/form)
-- Beans Valididation (JSR 303)
+- Beans Validation (JSR 303)
 
 ```java
 public class Employee{
@@ -276,7 +276,7 @@ Spring 3.0 기능활용
 Bytecode weaving 적극 활용
 
 - Roo 의 자동 생성 부분을 담당
-- Aspect J 의 Inter-type Declaration 을 이용한 Mixin
+- AspectJ 의 Inter-type Declaration 을 이용한 Mixin
   - Abstract subclassing, static crosscutting
   - Compile time 에서 코드 삽입
   - 성능 손해가 없음
@@ -322,7 +322,7 @@ ORM 에 대한 걱정들
 ORM 의 확산
 
 - 다른 언어에서도..
-  - PHP(Zend, Codeigniter), Phython(Django), Ruby 등의
+  - PHP(Zend, CodeIgniter), Python(Django), Ruby 등의
 - Java 프레임웍도 '생산성'이라는 말을 위해서는..
   - JBoss Seam
   - Play framework
@@ -335,7 +335,7 @@ ORM 의 확산
 
 ORM 의 확산
 
-- It job trend
+- IT job trend
 
 <img src="./hibernate-ibatis-job-trends.png" style="height:280px" />
 

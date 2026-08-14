@@ -46,10 +46,10 @@ source: https://www.slideshare.net/slideshow/spring-one-ksug-5793406/5793406
 **SpringOne2GX 2010**
 
 - Spring과 Groovy를 주제로 여는 컨퍼런스
-- SpringSource 주최 (Divison of VMWare)
+- SpringSource 주최 (Division of VMware)
   - Java의 주요 오픈 소스 개발 주도 업체
-    - Spring, Aspect J, Groovy-Grails
-    - Tomcat, Apache Httpd의 핵심 Commiter
+    - Spring, AspectJ, Groovy-Grails
+    - Tomcat, Apache Httpd의 핵심 Committer
 
 <img src="./springone2gx-banner.png" style="height:150px" />
 
@@ -57,7 +57,7 @@ source: https://www.slideshare.net/slideshow/spring-one-ksug-5793406/5793406
 
 ### 1.2 TripIt
 
-**참석 준비 중 Tripit을 알게 됨**
+**참석 준비 중 TripIt을 알게 됨**
 
 - 여행정보 관리 사이트
 
@@ -81,7 +81,7 @@ source: https://www.slideshare.net/slideshow/spring-one-ksug-5793406/5793406
 
 **SNS, Mobile**
 
-- FaceBook, Twitter로 여행정보 share 가능
+- Facebook, Twitter로 여행정보 share 가능
 - Android App
 
 <div style="display:flex; gap:30px; align-items:flex-start">
@@ -117,12 +117,12 @@ source: https://www.slideshare.net/slideshow/spring-one-ksug-5793406/5793406
 
 ### 1.4 Spring Social
 
-**Twitter, Tripit등을 지원하는 스프링 API**
+**Twitter, TripIt 등을 지원하는 스프링 API**
 
 - Twitter에서 친구 목록 가지고 오기
 
 ```java
-TwitterTemplate tw = new Twitter
+TwitterTemplate tw = new TwitterTemplate(...인증키...);
 List<String> friends = tw.getFriends("sanghyukjung");
 ```
 
@@ -133,7 +133,7 @@ TripItTemplate ti = new TripItTemplate(...인증키...);
 List<Trip> trips = ti.getTrips();
 ```
 
-- FaceBookTemplate
+- FacebookTemplate
 - LinkedInTemplate
 
 ---
@@ -153,7 +153,7 @@ List<Trip> trips = ti.getTrips();
 **Social Service와 Spring**
 
 - 자연스럽게 사용되고 있는 Social Service
-- Spring에서 한두줄의 코드로 바로 연결
+- Spring에서 한두 줄의 코드로 바로 연결
 - Spring의 지원범위 확장에 대한 예
   - 개발자들이 할만한 반복적인 작업이라면
     - ~Template 클래스
@@ -205,7 +205,7 @@ for(Item page : searched.getItems()){
 - 2.1 Keynote
 - 2.2 Spring 3.1
 - 2.3 Spring과 JavaEE6
-- 2.4 분산캐쉬
+- 2.4 분산 캐쉬
 - 2.5 NoSQL
 - 2.6 RabbitMQ
 - 2.7 Spring Roo
@@ -269,8 +269,8 @@ for(Item page : searched.getItems()){
 
 **Innovation**
 
-- Spring Data : NoSql (Not Only SQL) :
-  - Neo4j, Redis, MongoDB, Casandra를 더 편하게 쓰는 API
+- Spring Data : NoSQL (Not Only SQL) :
+  - Neo4j, Redis, MongoDB, Cassandra를 더 편하게 쓰는 API
 - Spring AMQP, RabbitMQ : Messaging Queue
 - Gemfire : Data Grid
 - Spring Payment : 지불 API(Visa / Incept5)
@@ -288,7 +288,7 @@ for(Item page : searched.getItems()){
 - Java 바탕의 설정 강화
 - Bean 설정 Profile 개념
 - c: namespace
-- ConversationMangement
+- ConversationManagement
 
 ---
 
@@ -357,8 +357,8 @@ class UserService{
 - p: 와 동일한 개념이 constructor에도
 
 ```xml
-<bean class="..." c:age="10/>
-<bean class="..." c:family-ref="myFamily/>
+<bean class="..." c:age="10"/>
+<bean class="..." c:family-ref="myFamily"/>
 ```
 
 ---
@@ -383,7 +383,7 @@ class UserService{
 - 3.1 RC1 : 2011년 2월말?
 - 3.1 GA : 2011년 3월말?
 - 3.2 : 2011년 말 경
-- 지금까지로 전례로 볼 때 더욱 미루어 질 듯
+- 지금까지의 전례로 볼 때 더욱 미루어 질 듯
 
 ---
 
@@ -395,14 +395,14 @@ class UserService{
 - Spring을 통해 더 많은 선택을 할 수 있다
   - 예)JavaEE5 server + Hibernate 3.6으로 JPA2.0 쓰기
   - Tomcat, Jetty
-- 겹치는 부분은 5%도 안된다
-  - DI container부분만은 스프링에서 양보할 수 없는 부분인듯
+- 겹치는 부분은 5%도 안 된다
+  - DI container부분만은 스프링에서 양보할 수 없는 부분인 듯
 
 ---
 
 ### 2.4 분산 캐쉬
 
-**Teracotta BigMemory**
+**Terracotta BigMemory**
 
 <div style="display:flex; gap:40px; align-items:flex-start">
 <div>
@@ -425,22 +425,22 @@ class UserService{
 
 **Gemfire**
 
-- SpringSource가 인수한 솔류션
-- JP morgan등 Critical곳의 reference
+- SpringSource가 인수한 솔루션
+- JP Morgan등 Critical곳의 reference
 - Data Grid
   - Key-value 저장소
-  - Sql Fabric – SQL Cache + Persistence
+  - SQL Fabric – SQL Cache + Persistence
     - Derby 이용
 - 분산 연산 기능
   - Map Reduce도 가능
 
 ---
 
-### 2.5 No SQL
+### 2.5 NoSQL
 
 **Spring data project**
 
-- 저장소 특성별로 등의 하위 모듈
+- 저장소 특성별 하위 모듈
 - Datastore Key-Value
   - Redis
 - Datastore Document
@@ -452,11 +452,11 @@ class UserService{
 
 ---
 
-### 2.5 No SQL
+### 2.5 NoSQL
 
 **Spring data project**
 
-- 솔류션을 주도하는 업체와 협업으로 진행
+- 솔루션을 주도하는 업체와 협업으로 진행
   - Hadoop도 예정
 
 <div style="display:flex; gap:40px; align-items:center; flex-wrap:wrap">
@@ -469,27 +469,27 @@ class UserService{
 
 ---
 
-### 2.5 No SQL
+### 2.5 NoSQL
 
-**Spring으로 No SQL을 사용하는 여러가지 방법**
+**Spring으로 NoSQL을 사용하는 여러가지 방법**
 
 - GORM
   - GORM for Redis
   - GORM for Gemfire
 - Spring ROO
   - Neo4j Addon
-- 상황에 따라 Low-level API와 Warpping API를 선택적으로
+- 상황에 따라 Low-level API와 Wrapping API를 선택적으로
 
 ---
 
-### 2.6 Rabbit MQ
+### 2.6 RabbitMQ
 
-**Procotol 바탕의 메시징 큐**
+**Protocol 바탕의 메시징 큐**
 
-- JMS(Java Messaging Server) – Active MQ, Open MQ
+- JMS(Java Message Service) – Active MQ, Open MQ
   - API 기반의 메시징큐
-- Protocol 바탕은 비java와의 Integration이에 장점
-- Rabbit MQ는 Erlang으로 만들어짐
+- Protocol 바탕은 비java와의 Integration에 장점
+- RabbitMQ는 Erlang으로 만들어짐
   - Multicore에 유리할 가능성
 
 ---
@@ -501,12 +501,12 @@ class UserService{
 <div style="display:flex; gap:60px; align-items:flex-start">
 <div>
 
-- GWT (Google Web Tools kit)
+- GWT (Google Web Toolkit)
 - GAE (Google App Engine)
 - Solr를 위한 인덱싱
   - Lucene 바탕의 검색서버
 - Database reverse Engineering
-- 향후 Jdbc, iBatis 지원
+- 향후 JDBC, iBatis 지원
 
 </div>
 <div style="display:flex; flex-direction:column; gap:20px">
@@ -520,7 +520,7 @@ class UserService{
 
 ### 2.7 Spring Roo
 
-**Grails 급으로 격상 시키려 의도가 보임**
+**Grails 급으로 격상시키려는 의도가 보임**
 
 - API 샘플 코드의 전파 경로도 될 수 있음
 
@@ -534,7 +534,7 @@ class UserService{
 ## 3. 분석 – 스프링을 둘러싼 전략들
 
 - 3.1 지난 10년
-- 3.2 오픈소스 프레임웍 그 이후는?
+- 3.2 오픈소스 프레임웍 그 다음은?
 - 3.3 기술환경 변화
 - 3.4 스프링과 PaaS 클라우드
 - 3.5 기술 유통 창구
@@ -577,7 +577,7 @@ class UserService{
 
 - 로드 존슨의 주장
   - 웹 시스템에서는 Web-tier와 Business tier가 한 machine에 있는 것이 더 효율적이고, 더 쉽게 확장 가능하다
-  - 비니지스적 필요성이 있는 부분만 원격호출
+  - 비즈니스적 필요성이 있는 부분만 원격호출
     - Proxy를 DI해서 인터페이스 사용
     - 사용하는 쪽에서는 원격인지 아닌지도 신경 쓸 필요 없음
 - 최근 EJB 3.1 light
@@ -630,13 +630,13 @@ class RoboWay extends GuiceActivity {
 
 ### 3.2 오픈소스 프레임웍 그 다음은?
 
-**비니지스 모델을 고민하다**
+**비즈니스 모델을 고민하다**
 
 - 회사 설립, 벤처 캐피탈 투자 받음
-- 오프소스 프레임웍만으로는 돈이 안 된다.
+- 오픈소스 프레임웍만으로는 돈이 안 된다.
   - Tomcat 주도 업체인 Covalent 등 인수
-  - 컨설팅,교육이 주 수입원
-- 2009년 5천3백억에 VMWare에 인수
+  - 컨설팅, 교육이 주 수입원
+- 2009년 5천3백억에 VMware에 인수
   - 100만원짜리 서버 53만대 가격
 
 ---
@@ -666,7 +666,7 @@ class RoboWay extends GuiceActivity {
 - OS수준의 가상화 환경에서는
   - 이미 JVM의 portability가 있는데 무슨 이득이?
   - Tomcat (Tc server) + 관리 도구 제공 전략
-  - 라이센스, 모니터링, 클러스터링 등의 관리 편의성
+  - 라이선스, 모니터링, 클러스터링 등의 관리 편의성
 - 제약된 JVM + Servlet container
   - Google App Engine
   - GAE에서 JavaEE6 스펙을 지원하기를 기대하기?

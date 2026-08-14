@@ -21,7 +21,7 @@ source: https://www.slideshare.net/benelog/ss-35627826
 
 S/W엔지니어링팀에서 공공프로젝트 수행
 
-2008 ~ 현재 : NHN, NHN Technolgy Servier, NBP/Naver Labs
+2008 ~ 현재 : NHN, NHN Technology Services, NBP/Naver Labs
 
 생산성혁신랩에서 신규 프로젝트 개발 지원
 
@@ -31,7 +31,7 @@ S/W엔지니어링팀에서 공공프로젝트 수행
 
 ## 발표내용
 
-스프링으로 만든 웹어플리이션에서
+스프링으로 만든 웹어플리케이션에서
 
 - 치명적인 문제를 유발하는 사용방식
 
@@ -45,11 +45,11 @@ S/W엔지니어링팀에서 공공프로젝트 수행
 
 ### 관례를 고려하지 않은 컴파일 옵션 변경
 
-@PathVarible, @RequestParam의 속성을 생략했을 때
+@PathVariable, @RequestParam의 속성을 생략했을 때
 
 ```java
 @RequestMapping(value="/user/{id}")
-public String user(@PathVarible String id){
+public String user(@PathVariable String id){
 }
 ```
 
@@ -60,13 +60,13 @@ public String user(@RequestParam String name){
 ```
 
 어떤 프로젝트에서는 서버에 올리니 에러가 난다
-(IllegalArguementException)
+(IllegalArgumentException)
 
 ---
 
 ### 관례를 고려하지 않은 컴파일 옵션 변경
 
-@PathVarible, @RequestParam의 속성을 생략했을 때
+@PathVariable, @RequestParam의 속성을 생략했을 때
 
 컴파일 옵션을 확인
 
@@ -100,11 +100,11 @@ Debug가 false라면 제대로 동작하지 않는다
 
 컴파일옵션에 debug=false를 명시하지 않는다. (디폴트는 true) 또는
 
-@PathVarible 등을 쓸 때 속성을 명시한다
+@PathVariable 등을 쓸 때 속성을 명시한다
 
 ```java
 @RequestMapping(value="/user/{id}")
-public String user(@PathVarible("id") String id){
+public String user(@PathVariable("id") String id){
 }
 ```
 
@@ -126,16 +126,16 @@ Spring Framework 2.5의 Annotation based Controller의 메서드 파라미터에
 
 Redirect url에 변수를 더하는 경우
 
-매번 변하는 ViewName이 Controller에서 String retury type이나 ModelAndView의 ViewName으로 지정될때
+매번 변하는 ViewName이 Controller에서 String return type이나 ModelAndView의 ViewName으로 지정될 때
 
 ```java
-retrn "redirect:form.html?entityId=" + entityId;
+return "redirect:form.html?entityId=" + entityId;
 ```
 
 ```java
 modelAndView.setViewName(
-    "redirect:form.html?entityId=" + entityId;
-)
+    "redirect:form.html?entityId=" + entityId
+);
 ```
 
 서버에 올린 뒤 오래되면 OOM이 발생
@@ -146,8 +146,8 @@ modelAndView.setViewName(
 
 원인
 
-ViewResolver가 viewName으로 ViewResolver를 캐쉬한다.
-(AbstractCacheingViewResolver의 구현 방식)
+ViewResolver가 viewName으로 View를 캐쉬한다.
+(AbstractCachingViewResolver의 구현 방식)
 
 해결방법
 
@@ -170,7 +170,7 @@ return new RedirectView("form.html?entityId="+entityId);
 URI template 활용 (Spring 3.1 이상)
 
 ```java
-retrn "redirect:form.html?entityId={entityId}";
+return "redirect:form.html?entityId={entityId}";
 ```
 
 RedirectAttributes (Spring 3.1 이상)
@@ -180,7 +180,7 @@ RedirectAttributes (Spring 3.1 이상)
 public String onPost(RedirectAttributes attrs) {
     ...
     attrs.addAttribute(entityId, 123);
-    return "redirect:form.html;
+    return "redirect:form.html";
 }
 ```
 
@@ -209,7 +209,7 @@ LinkedHashMap.removeEldestEntry() override해서 활용
 
 2006년 12월 06일 : 이슈 올라옴 ([https://jira.spring.io/browse/SPR-3145](https://jira.spring.io/browse/SPR-3145) )
 Performance improvement on AbstractCachingViewResolver
-당시는 Java5이전버전도 지원해야 했기 때문에 ConcurrentHashMap을 도입 못함
+당시는 Java 5 이전 버전도 지원해야 했기 때문에 ConcurrentHashMap을 도입 못함
 
 2013년 2월 06일 : Commit by Juergen Hoeller
 [https://github.com/SpringSource/spring-framework/commit/06c6cbb6b92](https://github.com/SpringSource/spring-framework/commit/06c6cbb6b92)
@@ -224,7 +224,7 @@ ConcurrentHashMap과 LinkedHashMap을 동시에 사용하고, 새로 View를 생
 
 `<task:annotation-driven/>` + Prototype bean
 
-@Async, @Scheduled를 쓰기 위해 쓰면서 `<task:annotation-drive/>`을 추가
+@Async, @Scheduled를 쓰기 위해 쓰면서 `<task:annotation-driven/>`을 추가
 
 Scope=prototype 혹은 @Configurable 선언으로 Spring에서 관리하는 객체가 자주 생성될 때
 
@@ -275,7 +275,7 @@ Spring 3.2 이상 업그레이드 또는
 
 참고 자료
 
-AopUtils,canApply의 성능개선 논의 이슈
+AopUtils.canApply의 성능개선 논의 이슈
 
 [https://jira.springsource.org/browse/SPR-8065](https://jira.springsource.org/browse/SPR-8065)
 
@@ -294,7 +294,7 @@ AopUtils,canApply의 성능개선 논의 이슈
 StringHttpMessageConverter를 매 요청마다 생성
 
 ```java
-public void handRequest(HttpServletRequest request) {
+public void handleRequest(HttpServletRequest request) {
     HttpMessageConverter<String> converter =
                         new StringHttpMessageConverter();
 }
@@ -311,7 +311,7 @@ TPS가 더 이상 올라가지 않는다.
 
 생성시에 encoding을 위해 시스템이 지원하는 character set을 확인하게 됨
 
-charsets.jar 파일 안의 객체를 동적 로딩하게 되는데, 동적 로딩을 하는 jdk 코드 내 synchronize로 감싼 코드로 인해 locking
+charsets.jar 파일 안의 객체를 동적 로딩하게 되는데, 동적 로딩을 하는 jdk 코드 내 synchronized로 감싼 코드로 인해 locking
 
 길지 않은 Lock구간이지만 대량 요청 시에는 문제가 됨
 
@@ -333,15 +333,15 @@ at org.springframework.http.converter.StringHttpMessageConverter.(StringHttpMess
 
 이 클래스는 Thread-safe하므로 매번 생성할 필요 없었음
 
-어플리케이션 초기화시에 한번만 생성되도록
+어플리케이션 초기화 시에 한 번만 생성되도록
 
-ApplicationConetxt에 Singleton Bean 등록 혹은 직접 생성하더라도 멤버변수로
+ApplicationContext에 Singleton Bean 등록 혹은 직접 생성하더라도 멤버변수로
 
 ---
 
 ### XXE Injection 취약점 노출
 
-Spring-OXM로 신뢰할 수 없는 출처의 XML을 파싱할 때
+Spring-OXM으로 신뢰할 수 없는 출처의 XML을 파싱할 때
 
 XXE = XML External Entity
 
@@ -349,7 +349,7 @@ XXE = XML External Entity
 
 - 외부에서 생성한 XML을 파싱
 
-- Spring-OXM사용
+- Spring-OXM 사용
 
 ( Spring MVC에서 @RequestBody로 자동 파싱하는 경우도 포함 )
 
@@ -373,7 +373,7 @@ public Group update(@RequestBody Person person) {
 
 원인
 
-Sax, DOM, Stax 등 다양한 근본 구현 기술에서 가진 문제
+SAX, DOM, StAX 등 다양한 근본 구현 기술에서 가진 문제
 
 PHP, C/C++, 닷넷, iOS 등 다른 플랫폼에서도 존재
 
@@ -409,7 +409,7 @@ Spring 3.2.5 업그레이드
 
 class.classLoader 접근식으로 속성 조작이 가능
 
-HttpRequst -> Bean 매핑을 하는 URL에서
+HttpRequest -> Bean 매핑을 하는 URL에서
 
 ```java
 @RequestMapping("/saveUser")
@@ -440,7 +440,7 @@ getClass().getClassLoader().getResource().
 .setHome("/etc");
 ```
 
-몇년전에는 TLD파일을 업로드해서 커스텀태그를 Injection 하는 경로만 알려졌으나 최근 Tomcat의 classLoader접근 방식이 공개되어 더욱 치명적
+몇 년 전에는 TLD 파일을 업로드해서 커스텀 태그를 Injection 하는 경로만 알려졌으나 최근 Tomcat의 classLoader 접근 방식이 공개되어 더욱 치명적
 
 ---
 
@@ -454,7 +454,8 @@ Spring 3.0.3 이상 업그레이드
 
 ```java
 if (Class.class.equals(beanClass) && "classLoader".equals(pd.getName())) {
- // Ignore Class.getClassLoader() method - nobody needs to bind to that continue;
+ // Ignore Class.getClassLoader() method - nobody needs to bind to that
+ continue;
 }
 ```
 
@@ -480,10 +481,10 @@ Struts2의 유사사례 : [http://hacksum.net/?p=2103](http://hacksum.net/?p=210
 
 Tomcat 7 + Spring의 커스텀 태그를 사용할 때
 
-아래 조건을 모두 충적할 때
+아래 조건을 모두 충족할 때
 
 - EL 2.2를 지원하는 서블릿 컨테이너를 쓰거나 EL 2.2 라이브러리를 직접 jar파일로 참조해서 쓰고 있다. (대표적으로 Tomcat 7.x혹은 Glassfish 2.2.x)
-- Spring 3.1.x 미만 버전을 쓰고 있다.`
+- Spring 3.1.x 미만 버전을 쓰고 있다.
 - Spring의 JSP Tag( `<spring:message..` 등)을 쓰고 있다.
 - Spring의 JSP Tag에서 EL을 지원하는 속성에 사용자가 입력한 값이 들어갈 수 있다.
 
@@ -512,7 +513,7 @@ Spring 3.1.x 버전 이상 사용
 
 ### HttpServletRequest, Response 애착
 
-ResponseEntity등 Spring의 API를 활용하지 않는다.
+ResponseEntity 등 Spring의 API를 활용하지 않는다.
 
 ```java
 @RequestMapping(value="/product1")
@@ -552,7 +553,7 @@ public ResponseEntity<Product> product2() throws IOException {
 
 @Transactional을 쓸 때
 
-Timeout등의 속성을 모든 메서드에 지정하는 사례
+Timeout 등의 속성을 모든 메서드에 지정하는 사례
 
 ```java
 @Transactional(value="account",
@@ -577,8 +578,8 @@ public void deleteUser(String id) {
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Transactional(
-    value="order"
-    propagation = Propagation.REQUIRED_NEW,
+    value="order",
+    propagation = Propagation.REQUIRES_NEW,
     rollbackFor=Exception.class )
 public @interface OrderTx {
 
@@ -721,7 +722,7 @@ viewName만 리턴하는 Controller : 개선
 
 Spring 3.0 -> 3.1 -> 3.2 따라잡기 참고
 
-[https://github.com/benelog/spring-upgrade-seminar](https://github.com/benelog/spring-upgrade-seminar)
+[https://benelog.github.io/presentations/20130713-spring-upgrade/](https://benelog.github.io/presentations/20130713-spring-upgrade/)
 
 ---
 
@@ -743,4 +744,4 @@ Controller의 Return type 규칙
 
 HttpServletRequest, Response 사용 규칙
 
-예: 쿠키를 새로 만들때만 사용
+예: 쿠키를 새로 만들 때만 사용

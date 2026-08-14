@@ -32,8 +32,9 @@ event: 소프트웨어 마에스트로 멘토링
 
 1. 과정 소개
 2. 업계 흐름
-3. 코드 지향 방향
-4. Android 환경 구축 실습
+3. JUnit 기초
+4. 코드의 지향 방향
+5. Android 실습 환경 구축
 
 ---
 
@@ -90,7 +91,7 @@ event: 소프트웨어 마에스트로 멘토링
 **폭넓은 주제, 특정 구현 기술**
 
 - Android의 특수성, 특이한 관습
-  - 예)Junit3 바탕, m을 붙이는 멤버변수 명명법
+  - 예)JUnit3 바탕, m을 붙이는 멤버변수 명명법
 - 짧은 과정, 바쁜 강사
 - 특이해 보이는 마에스트로 과정
 - 어떻게 극복할 것인가?
@@ -137,7 +138,7 @@ event: 소프트웨어 마에스트로 멘토링
 
 ---
 
-### 2.1 개발 도구의 전문화 분야화
+### 2.1 개발 도구의 전문 분야화
 
 **코딩만 알아서는 일을 못하는 시대 ..**
 
@@ -163,7 +164,7 @@ event: 소프트웨어 마에스트로 멘토링
   - S/W에 명시적인 공정제어 모델들은 적합하지 않다
   - 그러나 제조업에서의 교훈은 얻을 수 있다
     - 린소프트웨어, 칸반 시스템
-    - 제조업의 품질 활동 (생산라인을 멈출 수 있는 권한?
+    - 제조업의 품질 활동 (생산라인을 멈출 수 있는 권한?)
 
 ---
 
@@ -194,7 +195,7 @@ event: 소프트웨어 마에스트로 멘토링
 - Twitter, Facebook 사례
 - 다양한 저장소 전략
   - Cache farm Memcached
-  - Cloud repository (NoSql)
+  - Cloud repository (NoSQL)
   - 검색 Index(DB의 like 검색으로는 안 먹힘)
 
 ---
@@ -204,9 +205,9 @@ event: 소프트웨어 마에스트로 멘토링
 **다양한 저장소 전략**
 
 - Cache farm : Memcached
-- Cloud repository, NoSql
+- Cloud repository, NoSQL
   - Hadoop
-  - Big Table, Casandra, MongoDB,
+  - Big Table, Cassandra, MongoDB
 - 검색 Index(DB의 like 검색으로는 안 먹힘)
 - 이 다양한 저장소를 어떻게 동기화할 것인가의 이슈
   - 이벤트 발생 방식 (time based, user event)
@@ -223,7 +224,7 @@ event: 소프트웨어 마에스트로 멘토링
 - 최후의 차별화 요소
   - 기능이 다 비슷하고, 데이터 이식성도 이루어진다면?
 - 갈수록 높아지는 사용자의 기대 수준
-  - Rich & Heavy 해 지기 ㅟ움
+  - Rich & Heavy 해 지기 쉬움
   - 그래도 느리면 못 참음
 
 ---
@@ -233,11 +234,11 @@ event: 소프트웨어 마에스트로 멘토링
 **UX 플랫폼의 혼란**
 
 - 2004~2005년경만해도 IE면 만사형통
-- SI에는 xInternet 솔류션
+- SI에는 xInternet 솔루션
   - 기본 Client-Server 환경의 MIS 프로그램 대체
 - Ajax, Flash, HTML5, JavaFX, Silverlight
 - 다양한 이벤트 모델
-  - Service-side push, Long polling
+  - Server-side push, Long polling
   - Reverse Ajax, Comet 등의 기술 활용
 - 어느 기술에 줄을 서야 할까?
 
@@ -250,11 +251,11 @@ event: 소프트웨어 마에스트로 멘토링
 - 여전히 Java 자체도 세계에서 가장 많이 쓰는 기술
 - 느린 발전 (C# 등과 비교)
   - 많은 이해 당사자, 신중한 합의과정
-- Groovy, Scalar,Clojure 등 JVM 위의 다른 언어가 뜨고 있음
+- Groovy, Scala, Clojure 등 JVM 위의 다른 언어가 뜨고 있음
   - 아직은 조기수용자 집단
 - 세월이 지나면 Java 자체가 Low-level 언어처럼 될지도
   - GC가 안 되는 다른 언어가 지금 그렇듯이
-- 그러나 JVM의 성숙도는 버리기 힘듬
+- 그러나 JVM의 성숙도는 버리기 힘듦
   - JVM 실행환경은 그대로 계승되거나 적어도 이론적 계승
 
 ---
@@ -266,7 +267,7 @@ event: 소프트웨어 마에스트로 멘토링
 - IT 거품의 시대를 지나서, 도입보다는 성숙한 운영의 시대
 - H/W 비용
   - CPU가 놀고 있는 장비들은 어디에나 흔할 것
-  - Green IT 이라고 이름 붙이고 '전기비 절감'이라 읽는다
+  - Green IT라고 이름 붙이고 '전기비 절감'이라 읽는다
   - 인프라수준의 클라우드 시장
 
 ---
@@ -277,7 +278,7 @@ event: 소프트웨어 마에스트로 멘토링
 
 - 반복되는 신규 프로젝트 비용
   - 위험성이 큼 (데이터 전환 등)
-  - 레가시는 자산이자 부채
+  - 레거시는 자산이자 부채
     - 시장 대응 속도 결정
 - 소프트웨어 키워가기
   - '앞으로 60년 후에는 대부분의 개발자는 자기의 나이보다 더 많은 시스템을 유지보수하고 있을 것이다' 랄프 E 존슨
@@ -289,7 +290,7 @@ event: 소프트웨어 마에스트로 멘토링
 **언제나 '차세대'를 개발할 수는 없다**
 
 - 완성도 있는 코드의 가치가 커짐
-  - 좋은 설계, Testablility, 리팩토링
+  - 좋은 설계, Testability, 리팩토링
   - 사람에 가까운 코드, High level의 가치
 
 ---
@@ -301,7 +302,7 @@ event: 소프트웨어 마에스트로 멘토링
 - server, client 등의 수많은 도전 과제
 - 결국 사람이 하는 일은 의사결정과 그 표현
   - 작은 단위의 표현 – 코딩
-  - 큰 단위 – 서버 구성, 솔류션별 역할, 이벤트 구조 설계
+  - 큰 단위 – 서버 구성, 솔루션별 역할, 이벤트 구조 설계
 - 큰 단위의 의사 결정을 하려면
   - Low to High level까지의 모든 지식이 필요
   - 그 외 의사 소통 기술
@@ -330,7 +331,7 @@ event: 소프트웨어 마에스트로 멘토링
 - 한국 IT의 우울
   - Tmax, 한컴이 매물로 …
   - Global Scale이 있는 업체의 시장 잠입
-    - Facebook, Twiiter
+    - Facebook, Twitter
     - 한국 지사도 없는 업체?
 - 개발 언어도 영어
   - Domain Driven Design 에서도 불리
@@ -496,7 +497,7 @@ backgroundSize: contain
 ### 4.1 이름 짓기
 
 - 발음할 수 있는 이름으로
-- 범위가 클 수록 상세하게
+- 범위가 클수록 상세하게
   - local 변수보다는 멤버변수가 더 자세한 이름이
 - `Map<String,Object> map` 보다는 `Map<String,Object> response`
 - a,b,c,d a1,b1 등은 피하자
@@ -508,13 +509,13 @@ backgroundSize: contain
 
 **참고자료**
 
-- Code Completed 2nd Edtion
+- Code Complete 2nd Edition
   - Ch 6.2 클래스의 이름
   - Ch 7.3 루틴의 이름
   - Ch 11 변수 이름의효과
 - 켄트백의 구현패턴
   - 101페이지, 128페이지, 53페이지
-- Clean code – Rober c Martin
+- Clean Code – Robert C. Martin
 
 ---
 
@@ -537,7 +538,7 @@ backgroundSize: contain
   - `List<Object>.add(String)` 은 되지만
   - `List<Object> myList = new ArrayList<String>();` 은 에러
   - Wild card로 범위지정
-    - `List<? Super String)`
+    - `List<? super String>`
 
 ---
 
@@ -603,7 +604,7 @@ Map<String, String[]> requestMap = request.getParameterMap()
 **Legacy 코드에 의한 warning이 너무 많을 때**
 
 - Eclipse 설정으로 warning 제외
-  - Project – Properties - Java Compile -Errors/Warnings
+  - Project – Properties - Java Compiler - Errors/Warnings
 
 <img src="./eclipse-warning-settings.png" style="height:300px" />
 
@@ -638,7 +639,7 @@ Map<String, String[]> requestMap = request.getParameterMap()
 
 - Agile Java
 - [http://java.sun.com/j2se/1.5/pdf/generics-tutorial.pdf](http://java.sun.com/j2se/1.5/pdf/generics-tutorial.pdf)
-- 월간 마이크로소프트웨어 2004년 12월 Java 제네릭스에대한 실제적 고찰
+- 월간 마이크로소프트웨어 2004년 12월 Java 제네릭스에 대한 실제적 고찰
 - [http://www.ibm.com/developerworks/kr/library/j-jtp04298.html](http://www.ibm.com/developerworks/kr/library/j-jtp04298.html)
 
 ---
@@ -663,7 +664,7 @@ void method (User user){
 
 ### 4.3 Enum
 
-**Enum 활용 활용 사례**
+**Enum 활용 사례**
 
 ```java
 public enum FtpAuthStatus {
@@ -729,8 +730,8 @@ static int countOfIncluded(List lines, String word){
 
 ```java
 Map row = new HashMap();
-for(int i=0,n=selected.size();i++){
-        row = (Map) seleted.get(i);
+for(int i=0,n=selected.size();i<n;i++){
+        row = (Map) selected.get(i);
         ……
 }
 ```
@@ -769,7 +770,7 @@ static int countOfIncluded(List lines, String word){
 
 element가 밖에 선언 되었다고 해서 힙메모리에 객체가 덜 생성되는 것도 아니고, Stack 메모리에 변수 선언 공간을 덜 차지 하는 것이 아님
 
-element는 힙메모리에 생성된 객체 그 자체가 아니다 (객체를 가르키는 리모컨 같은 것)
+element는 힙메모리에 생성된 객체 그 자체가 아니다 (객체를 가리키는 리모컨 같은 것)
 
 ---
 
@@ -783,8 +784,8 @@ element는 힙메모리에 생성된 객체 그 자체가 아니다 (객체를 �
 static int countOfIncluded(List<String> lines,
                                     String word){
   int count = 0;
-  for (String line:list){
-    if (element.indexOf(word)!= -1 ) count++;
+  for (String line:lines){
+    if (line.indexOf(word)!= -1 ) count++;
   }
   return count;
 }
@@ -807,16 +808,16 @@ static int countOfIncluded(List<String> lines,
 **멤버 변수 남용 않기**
 
 ```java
-Class Person{
+class Person{
   String  temp;
   void work(List list){
-     for (int i=0; i = worksToDo.size(); i++){
+     for (int i=0; i < worksToDo.size(); i++){
      temp = (String) worksToDo.get(i);
      // 기타 ...
    }
   }
   void play(List list){
-     for (int i=0; i = playStuff.size(); i++){
+     for (int i=0; i < playStuff.size(); i++){
      temp = (String) playStuff.get(i);
      // 기타 ...
     }
@@ -839,7 +840,7 @@ Class Person{
 
 - 개발자의 머리를 더 가볍게
   - 블록을 벗어나면 그 변수에 대해서는 잊어 버리자
-- Garbarge Collection 시점 차이도 있음
+- Garbage Collection 시점 차이도 있음
 
 ---
 
@@ -878,7 +879,7 @@ for(String userId : userIdList){
 
 **참고자료**
 
-- Code completed 2nd Edtion, Streve McConnell 저 서우석 역
+- Code Complete 2nd Edition, Steve McConnell 저 서우석 역
   - 10장 변수사용 시 일반적인 문제
   - 10.3 변수의 초기화에 대한 지침
 - [http://benelog.egloos.com/1382604](http://benelog.egloos.com/1382604)
@@ -888,7 +889,7 @@ for(String userId : userIdList){
 ### 4.5 Exception 처리
 
 - 반드시 예외적인 경우만
-  - if 으로 대체할 수 있는 것인지 고민
+  - if로 대체할 수 있는 것인지 고민
   - 100% Exception이 나는 경우라면 Exception이 아니다
 - 그냥 버리지 않기
 - Checked Exception을 남용하지 않기
@@ -899,7 +900,7 @@ for(String userId : userIdList){
 
 ### 4.5 Exception 처리
 
-- Java.lang.Exception 보다는 되도록 구체적인 Exception으로
+- java.lang.Exception 보다는 되도록 구체적인 Exception으로
   - throws Exception은 최후의 수단
 - 기본 Exception 잘 활용하기
   - IllegalArgumentException, IllegalStateException
@@ -911,7 +912,7 @@ for(String userId : userIdList){
 **Effective Java 2nd Edition**
 
 - Item 57 : Use exceptions only for exceptional conditions
-- Item 58 : Use checked exceptions for recoverable coditions, and run-time exceptions for programming errors
+- Item 58 : Use checked exceptions for recoverable conditions, and run-time exceptions for programming errors
 - Item 59 : Avoid unnecessary use of checked exceptions
 - Item 60 : Favor the use of standard exceptions
 - Item 61 : Throw exceptions appropriate to the abstraction
@@ -959,9 +960,9 @@ ServiceContext.setAttribute("message", message);
 - 사용하기 쉬워야 하고, 오용하기 어려워야 한다.
 - 되도록 빠른 시점에 에러를 보고하고 컴파일 타임이면 가장 좋다.
 - 가능한 많은 부분은 private 한 영역으로
-- 가능한 작으면서도 충분하게. 한가지 일만하게. API가 향후 기능이 추가되기는 쉬워도 들어간 기능이 빠지기는 힘들다.
+- 가능한 작으면서도 충분하게. 한 가지 일만 하게. API가 향후 기능이 추가되기는 쉬워도 들어간 기능이 빠지기는 힘들다.
 - API 내부에서 할 수 있는 일을 API를 사용하는 Client가 하게 내버려 두어서는 안 된다.
-- 구현이 API에 영향을 미치면 안된다.
+- 구현이 API에 영향을 미치면 안 된다.
 
 ---
 
@@ -976,14 +977,14 @@ ServiceContext.setAttribute("message", message);
 
 ---
 
-## 4. Android 실습 환경 구축
+## 5. Android 실습 환경 구축
 
-- 1.1 설치
-- 1.2 샘플 프로젝트
+- 5.1 설치
+- 5.2 샘플 프로젝트
 
 ---
 
-### 4.1 설치
+### 5.1 설치
 
 **실습**
 
@@ -991,7 +992,7 @@ ServiceContext.setAttribute("message", message);
 
 ---
 
-### 4.2 샘플 프로젝트
+### 5.2 샘플 프로젝트
 
 **실습**
 

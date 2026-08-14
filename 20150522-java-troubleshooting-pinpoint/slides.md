@@ -31,7 +31,7 @@ source: https://www.slideshare.net/slideshow/d2-java-pinpoint/48473101
 - A단계 : 사용자 현상 파악
   - 503/500 에러
   - 무응답/느린 응답
-  - 예상과는 다른 어플리케이션 동작 (예) 간헐적 인증 실패)
+  - 예상과는 다른 어플리케이션 동작 (예: 간헐적 인증 실패)
 
 ---
 
@@ -80,13 +80,13 @@ source: https://www.slideshare.net/slideshow/d2-java-pinpoint/48473101
 ### 트러블 슈팅 요청자의 대부분은
 
 - C단계 (어플리케이션의 정보)는
-  - 종합적으로 연결해서 봐야함
+  - 종합적으로 연결해서 봐야 함
   - 취득, 분석 비용이 비쌈
   - 힙덤프
     - 서비스 운영 중에는 덤프를 뜰 수 없다.
     - 덤프 파일의 용량이 커서 파일을 주고 받기도 어렵다
   - 프로파일링
-    - 운영중에 할 수는 없다.
+    - 운영 중에 할 수는 없다.
 
 ---
 
@@ -142,11 +142,11 @@ source: https://www.slideshare.net/slideshow/d2-java-pinpoint/48473101
 **최고의 지원 요청은?**
 
 - 지원 요청을 하지 않는 것
-- 알아서 해결하고 과정과 배경 정보까지 다 정리해서 다른 부서에도 공유해달라고 알려주는것
+- 알아서 해결하고 과정과 배경 정보까지 다 정리해서 다른 부서에도 공유해달라고 알려주는 것
 
 ---
 
-### 문의가 오면 주로 추가로 확인을 하는것들
+### 문의가 오면 주로 추가로 확인을 하는 것들
 
 **현상의 일관성 확인**
 
@@ -157,7 +157,7 @@ source: https://www.slideshare.net/slideshow/d2-java-pinpoint/48473101
 
 ---
 
-### 정보 중 누락된것이 있으면 추가 요청
+### 정보 중 누락된 것이 있으면 추가 요청
 
 - 주로 C단계의 정보를 취득 비용이 싼 것부터 점진적으로 요청
   - 현재 사용 중인 JVM 옵션을 알려주세요
@@ -176,11 +176,11 @@ source: https://www.slideshare.net/slideshow/d2-java-pinpoint/48473101
 -XX:+PrintGCDetails -XX:+PrintGCTimeStamps
 -Xloggc:../logs/gc-was1.log
 -XX:+UseGCLogFileRotation
--XX:NumberOfGClogFiles=5
+-XX:NumberOfGCLogFiles=5
 -XX:GCLogFileSize=256M
 ```
 
-  - Java6 update 24, Java7 update 2부터는 gc log roate를 지원
+  - Java6 update 24, Java7 update 2부터는 gc log rotate를 지원
 
 ---
 
@@ -214,7 +214,7 @@ source: https://www.slideshare.net/slideshow/d2-java-pinpoint/48473101
 
 - 어플리케이션의 로직과는 상관없이 공통적인 설정을 변경해서 해결하는 경우
 - 현상의 사례
-  - A. 사용자가 몰릴 시 간헐적 느린응답, 500, 503에러
+  - A. 사용자가 몰릴 시 간헐적 느린 응답, 500, 503에러
   - B. Swapping 영역 사용.
   - C. 잦은 GC, OOM, Connection pool의 getConnection()에서 대기
 - Database 등 공용 외부 자원에서 병목이 있을 때 부적절한 설정 때문에 상태를 악화시키거나 방어하지 못하는 경우가 많음.
@@ -228,7 +228,7 @@ source: https://www.slideshare.net/slideshow/d2-java-pinpoint/48473101
 
 - 주로 건드리는 핵심 설정
   - ConnectionPool
-    - DBCP : maxActive (maxTotal), maxWait (maxWaitMills), validation query
+    - DBCP : maxActive (maxTotal), maxWait (maxWaitMillis), validation query
   - JDBC : Socket timeout 등
   - Web Server
     - Apache Httpd : maxClients
@@ -255,12 +255,12 @@ source: https://www.slideshare.net/slideshow/d2-java-pinpoint/48473101
 **해결유형2: 메모리릭 경로 제거**
 
 - 현상의 사례
-  - C. 서버 올린지 오래되면 잦은 GC. OOM
+  - C. 서버 올린 지 오래되면 잦은 GC. OOM
 - 주로 Cache 로직에서 발생
-  - 해당서비스팀에서 직접 만든 캐쉬 로직이 있는가?
+  - 해당 서비스팀에서 직접 만든 캐쉬 로직이 있는가?
   - 캐쉬 용량의 한도값이 적절한가?
   - 모든 서버에 같은 현상이 궁극적으로는 생김.
-- Thead 불안정성에 의한 메모리릭
+- Thread 불안정성에 의한 메모리릭
   - 일부 서버에만 OOM 발생
 
 ---
@@ -271,9 +271,9 @@ source: https://www.slideshare.net/slideshow/d2-java-pinpoint/48473101
 
 - 현상의 사례
   - B. 100%에 가까운 CPU 사용. 특정 서버에서만 발생하는 경우가 많음.
-  - C. 스택덤프를 뒤져보면 계속 실행 중인 스레드가 있음. 모든 CPU가 100%가 걸리면 덤프조차 못 뜰수 있음.
-- 특정 조건이 들어왔을때 혹은 Thread 불안정성 때문에 생기는 무한루프가 많음.
-  - 부조건 무한루프였으면 개발할때 모를리가 없음.
+  - C. 스택덤프를 뒤져보면 계속 실행 중인 스레드가 있음. 모든 CPU가 100%가 걸리면 덤프조차 못 뜰 수 있음.
+- 특정 조건이 들어왔을 때 혹은 Thread 불안정성 때문에 생기는 무한루프가 많음.
+  - 무조건 무한루프였으면 개발할 때 모를 리가 없음.
 - 잘못된 정규식에서 발생한 사례도 있음
 
 ---
@@ -296,7 +296,7 @@ source: https://www.slideshare.net/slideshow/d2-java-pinpoint/48473101
 
 **분석**
 
-- Hpjmeter 로 GC log를 시각화해서 확인
+- HPjmeter 로 GC log를 시각화해서 확인
 - CMS GC가 길어지는 대부분의 원인인 promotion fail (concurrent mode fail)의 경우였음.
   - old 영역의 파편화로 큰 객체가 들어갈 공간이 없어질 때 compaction 수행
 
@@ -324,7 +324,7 @@ source: https://www.slideshare.net/slideshow/d2-java-pinpoint/48473101
 -XX:CMSInitiatingOccupancyFraction=70 -XX:+UseCMSInitiatingOccupancyOnly
 ```
 
-  - CMSInitiatingOccupancyFraction의 값을 70으로 주면 70%정도 old gen이 찼을 경우 cms gc를 시작. 더 많은 가용공간을 확보된 상황에서 gc를 하기 때문에 promotion fail이 발생할 확율을 줄여줌
+  - CMSInitiatingOccupancyFraction의 값을 70으로 주면 70%정도 old gen이 찼을 경우 cms gc를 시작. 더 많은 가용공간이 확보된 상황에서 gc를 하기 때문에 promotion fail이 발생할 확률을 줄여줌
 
 ---
 
@@ -344,8 +344,8 @@ source: https://www.slideshare.net/slideshow/d2-java-pinpoint/48473101
 - B. 서버 상태
   - DB서버의 IO 트래픽이 높음
 - C. 어플리케이션 정보
-  - 웹서버를 시작하면 Full GC가 매우 빈번하게 발생합 (약 5초에 1~2번)
-  - Full GC가 발생할 때 힙덤프를 떠서 확인을 해보니 엄청난 양의 com.mysql.jdbc.ByteArrayRow객체가 생성
+  - 웹서버를 시작하면 Full GC가 매우 빈번하게 발생함 (약 5초에 1~2번)
+  - Full GC가 발생할 때 힙덤프를 떠서 확인을 해보니 엄청난 양의 com.mysql.jdbc.ByteArrayRow 객체가 생성
   - 소스에는 많은 건수를 조회하는 SQL이 없음
   - 같은 소스로 개발서버에서는 문제가 없었음.
   - 프레임워크 문제인가 싶어서 변경도 해봤음.
@@ -357,7 +357,7 @@ source: https://www.slideshare.net/slideshow/d2-java-pinpoint/48473101
 **분석**
 
 - 힙덤프를 분석해서 대량의 ResultSet을 가지고 오는 형상으로 파악
-- 소스 분석 결과 DBCP설정의 validationQuery가 데이터가 존재하는 테이블을 조회하고 있었음
+- 소스 분석 결과 DBCP 설정의 validationQuery가 데이터가 존재하는 테이블을 조회하고 있었음
 
 ```sql
 SELECT 0 FROM USERS
@@ -378,10 +378,10 @@ SELECT 0 FROM USERS
 **참고**
 
 - 권장하는 validationQuery 설정
-  - Oracle : SEELCT 1 FROM dual
+  - Oracle : SELECT 1 FROM dual
   - MS SQLSERVER : SELECT 1
-  - Mysql : SELECT 1
-  - Cubrid : SELECT1 FROM db_root
+  - MySQL : SELECT 1
+  - Cubrid : SELECT 1 FROM db_root
 - DBCP 2.0에서는 validationQuery 속성이 없으면 Connection.isValid() 를 호출해서 유효성 검사
   - 구현은 JDBC 드라이버마다 다를 것임.
 
@@ -401,13 +401,13 @@ SELECT 0 FROM USERS
 **최초 공유된 정보**
 
 - A. 사용자의 현상
-  - 특정 시간대에 갑자기 응답시간에 늘어남
+  - 특정 시간대에 갑자기 응답시간이 늘어남
   - 긴 추석연휴의 마지막에 발생
 - C. 어플리케이션의 정보
-  - EhCache를 최대 6G까지 쓸 수 있도록 설정해서 메모리를 10G정도로 많이 잡고 있음.
+  - EhCache를 최대 6G까지 쓸 수 있도록 설정해서 메모리를 10G 정도로 많이 잡고 있음.
   - 문제의 시간대에 GC하고 있음.
-  - 힙이 커서 GC시간이 길어지고 있는것으로 추정
-    - newRatio등의 값을 튜닝 중
+  - 힙이 커서 GC시간이 길어지고 있는 것으로 추정
+    - newRatio 등의 값을 튜닝 중
 
 ---
 
@@ -415,11 +415,11 @@ SELECT 0 FROM USERS
 
 **분석**
 
-- 처음에는 jstat --gcutil로 얻은 정보를 전달받음
+- 처음에는 jstat -gcutil로 얻은 정보를 전달받음
   - 평균 GC 수행시간만 있음
-- 개별 GC의 정보 파익이 필요해서 verbose GC 로그 요청
+- 개별 GC의 정보 파악이 필요해서 verbose GC 로그 요청
 - GC로그 분석결과 점진적으로 사용메모리가 증가하는 그래프 파악
-  - 개발 담당자는 EHCache 적용의 영향으로 판단했을 수도 있음
+  - 개발 담당자는 EhCache 적용의 영향으로 판단했을 수도 있음
 
 ---
 
@@ -467,7 +467,7 @@ return "redirect:form.html?entityId=" + entityId;
 
 **해결**
 
-- 어플케이션 코드 수정
+- 어플리케이션 코드 수정
   - 스프링 프레임워크의 버전을 올리지 않고 가능한 방법
 
 ```java
@@ -492,12 +492,12 @@ return new RedirectView("form.html?entityId="+entityId);
 
 **현상**
 
-- 몇달에 걸쳐 서비스 담당부서의 노력으로 원인을 찾아낸 사례
+- 몇 달에 걸쳐 서비스 담당부서의 노력으로 원인을 찾아낸 사례
 - A. 사용자 현상
   - 간헐적인 503에러
 - C. 어플리케이션 상태
   - 장비 1대에서 OOM 에러
-- 힙을 늘려주고 몇달 동안 발생을 안 했으나 가끔씩 또 발생
+- 힙을 늘려주고 몇 달 동안 발생을 안 했으나 가끔씩 또 발생
 
 ---
 
@@ -506,8 +506,8 @@ return new RedirectView("form.html?entityId="+entityId);
 **분석**
 
 - 힙덤프 분석결과 LinkedHashMap 관련 객체가 대다수 힙을 차지
-- 자체 cache모듈의 thread-safetey 문제로 발생한 메모리릭
-  - LinkedHashMap.put은 synchronized 블록 안에서 호출 get은 그렇게 하지 않았을 때
+- 자체 cache 모듈의 thread-safety 문제로 발생한 메모리릭
+  - LinkedHashMap.put은 synchronized 블록 안에서 호출하고 get은 그렇게 하지 않았을 때
 
 ---
 
@@ -516,7 +516,7 @@ return new RedirectView("form.html?entityId="+entityId);
 **해결**
 
 - LinkedHashMap.get에도 동기화 처리
-  - JDK5였으면 ConcurrentHashMap 등을 고려할수도 있었을 듯
+  - JDK5였으면 ConcurrentHashMap 등을 고려할 수도 있었을 듯
 - '네이버를 만든 기술 읽으면서 배운다- 자바편'의 '하나의 메모리누수를 잡기까지' 참조
 
 ---
@@ -534,20 +534,20 @@ return new RedirectView("form.html?entityId="+entityId);
 
 **참고**
 
-- HashMap에 대한 Thread saftey 문제는 무한루프로 나타나기도 함
+- HashMap에 대한 Thread safety 문제는 무한루프로 나타나기도 함
   - Beautiful race condition : <http://mailinator.blogspot.kr/2009/06/beautiful-race-condition.html>
-  - private Map으로 전체 소스 검색 해볼만 함
+  - private Map으로 전체 소스 검색해 볼 만함
 - XStream 라이브러리 사례의 무한루프 사례 <http://jira.codehaus.org/browse/XSTR-584>
   - WeakHashMap을 Thread safe하지 않게 접근한 버그
-  - 몇년동안 같은 버전으로 잘 쓰다가 고사양 장비(네할렘)으로 옮기니 장애 발생
-- 같은 Thread-saftey문제라도 메모리릭으로 나타나면 해결이 더 괴로움
+  - 몇 년 동안 같은 버전으로 잘 쓰다가 고사양 장비(네할렘)으로 옮기니 장애 발생
+- 같은 Thread-safety 문제라도 메모리릭으로 나타나면 해결이 더 괴로움
 
 ---
 
 ### 교훈
 
 - 요청하는 사람의 말을 100% 믿지는 말아야겠다.
-  - 정보를 종합하지 파악하지 못 해서 오판한 경우도 있다
+  - 정보를 종합해서 파악하지 못 해서 오판한 경우도 있다
     - 예) 'GC 튜닝해주세요'라고 온 요청을 보면 메모리릭
       - 분석 후 메모리 릭이라고 알려줬는데도 다른 사람에게 GC튜닝을 요청한 사례도...
     - 예) java 레벨의 성능 튜닝을 해주세요 해서 들여다 봤더니 느린 쿼리가 문제
@@ -557,10 +557,10 @@ return new RedirectView("form.html?entityId="+entityId);
 ### 교훈
 
 - 복합적인 원인도 많다
-  - 단순히 증상만으로 판단할 수 없다. 여러 정보를 복합적으로 봐야한다.
-  - 같은 결함이 다른 요인과 얽히면 현상이 다르게 나타난다,
+  - 단순히 증상만으로 판단할 수 없다. 여러 정보를 복합적으로 봐야 한다.
+  - 같은 결함이 다른 요인과 얽히면 현상이 다르게 나타난다.
     - 예1) DB병목 -> 요청 적체 -> 503 에러
-    - 예2) DB병목 + 과도한 동시사용자 허용(maxActive, maxThread) + 적은 힙 메모리 -> 메모 과다 점유 -> OOM
+    - 예2) DB병목 + 과도한 동시사용자 허용(maxActive, maxThread) + 적은 힙 메모리 -> 메모리 과다 점유 -> OOM
   - 어플리케이션의 코드 + 라이브러리의 코드
     - 양쪽을 다 확인해야 문제 파악이 가능하다.
     - 한 사람이 둘 다 알지 못한다면 긴밀한 협업이 필요하다.
@@ -586,7 +586,7 @@ return new RedirectView("form.html?entityId="+entityId);
 
 - TDA
   - <https://java.net/projects/tda>
-- Tread Logic
+- Thread Logic
   - <https://java.net/projects/threadlogic>
   - TDA + Alpha : 툴이 분석한 병목 등을 제시해 줌
 
@@ -594,7 +594,7 @@ return new RedirectView("form.html?entityId="+entityId);
 
 ### 쓰레드 덤프 분석
 
-Threadlogic은 DB쿼리를 실행하는 스레드를 알아보기 쉽게 표시 해줌
+Threadlogic은 DB쿼리를 실행하는 스레드를 알아보기 쉽게 표시해 줌
 
 <img src="./threadlogic-db-query.png" style="height:380px" />
 
@@ -612,7 +612,7 @@ Threadlogic은 Bottleneck 의심 스레드를 추천해주기도 함
 
 **TIP**
 
-- 덤프뜰때 kill -3하려다 kill -9실수 하지 말길..
+- 덤프 뜰 때 kill -3 하려다 kill -9 실수 하지 말길..
   - jstack 활용
   - 진짜 죽이고 싶을 때는 kill -kill 습관을..
 
@@ -662,7 +662,7 @@ java -jar one-ftpserver.jar port=10021 id=benelog password=...
 
 ### GC로그 분석
 
-- HPJmeter
+- HPjmeter
   - <https://h20392.www2.hp.com/portal/swdepot/displayProductInfo.do?productNumber=HPJMETER>
 
 ---
@@ -681,7 +681,7 @@ java -jar one-ftpserver.jar port=10021 id=benelog password=...
 - Btrace
   - <https://kenai.com/projects/btrace>
   - 특정 메서드 호출 추적
-  - JVM 옵션 변경없이도 붙일수 있다.
+  - JVM 옵션 변경 없이도 붙일 수 있다.
 
 ---
 
@@ -708,8 +708,8 @@ public static void dao(@Duration long duration, @ProbeClassName String className
 
 - 덤프, 프로파일링
   - 상시적으로 할 수는 없다.
-- Brace
-  - 목적이 명확할때만 쓸만하다.
+- Btrace
+  - 목적이 명확할 때만 쓸 만하다.
     - 예) 프레임워크에서 로깅해주지 않는 파라미터 값을 운영서버에서 추적
     - 예) 특정 레이어의 실행시간 비중 파악
       - 스크립트 작성이 번거롭다
@@ -745,17 +745,17 @@ public static void dao(@Duration long duration, @ProbeClassName String className
 
 - 가장 흔한 어플리케이션의 병목
 - Dynamic query, ORM 등 쿼리 생성 조건이 복잡한 경우 더욱 유용했음
-- Connection poool 설정으로 인한 결과를 바로 확인 가능
+- Connection pool 설정으로 인한 결과를 바로 확인 가능
 
 ---
 
 ### DB 호출 모니터링 사례
 
-**느린 Dyanmic query 확인**
+**느린 Dynamic query 확인**
 
 - 조회 조건에 따라서 where 절의 구성이 달라지는 쿼리
 - DBA도 사전에는 엄격하게 확인하지 못하는 경우가 많음
-- Pinpoint로 운영서버에서 특정 조건일때만 느려지는 쿼리를 파악하여 튜닝을 했음
+- Pinpoint로 운영서버에서 특정 조건일 때만 느려지는 쿼리를 파악하여 튜닝을 했음
 
 ---
 
@@ -765,8 +765,8 @@ public static void dao(@Duration long duration, @ProbeClassName String className
 
 - 쿼리가 호출되는 시점이나 횟수, 생성되는 쿼리를 개발자가 잘 예측하지 못하는 경우도 있음.
   - Local에서 로그로 확인이 가능하지만 시각적으로 확인이 편하지는 않음.
-- 사례 : JPA를 쓰는 서비스에서 파일을 다운로드는 긴 요청에 OpenEntityManagerInViewFilter가 적용되어서 불필요하게 길게 Connection을 보유하는 상황
-  - Pinpoint로 모니터닝해서 DataSource.getConnection() 메서드 대기하고 있는 것을 확인
+- 사례 : JPA를 쓰는 서비스에서 파일을 다운로드하는 긴 요청에 OpenEntityManagerInViewFilter가 적용되어서 불필요하게 길게 Connection을 보유하는 상황
+  - Pinpoint로 모니터링해서 DataSource.getConnection() 메서드에서 대기하고 있는 것을 확인
   - 문서 수정 후 같은 현상이 없음을 다시 확인
 
 <img src="./pinpoint-getconnection.png" style="height:130px" />
@@ -785,9 +785,9 @@ public static void dao(@Duration long duration, @ProbeClassName String className
 
 **과도한 validation query**
 
-- DBCP의 testOnBorrow속성이 true로 되어 있어어 매번 실제 쿼리 호출 전에 validation query가 날아가는 현상
+- DBCP의 testOnBorrow 속성이 true로 되어 있어서 매번 실제 쿼리 호출 전에 validation query가 날아가는 현상
   - 부적절한 설정 사례
-- DBCP설정 소스를 보지 않고도 pinoint 모니터링으로 바로 파악
+- DBCP 설정 소스를 보지 않고도 Pinpoint 모니터링으로 바로 파악
 
 <img src="./pinpoint-validation-query.png" style="height:210px" />
 
@@ -795,7 +795,7 @@ public static void dao(@Duration long duration, @ProbeClassName String className
 
 ### Server to server API 호출 모니터링 사례
 
-- 서버 간의 호출여부, 응답이 느린 API서버와 구간별 정보를 바로 파악할 수 있음.
+- 서버 간의 호출여부, 응답이 느린 API 서버와 구간별 정보를 바로 파악할 수 있음.
 
 ---
 
@@ -816,8 +816,8 @@ public static void dao(@Duration long duration, @ProbeClassName String className
 
 **특정시간대의 특정 API 서버의 병목**
 
-- 특정 시간대의 응답이 느린것을 보고 그때의 어느 구간이 느렸는지 바로 확인
-- 연계 호출되는 API서버에서 평소보다 많은 시간을 쓰는것을 확인
+- 특정 시간대의 응답이 느린 것을 보고 그때의 어느 구간이 느렸는지 바로 확인
+- 연계 호출되는 API 서버에서 평소보다 많은 시간을 쓰는 것을 확인
 
 <img src="./pinpoint-response-scatter.png" style="height:290px" />
 
@@ -844,7 +844,7 @@ public static void dao(@Duration long duration, @ProbeClassName String className
 
 **지역별 실행시간 비교**
 
-- 별도의 프로파일링 도구나 코드수정없이 바로 파악이 가능했음.
+- 별도의 프로파일링 도구나 코드 수정 없이 바로 파악이 가능했음.
   - 예) A국가 서버 -> 한국 중계서버 --> 한국 서비스 서버 : 약 250ms + alpha
   - 예) B국가 서버 -> 한국 중계서버 --> 한국 서비스 서버 : 약 70ms + alpha
 - 분산 호출 사이의 실행시간 파악
@@ -875,9 +875,9 @@ public static void dao(@Duration long duration, @ProbeClassName String className
 ### 교훈
 
 - 지원 요청의 수준을 상향 평준화
-  - '최고의 지원요청' 이 늘어남
-  - DBA /프레임워크팀/인프라조직/연계서비스 담당자와 더 깊이 있는 정보로 의사소통
-  - 섯부른 단정/오해 방지
+  - '최고의 지원요청'이 늘어남
+  - DBA/프레임워크팀/인프라조직/연계서비스 담당자와 더 깊이 있는 정보로 의사소통
+  - 섣부른 단정/오해 방지
 - 트러블 슈팅 자동화
   - Pinpoint의 시작 동기 중 일부
 

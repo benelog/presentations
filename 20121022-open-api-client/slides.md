@@ -50,7 +50,7 @@ event_url: https://d2.naver.com/helloworld/172098
 
 ## URL 연결 담당 클래스
 
-- ResourceConnector.java :GET 요청 공통 interface
+- ResourceConnector.java : GET 요청 공통 interface
 - SimpleConnector.java : JDK의 URLConnection 활용
 - HttpClient3Connector.java: Apache HttpClient 3.x 활용
 - HttpClient4Connector.java: Apache HttpComponent 4.x 활용
@@ -64,7 +64,7 @@ event_url: https://d2.naver.com/helloworld/172098
 - SearchApiClient.java
 - SearchApiClientTest.java
   - 파일로 파싱 테스트
-- SearchApiClientIntegationTest
+- SearchApiClientIntegrationTest
   - 실제 API 서버와 연결해서 테스트
 
 ---
@@ -126,7 +126,7 @@ event_url: https://d2.naver.com/helloworld/172098
 
 2.4 쓰레드 안정성을 늘 의식해라
 
-2.5 모듈별 역할과 책임을 구분해라
+2.5 모듈별 역할과 책임을 구분하라
 
 2.6 다시 보는 어느 클라이언트 코드
 
@@ -217,13 +217,13 @@ this.httpClient = client;
 
 ### 2.2 예외에 대비하라
 
-## 예외 상황을  테스트하라
+## 예외 상황을 테스트하라
 
 - 예외메시지 파싱을 테스트하라.
   - 예외 메시지 파일을 따로 저장해서 테스트
   - Text based protocol의 장점을 활용
 - 통합 테스트도 자동화하면 도움이 된다.
-  - 매일 돌리다보면 정기 점검 일때, 서버 상태가 이상할 때를 만날 수도 있다.
+  - 매일 돌리다보면 정기 점검일 때, 서버 상태가 이상할 때를 만날 수도 있다.
   - 때로는 스펙에 명시되지 않은 동작까지 알 수 있다.
 
 ---
@@ -241,7 +241,7 @@ this.httpClient = client;
 
 ## 명시적으로 DOM을 쓰지 마라
 
-- Event base인 SAX에 비해서 비효율적.
+- Event based인 SAX에 비해서 비효율적.
 - XStream은 Stream based의 처리
 - JAXB는 보다 high level의 추상화 계층
 - SAX, StAX(Streaming API for XML) 등 활용 가능
@@ -254,7 +254,7 @@ this.httpClient = client;
 
 - Apache HttpClient 3.x
   - MultiThreadedHttpConnectionManager 활용
-  - DefaultMaxConnectionsPerHost' 값 주의
+  - 'DefaultMaxConnectionsPerHost' 값 주의
   - Default는 2. 성능에 악영향.
   - Concurrent user * 2 값이 바람직
 - Apache HttpComponent 4.x
@@ -268,7 +268,7 @@ this.httpClient = client;
 ## 여러 API를 함께 쓴다면 병렬 실행을 고려해라
 
 - JDK concurrent API (ExecutorService)
-- Apache HttpClientd의 HttpAsyncClient
+- Apache HttpClient의 HttpAsyncClient
 - Jetty HttpClient
 - 얼마만큼 효과가 있을지는 해봐야 안다.
 
@@ -276,11 +276,11 @@ this.httpClient = client;
 
 ### 2.4 쓰레드 안정성을 늘 의식해라
 
-## 쓰레드 안정하지 않은 객체를 파악하라
+## 쓰레드 안전하지 않은 객체를 파악하라
 
-- HttpCient 3.x
+- HttpClient 3.x
   - MultiThreadedHttpConnectionManager를 사용하지 않을 때의 HttpClient
-  - HttpMethod, HttpState, HostConfigureation
+  - HttpMethod, HttpState, HostConfiguration
 - HttpComponent 4.x
   - HttpGet, HttpPost
 
@@ -288,9 +288,9 @@ this.httpClient = client;
 
 ### 2.4 쓰레드 안정성을 늘 의식해라
 
-## 쓰레드 안정하지 않은 객체를 파악하라
+## 쓰레드 안전하지 않은 객체를 파악하라
 
-- Jaxb2
+- JAXB2
   - Marshaller, Unmarshaller
 - JacksonJson
   - JsonParser
@@ -301,8 +301,8 @@ this.httpClient = client;
 
 ## 쓰레드 안전한 객체는 매번 생성하지 말라.
 
-- Apache HttpCient 3.x
-  - MultiThreadedHttpConnectionManager를 사용 할 때의 HttpClient
+- Apache HttpClient 3.x
+  - MultiThreadedHttpConnectionManager를 사용할 때의 HttpClient
 - Apache HttpComponent 4.x
   - DefaultHttpClient
   - SingleClientConnManager, ThreadSafeClientConnManager
@@ -313,7 +313,7 @@ this.httpClient = client;
 
 ## 쓰레드 안전한 객체는 매번 생성하지 말라.
 
-- Jaxb2
+- JAXB2
   - JAXBContext
 - JacksonJson
   - Thread-safe after configuration : ObjectMapper, JsonFactory
@@ -325,9 +325,9 @@ this.httpClient = client;
 ## 쓰레드 안전한 객체는 매번 생성하지 말라.
 
 - 사례 : Spring의 RestTemplate을 매번 생성한다면?
-  - RestTemplated의 기본 생성자는 StringHttpMessageConverter를 생성
+  - RestTemplate의 기본 생성자는 StringHttpMessageConverter를 생성
   - StringHttpMessageConverter는 생성자에서 encoding을 위해 시스템이 지원하는 character set을 확인하게 됨
-  - charsets.jar 파일 안의 객체를 동적 로딩하게 되는데, 동적 로딩을 하는 jdk 코드 내 synchronize로 감싼 코드로 인해 locking
+  - charsets.jar 파일 안의 객체를 동적 로딩하게 되는데, 동적 로딩을 하는 jdk 코드 내 synchronized로 감싼 코드로 인해 locking
   - 길지 않은 Lock구간이지만 대량 요청 시에는 문제가 됨
 
 ---
@@ -414,7 +414,7 @@ public  User findUser(String userId) {
 
 String response대신 Stream으로 넘길 수도 있지 않을까?
 
-ParseUtils에서는 반복적으로 처음부터 문자열을 검색하지는
+ParseUtils에서는 반복적으로 처음부터 문자열을 검색하지는 않을까?
 
 ---
 
@@ -424,7 +424,7 @@ ParseUtils에서는 반복적으로 처음부터 문자열을 검색하지는
 
 3.2 Apache HttpClient 3.x
 
-3.3 Apache HttpComponet 4.x
+3.3 Apache HttpComponent 4.x
 
 3.4 Jetty HttpClient
 
@@ -434,7 +434,7 @@ ParseUtils에서는 반복적으로 처음부터 문자열을 검색하지는
 
 ### 3.1 Java URLConnection
 
-## 기본  JDK 포함
+## 기본 JDK 포함
 
 - 의존성 추가가 없음.
 - HTTP의 용어와 직관적으로 대응되지는 않음.
@@ -462,7 +462,7 @@ ParseUtils에서는 반복적으로 처음부터 문자열을 검색하지는
 
 ---
 
-### 3.2 Apache HttpComponent 4.x
+### 3.3 Apache HttpComponent 4.x
 
 ## 3.x의 새 얼굴
 
@@ -485,7 +485,7 @@ ParseUtils에서는 반복적으로 처음부터 문자열을 검색하지는
 
 ---
 
-### 3.2 Apache HttpComponent 4.x
+### 3.3 Apache HttpComponent 4.x
 
 ## 3.x의 새 얼굴
 
@@ -522,14 +522,14 @@ public class SingleClientConnManager implements ClientConnectionManager {
 
 ### 3.5 Spring RestTemplate
 
-여러 통신 모듈과 파싱모듈의 추상화 계층.
+여러 통신 모듈과 파싱 모듈의 추상화 계층.
 
-- 통신 모듈에 Apache Http Client 3,4와 URLConnection 사용
-- 파싱 모듈에 Jaxb, Jacksonjson등의 다양한 기본 구현체 제공
+- 통신 모듈에 Apache HttpClient 3, 4와 URLConnection 사용
+- 파싱 모듈에 JAXB, JacksonJson 등의 다양한 기본 구현체 제공
 - 확장 가능
 - Spring Android에서도 제공
   - Android 버전에 따라서 통신 라이브러리를 권장하는 것으로 알아서 선택해줌.
-    - 진저브래드(2.3)전에는 구글에서 Apache HttpComponents 권장
+    - 진저브레드(2.3) 전에는 구글에서 Apache HttpComponents 권장
 
 ---
 
@@ -540,7 +540,7 @@ public class SingleClientConnManager implements ClientConnectionManager {
 - 안전하게
   - 쓰레드 안정성, Timeout, 예외 테스트
 - 효율적으로
-  - Stream활용, Connection pool,  Async 검토
+  - Stream활용, Connection pool, Async 검토
 - 유연하게
   - 역할과 책임 구분, 추상화 계층
 

@@ -81,20 +81,20 @@ public void testSchemeUnknown() throws Exception {
 ### Mock을 쓰기 어려운 기본 프레임워크 구조
 
 - 예: 상위클래스의 메소드를 호출
-  - Activity.getViewById(int), getSystemService(String)
+  - Activity.findViewById(int), getSystemService(String)
 
 ---
 
-### 빈약한 기본 Mock클래스
+### 빈약한 기본 Mock 클래스
 
-- android.test.mock 아래에 MockContext, MockApplication, MockResource 등
+- android.test.mock 아래에 MockContext, MockApplication, MockResources 등
   - UnsupportedOperationException을 던지는 껍데기일 뿐
 - 필요한 동작은 직접 override해서 구현해야 함.
 
 ```java
 static public class MockServiceContext extends MockContext {
-	@Overrride
-	public getSystemService(String name){
+	@Override
+	public Object getSystemService(String name){
 		……
 	}
 }
@@ -104,9 +104,9 @@ static public class MockServiceContext extends MockContext {
 
 ### Instrumentation Test의 높은 난이도
 
-- 예: Activity를 테스트할때 ActivityTestCase, ActivityUnitTestCase, ActivityInstrumentationTestCase2의 세 가지 클래스 중 어느것을 써야할까?
+- 예: Activity를 테스트할 때 ActivityTestCase, ActivityUnitTestCase, ActivityInstrumentationTestCase2의 세 가지 클래스 중 어느 것을 써야 할까?
 - 많은 예외
-  - ActivityUnitTestCase에서 Dialog생성 등에 Event가 전달되면 BadToken Exception이 발생
+  - ActivityUnitTestCase에서 Dialog 생성 등에 Event가 전달되면 BadToken Exception이 발생
   - ActivityInstrumentationTestCase2에서 Dialog 객체를 생성 후 dismiss() 메서드를 호출하지 않으면 leak window Exception이 발생
 
 ---
@@ -122,7 +122,7 @@ static public class MockServiceContext extends MockContext {
 
 ### 느린 테스트 실행
 
-- 한줄을 고쳐도 패키징 -> 설치 -> 실행 싸이클을 거친다
+- 한 줄을 고쳐도 패키징 -> 설치 -> 실행 싸이클을 거친다
 - 가장 치명적
 
 ---
@@ -131,7 +131,7 @@ static public class MockServiceContext extends MockContext {
 
 ---
 
-### Robolecric은?
+### Robolectric은?
 
 ```
 java.lang.RuntimeException: Stub!?
@@ -142,14 +142,14 @@ java.lang.RuntimeException: Stub!?
 
 ---
 
-### Robolecric은?
+### Robolectric은?
 
 - 활발한 Github 프로젝트 : <https://github.com/robolectric/robolectric>
   - 174명의 기여자. Jake Wharton 등 유명 개발자도 참여
   - 꾸준한 발전
     - <http://robolectric.org/release-notes/>
     - Kitkat 이슈 : <https://github.com/robolectric/robolectric/pull/881>
-- 구글에서 1.x버전을 자체 fork한 소스가 Android 소스 저장소에 있음
+- 구글에서 1.x 버전을 자체 fork한 소스가 Android 소스 저장소에 있음
   - <https://android.googlesource.com/platform/external/robolectric/>
 
 ---
@@ -225,7 +225,7 @@ public class ViewParseUtilsMockTest {
 
 #### Mockito를 이용
 
-- View의 기대동작을 Mock API로 지정해야함
+- View의 기대동작을 Mock API로 지정해야 함
 - 'Log.i(..)'같은 Static 호출은 일반적인 Mocking 불가능
   - PowerMock을 쓰면 가능하긴 함
 
@@ -308,11 +308,11 @@ public static void setSdkVersion(int version) {
 
 - Build.VERSION 클래스 정보를 마음대로 설정 가능
   - Robolectric.Reflection.setFinalStaticField(..) 이용
-- Http호출을 하는 클라이언트에서 단말의 정보를 조합해서 userAgent를 생성하는 기능을 테스트할때 유용했음
+- HTTP 호출을 하는 클라이언트에서 단말의 정보를 조합해서 userAgent를 생성하는 기능을 테스트할 때 유용했음
 
 ---
 
-### System서비스의 결과를 원하는 값으로
+### System 서비스의 결과를 원하는 값으로
 
 ```java
 public static void setDeviceId(String deviceId) {
@@ -336,7 +336,7 @@ private static ShadowTelephonyManager getTelManager() {
 - 실제 API 서버를 호출해서 통합테스트해도 좋다
 - 예상되는 호출결과를 고정해서 테스트하기
   - 예외 테스트에 특히 유용
-    - 비정상적인 응답 (예: 서버 점검 중일때 )
+    - 비정상적인 응답 (예: 서버 점검 중일 때 )
     - 앞으로 변화가 예상되는 응답
   - 별도의 파일로 분리해서 관리하면 편리함
     - 편집 용이성
@@ -387,7 +387,7 @@ public class NaverSearchTest {
 
 #### 통합 테스트 사례
 
-- Spring Android RestTemlate을 이용한 네이버 검색 오픈 API
+- Spring Android RestTemplate을 이용한 네이버 검색 오픈 API
 - Robolectric이 없이 그냥 JUnit4만 쓴다면?
 
 ```
@@ -404,7 +404,7 @@ at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:472)
 - [Awaitility](https://github.com/jayway/awaitility)
   - 비동기 호출을 테스트
 - [Mock Http Server](https://github.com/kristofa/mock-http-server)
-  - 가짜 API서버를 쉽게 만듬
+  - 가짜 API 서버를 쉽게 만듦
 
 ---
 
@@ -438,7 +438,7 @@ public void responseShouldBeParsedWithUnknownProperties() throws Exception {
 #### Awaitility + Mock Http Server 활용 사례
 
 - Volley(네트워크 라이브러리)를 활용한 비동기 호출을 테스트
-  - 앞으로 속성이 추가되어도 기존 버전의 파싱메서드가 잘 동작하는지를 검증
+  - 앞으로 속성이 추가되어도 기존 버전의 파싱 메서드가 잘 동작하는지를 검증
 
 ---
 
@@ -510,7 +510,7 @@ assertThat(layout).isVisible()
 	.hasShowDividers(SHOW_DIVIDERS_MIDDLE);
 ```
 
-- View객체에 대한 assert를 편하게 해주는 도우미 라이브러리
+- View 객체에 대한 assert를 편하게 해주는 도우미 라이브러리
 - <https://github.com/square/assertj-android>
 
 ---
@@ -520,12 +520,12 @@ assertThat(layout).isVisible()
 - 문자열, 날짜 처리, 프로토콜 파싱 영역에서 이득이 많다
   - java.lang, java.util , java.io 패키지가 다루는 영역에 우선 집중
   - 특히 예외 상황
-  - UI영역의 테스트에 너무 많은 기대를 걸지는 말자
+  - UI 영역의 테스트에 너무 많은 기대를 걸지는 말자
 - Utility 클래스부터 시작
-- 버전 2.3부터는 실제 Sqlite 구현체를 이용하기 시작
-  - DB관련 테스트도 시도해볼만함
+- 버전 2.3부터는 실제 SQLite 구현체를 이용하기 시작
+  - DB 관련 테스트도 시도해볼 만함
 - 테스트의 이득이 높은 영역을 분리해서 설계하라
-  - 재활용/기능 추가/버그 발견에도 좋은 구조가 될것이다.
+  - 재활용/기능 추가/버그 발견에도 좋은 구조가 될 것이다.
 
 ---
 
@@ -586,7 +586,7 @@ public void testRemoveExpiredCookie() {
 - 유사한 테스트 케이스를 Robolectric으로 작성
 
 ```java
-CookieManager cookieManager = Robolectric.newInstanceOf(CookieManager.class);;
+CookieManager cookieManager = Robolectric.newInstanceOf(CookieManager.class);
 @Test
 public void shouldRemoveExpiredCookie() {
 	cookieManager.setCookie(url, "name=value; Expires=Wed, 11 Jul 2035 10:18:14 GMT");
@@ -597,11 +597,11 @@ public void shouldRemoveExpiredCookie() {
 ```
 
 - 이를 통과시키는 ShadowCookieManager를 구현하여 Pull request
-- Robolectric에 들어갈 코드를 Robolecric으로 검증했음
+- Robolectric에 들어갈 코드를 Robolectric으로 검증했음
 
 ---
 
-### ShawdowProcess 구현
+### ShadowProcess 구현
 
 <https://github.com/robolectric/robolectric/pull/861/>
 
@@ -632,7 +632,7 @@ public void shouldBeTrueWhenThisContextIsForeground(){
 <img src="./travis.png" alt="travis-ci" style="height:110px" />
 
 - <http://robolectric.org/contributor-guidelines/> 참조
-  - Indent에는 탭대신 공백 2칸
+  - Indent에는 탭 대신 공백 2칸
 
 ---
 

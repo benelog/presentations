@@ -1,6 +1,6 @@
 ---
 theme: ../themes/green
-title: 웹 프레임워크의 Web tier 처리방식과 SpringMVC
+title: 웹 프레임워크의 Web tier 처리방식과 Spring MVC
 event: KSUG(한국 스프링 사용자 모임) 세미나
 ---
 
@@ -30,7 +30,7 @@ event: KSUG(한국 스프링 사용자 모임) 세미나
 
 1.4 Django
 
-1.5 Codeigniter
+1.5 CodeIgniter
 
 1.6 Struts2
 
@@ -101,7 +101,7 @@ event: KSUG(한국 스프링 사용자 모임) 세미나
 - View 파일 선택
 - View로 Model 정보 전달
 - 기타 웹에 특화된 처리
-  - Cookie, Session,Header
+  - Cookie, Session, Header
 
 ---
 
@@ -128,7 +128,7 @@ http://www.ksug.org/liquor/list
 …/controllers/liquor_controller.rb
 
 ```ruby
-Class LiquorController < ApplicationController
+class LiquorController < ApplicationController
   def list
   end
 end
@@ -137,7 +137,7 @@ end
 …/config/routers.rb
 
 ```ruby
-ActionController::Routing::Routes.drae do |map|
+ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id'
 end
 ```
@@ -155,9 +155,9 @@ http://www.ksug.org/liquor/list?alcholRate=20
 …/controllers/liquor_controller.rb
 
 ```ruby
-Class LiquorController < ApplicationController
+class LiquorController < ApplicationController
   def list
-    Liquor.findByAlcolRate(params[:alcolRate])
+    Liquor.findByAlcholRate(params[:alcholRate])
   end
 end
 ```
@@ -171,7 +171,7 @@ end
 …/controllers/liquor_controller.rb
 
 ```ruby
-Class LiquorController < ApplicationController
+class LiquorController < ApplicationController
   def edit
     @liquor =Liquor.findById(params[:id])
   end
@@ -208,7 +208,7 @@ def list_page(req):
 …/urls.py
 
 ```python
-Urlpatterns – patterns('',
+urlpatterns = patterns('',
   (r'^liquor/list', liquor_views.list_page
 )
 ```
@@ -226,7 +226,7 @@ http://www.ksug.org/liquor/list?alcholRate=20
 …liquor_views.py
 
 ```python
-def list_page(req, alcolRate):
+def list_page(req, alcholRate):
    alcholRate = req.GET.get('alcholRate')
    …
 ```
@@ -240,7 +240,7 @@ def list_page(req, alcolRate):
 …liquor_views.py
 
 ```python
-def edit_page(req, alcolRate):
+def edit_page(req, alcholRate):
   …
   context= {'liquor':liquor};
   return render_to_response('liquor_edit.html',
@@ -270,7 +270,7 @@ http://www.ksug.org/liquor/list
 application/controllers/liquor.php
 
 ```php
-Class Liquor extends Controller {
+class Liquor extends Controller {
   function list(){
   }
 }
@@ -306,15 +306,15 @@ function list () {
 
 ### 1.5 CodeIgniter
 
-#### VIew 파일 선택 & 모델 전달
+#### View 파일 선택 & 모델 전달
 
 application/controllers/liquor.php
 
 ```php
-Function edit(){
+function edit(){
  …
   $data['liquor'] = $this->db->get('liquor');
-  $this->load->view('liquior_view', $data);
+  $this->load->view('liquor_view', $data);
 }
 ```
 
@@ -380,7 +380,7 @@ Model-driven interceptor를 활용하면 model객체를 한번에 받는 것도 
 
 ---
 
-### 1.5 Struts2
+### 1.6 Struts2
 
 #### View 파일 선택 & 모델 전달
 
@@ -506,7 +506,7 @@ public String list(@PathVariable
 #### Web parameter 전달
 
 - @ModelAttribute : 모델객체를 바로 파라미터로
-- @SessionAttribute : 웹세션에 담겨있는 값을
+- @SessionAttributes : 웹세션에 담겨있는 값을
 - @RequestHeader, @RequestBody
 - WebArgumentResolver
   - Request에서 매핑시키는 로직을 작성
@@ -525,7 +525,7 @@ public String list(@PathVariable
 public String list(@PathVariable
                 int id, Map context){
    Liquor liquor = liquorService.findById(id);
-   context.put("liquor",liquor");
+   context.put("liquor", liquor);
    return "liquorList"; // view 정보
 }
 ```
@@ -566,12 +566,12 @@ public Map list(@RequestParam
                 int id){
    Map context = new HashMap();
    Liquor liquor = liquorService.findById(id);
-   context.put("liquor",liquor");
+   context.put("liquor", liquor);
    return context; // view 정보
 }
 ```
 
-리턴 타입은 String, Map, ModelView, ModelMap, void가 다 가능
+리턴 타입은 String, Map, ModelAndView, ModelMap, void가 다 가능
 
 ---
 
@@ -601,7 +601,7 @@ public Map list(@RequestParam
 
 #### Spring 방식이란?
 
-- Ioc, AOP가 뒷받침하는 객체지향적 모듈 구성
+- IoC, AOP가 뒷받침하는 객체지향적 모듈 구성
 - 프레임워크 자체가 모듈별 책임이 잘 분리된 모범 설계
   - 하위 호환성을 잘 유지하면서 발전
 - 유연함, 확장성, 넓은 선택의 폭
@@ -625,7 +625,7 @@ public Map list(@RequestParam
 
 ### 3.1 Spring programming model
 
-#### Gemfire 에서 Spring Ioc활용 사례
+#### Gemfire 에서 Spring IoC활용 사례
 
 ```java
 public class Phonebook {
@@ -647,7 +647,7 @@ public class Phonebook {
 
 ### 3.1 Spring programming model
 
-#### Gemfire 에서 Spring Ioc활용 사례
+#### Gemfire 에서 Spring IoC활용 사례
 
 테스트 혹은 Local 용 설정
 
@@ -678,7 +678,7 @@ method="getRegion">
 
 - 라이브러리는 개발자 코드에서 호출됨
   - Apache commons
-- 프레임워크은 개발자 코드를 호출
+- 프레임워크는 개발자 코드를 호출
   - 어플리케이션의 구조를 결정, 개발자 코드를 제어
 
 > To me a framework is a way of thinking about a particular family of problems, and code to back it up.
@@ -750,7 +750,7 @@ method="getRegion">
 #### 어떤 방향으로 더 발전할까?
 
 - Cloud 환경을 더 편하게 지원하는 도구
-  - 프레임워크  특화된 정보를 제공하는 모니터링 도구
+  - 프레임워크에 특화된 정보를 제공하는 모니터링 도구
   - 배포 도구
 - 기존 인터페이스를 유지하면서 Cloud를 지원하는 인프라성 모듈
   - 제약된 혹은 분산된 JVM 지원

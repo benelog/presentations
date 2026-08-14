@@ -72,9 +72,9 @@ source: https://www.slideshare.net/benelog/spring-batch-tdd
 - Java 이외의 언어 부분은 검증 비용이 크다
   - SQL, javascript
 - UI 테스트는 어렵다
-  - Java입장에서 html, javascript는 그냥 문자열이다
-  - 실행코드와 검증코드의 거리가 멀어 지기 쉽다
-  - 플래쉬, 브라우저 호환성등까지 검증하려면…
+  - Java 입장에서 html, javascript는 그냥 문자열이다
+  - 실행코드와 검증코드의 거리가 멀어지기 쉽다
+  - 플래쉬, 브라우저 호환성 등까지 검증하려면…
 - 많은 오류는 javascript 같이 검증하기 어려운 곳에서 발생한다.
 
 ---
@@ -109,8 +109,8 @@ source: https://www.slideshare.net/benelog/spring-batch-tdd
   - 덜 기다린다!
 - Java 테스트 코드만으로도 더 많은 영역을 검증
 - Testable한 구조로 만들다 보면
-  - 알아보기 쉬워 지고
-  - 변경에 유연 해짐
+  - 알아보기 쉬워지고
+  - 변경에 유연해짐
 
 - 다양한 조건의 데이터를 쉽게 검증
 
@@ -144,12 +144,12 @@ source: https://www.slideshare.net/benelog/spring-batch-tdd
 
 - 대용량 처리에 적합한 구조
   - Jdbc cursor, Jdbc batchUpdate
-  - Stax, Stream방식의 파일 처리
+  - StAX, Stream 방식의 파일 처리
 - 구조 추상화
 - 이력 관리
 - 이벤트 처리
 
-- 구성요소의 역할이 구분되어 있어서 테스트 코드 짜리에 좋다!
+- 구성요소의 역할이 구분되어 있어서 테스트 코드 짜기에 좋다!
 
 ---
 
@@ -276,7 +276,7 @@ ER 다이어그램:
 
 ```xml
 <job id="ioSampleJob"
-        job-repository="jobRepository >
+        job-repository="jobRepository">
   <step id="step1">
     <tasklet>
       <chunk reader="gasStationDbReader"
@@ -308,7 +308,7 @@ ER 다이어그램:
 
 ### 3.1 JavaConfig
 
-**Xml설정의 단점 보안**
+**XML 설정의 단점 보완**
 
 - @Configuration, @Bean 활용
 - Compile Validation 범위 증가
@@ -337,9 +337,9 @@ ER 다이어그램:
 
 **운영에 도움이 됨**
 
-- 작업 진행상황을 보고 운영환경의 문제  파악을 더 빨리한 경험
+- 작업 진행상황을 보고 운영환경의 문제 파악을 더 빨리한 경험
 - 건수로 데이터 변경 추이 파악
-- Log파일보다 일괄적인 view
+- Log 파일보다 일괄적인 view
 
 ---
 
@@ -348,10 +348,10 @@ ER 다이어그램:
 **Job의 성격에 따라 필요한지 고민**
 
 - 많은 Job이 사용하거나, Commit interval이 짧으면 병목 가능성
-- JobRepository를 정기적으로 삭제하는 배치를 돌리기도함
+- JobRepository를 정기적으로 삭제하는 배치를 돌리기도 함
 - 자주, 짧게 도는 Job에는 큰 이득이 없음
 - MapJobRepository 활용
-  - 테스트,단독 프로세스
+  - 테스트, 단독 프로세스
 - Option이 생겼으면
   - 실패한 건만 기록
   - Asynchronous JobRepository
@@ -363,10 +363,10 @@ ER 다이어그램:
 
 **프레임웍만 쓴다고 다 응용되는 건 아니다.**
 
-- 처음 하는 사람은 Tasklet으로 많이 만듬
+- 처음 하는 사람은 Tasklet으로 많이 만듦
 - 되도록 reader-writer 구조를 응용하는 것이 바람직
   - 이력관리와 테스트 용이성
-  - 어떤 사람에게 배치는 1000라인짜리 메소드하나, 어떤 사람에게는 배치는 Job,Step,Reader, Writer
+  - 어떤 사람에게 배치는 1000라인짜리 메소드 하나, 어떤 사람에게는 배치는 Job, Step, Reader, Writer
 - Transaction 처리를 혼동하는 사람이 많았다.
   - @Transactional을 습관적으로 넣음
   - 특별한 경우가 아니면 Transaction은 Spring Batch에 맡기는 것이 바람직
@@ -382,6 +382,6 @@ ER 다이어그램:
   - 적절한 모듈화가 되어야 가능
 - Spring Batch 기능
   - TDD에 용이한 구조
-  - JavaConfig 를 접목시켜서 접목시켜서 Compile time validation을 높인 설정 가능
+  - JavaConfig를 접목시켜서 Compile time validation을 높인 설정 가능
   - 이력 확인
     - 실행 환경의 상태를 더욱 빨리 파악

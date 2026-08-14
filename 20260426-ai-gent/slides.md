@@ -102,14 +102,14 @@ p { text-align: right; }
 ---
 
 ### 재상봄 기념집 반별 사진 취합
- * 기념집 발간에 들어간 [파일 취합 진도율 리포트](https://docs.google.com/document/d/1o4MaYV7sEi-FBThth-HJCfOrAfD1PY54QgUNL3fVoPA/edit?tab=t.0) 발간 (단과대별 진행율 표시)
+ * 기념집 발간에 들어간 [파일 취합 진도율 리포트](https://docs.google.com/document/d/1o4MaYV7sEi-FBThth-HJCfOrAfD1PY54QgUNL3fVoPA/edit?tab=t.0) 발간 (단과대별 진행률 표시)
     * 출판사에서 원하는 형식에 맞춰졌는지 여부 포함
  * 형식에 맞지 않는 파일명 변환
     * 사진 파일은 {페이지 번호}-{페이지 내 사진 순번}\_설명.jpg
         * 예: 1-1\_대성리MT.jpg
     * 사진이 300 DPI 이상인지 검사
     * 파워포인트 내에 사진 파일에 대한 라벨 삽입
-* 8반 사진 취합 페이지는 AI가 초안에서 정상혁이 수정
+* 8반 사진 취합 페이지는 AI가 초안을 만들고 정상혁이 수정
 
 ---
 
@@ -124,7 +124,7 @@ p { text-align: right; }
 
 ---
 
-![](./pdf-annoation.png)
+![](./pdf-annotation.png)
 
 ---
 
@@ -165,7 +165,7 @@ p { text-align: right; }
 다른 사람이 AI 없이도 내가 한 작업을 할 수 있도록 프로그램화
 
 * [신한은행 모임 통장 내역을 Excel로 다운로드하는 프로그램](https://github.com/yonsei-alumni/bank-sheet)
-    * 통장주가 아니면 엑셀다운로드를 할 수 없는 한계 극복
+    * 통장주가 아니면 엑셀 다운로드를 할 수 없는 한계 극복
 * [기념품 주문 엑셀 파일 형식 변환 프로그램](https://github.com/yonsei-alumni/order-transformer)
     * 아이웹(주문사이트)의 엑셀을 3PL 배송업체의 형식으로
 
