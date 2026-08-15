@@ -7,7 +7,7 @@
 시간 역순(최신 발표가 먼저)으로 정렬. 발표한 행사는 각 `slides.md` headmatter의 `event:` 필드에 기록하고,
 행사 소개 페이지가 남아 있으면 `event_url:` 필드에 적어 행사명에 링크를 건다.
 행사 형태는 `event_type:` (`public` / `private`) 으로 구분한다 — `private` 은 사적인 모임에서 한 발표나
-행사 발표가 아닌 개인 연구 자료라서 [benelog.net 기술 공유 페이지](https://benelog.net/activities/) 동기화 대상에서 빠진다
+행사 발표가 아닌 개인 연구 자료라서 [benelog.net 저술 및 대외 활동 페이지](https://benelog.net/works/) 동기화 대상에서 빠진다
 (`scripts/sync_activities.py`).
 
 | 날짜 | 제목 | 행사 | 소스 | HTML | PDF |

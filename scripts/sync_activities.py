@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""발표 목록을 benelog.net 의 '기술 공유' 페이지(content/activities.md)와 동기화한다.
+"""발표 목록을 benelog.net 의 '저술 및 대외 활동' 페이지(content/works.md)와 동기화한다.
 
 각 `YYYYMMDD-slug/slides.md` 의 headmatter 를 읽어 '## 발표' 섹션의 표를 통째로 다시 만든다.
 
@@ -11,10 +11,10 @@
 `event_type: private` 인 발표(사적인 모임 등)는 대상에서 제외한다.
 
 사용법:
-    python3 scripts/sync_activities.py [--check] [--target <activities.md 경로>]
+    python3 scripts/sync_activities.py [--check] [--target <works.md 경로>]
 
     --check   파일을 고치지 않고 차이만 출력 (동기화 필요하면 exit code 1)
-    --target  기본값은 ../benelog.net/content/activities.md
+    --target  기본값은 ../benelog.net/content/works.md
 """
 import argparse
 import io
@@ -23,7 +23,7 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DEFAULT_TARGET = os.path.join(ROOT, '..', 'benelog.net', 'content', 'activities.md')
+DEFAULT_TARGET = os.path.join(ROOT, '..', 'benelog.net', 'content', 'works.md')
 BASE_URL = 'https://benelog.github.io/presentations'
 
 HEADER = [

@@ -1,6 +1,6 @@
 ---
 allowed-tools: Bash, Read, Edit
-description: 발표 목록을 benelog.net 의 '기술 공유' 페이지(content/activities.md) 발표 표와 동기화한다. 새 발표를 추가했거나 제목·행사 정보를 고친 뒤에 실행한다.
+description: 발표 목록을 benelog.net 의 '저술 및 대외 활동' 페이지(content/works.md) 발표 표와 동기화한다. 새 발표를 추가했거나 제목·행사 정보를 고친 뒤에 실행한다.
 ---
 
 ## Context
@@ -11,7 +11,7 @@ description: 발표 목록을 benelog.net 의 '기술 공유' 페이지(content/
 ## 동기화 규칙
 
 `scripts/sync_activities.py` 가 각 `YYYYMMDD-slug/slides.md` 의 headmatter 를 읽어
-activities.md 의 `## 발표` 섹션 표를 통째로 다시 만든다. 표 외의 내용은 건드리지 않는다.
+works.md 의 `## 발표` 섹션 표를 통째로 다시 만든다. 표 외의 내용은 건드리지 않는다.
 
 | 표의 칼럼 | 출처 |
 |-----------|------|
@@ -41,11 +41,11 @@ source: https://www.slideshare.net/...              # 원본 발표 자료 URL (
 ## Your task
 
 1. 위 `--check` 결과를 확인한다. '이미 동기화되어 있습니다' 면 여기서 끝내고 그 사실만 알린다.
-2. `python3 scripts/sync_activities.py` 를 실행해 `../benelog.net/content/activities.md` 를 갱신한다.
+2. `python3 scripts/sync_activities.py` 를 실행해 `../benelog.net/content/works.md` 를 갱신한다.
 3. `git -C ../benelog.net diff` 로 표 외의 내용이 바뀌지 않았는지 확인한다.
 4. benelog.net 저장소에서 커밋하고 push 한다. **기본 브랜치는 `master`** 다.
    ```bash
-   git -C ../benelog.net add content/activities.md
+   git -C ../benelog.net add content/works.md
    git -C ../benelog.net commit -m "<무엇이 바뀌었는지 한 줄로>"
    git -C ../benelog.net push origin master
    ```
