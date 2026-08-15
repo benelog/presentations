@@ -39,6 +39,7 @@ Slidev 로 옮기기 전의 원본은 `originals/` 에 발표일 기준 이름�
 - 디렉터리 통째로인 원본(reveal.js, remark 로 만든 HTML 자료)은 `originals/YYYYMMDD-slug/`
   — 지금은 삭제된 `benelog/docs` 저장소에서 옮겨온 자료들이다.
   `20140705-goodbye-powerpoint/` 에는 그 발표가 설명하는 빌드 스크립트(`build.gradle`, `start-py.sh` 등)도 함께 두었다.
+  `20140801-robolectric/bookmarker/` 는 그 발표의 예제 안드로이드 프로젝트로, `benelog/bookmarker` 저장소에서 옮겨왔다.
 
 `originals/` 는 숫자로 시작하지 않으므로 `scripts/build.sh` 의 빌드 대상(`[0-9]*/slides.md`)에 잡히지 않는다.
 

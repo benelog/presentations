@@ -220,7 +220,7 @@ public class ViewParseUtilsMockTest {
 }
 ```
 
-( [ViewParseUtilsMockTest.java](https://github.com/benelog/bookmarker/blob/master/src/test/java/helloworld/android/util/ViewParseUtilsMockTest.java) )
+( [ViewParseUtilsMockTest.java](https://github.com/benelog/presentations/blob/main/originals/20140801-robolectric/bookmarker/src/test/java/helloworld/android/util/ViewParseUtilsMockTest.java) )
 
 ---
 
@@ -255,7 +255,7 @@ public void wrongDateFormat(){
 }
 ```
 
-( [ViewParseUtilsTest.java](https://github.com/benelog/bookmarker/blob/master/src/test/java/helloworld/android/util/ViewParseUtilsTest.java) )
+( [ViewParseUtilsTest.java](https://github.com/benelog/presentations/blob/main/originals/20140801-robolectric/bookmarker/src/test/java/helloworld/android/util/ViewParseUtilsTest.java) )
 
 ---
 
@@ -382,7 +382,7 @@ public class NaverSearchTest {
 	}
 ```
 
-( [SearchServiceTest.java](https://github.com/benelog/bookmarker/blob/master/src/test/java/helloworld/android/resttemplate/bookmarker/service/SearchServiceTest.java) )
+( [SearchServiceTest.java](https://github.com/benelog/presentations/blob/main/originals/20140801-robolectric/bookmarker/src/test/java/helloworld/android/resttemplate/bookmarker/service/SearchServiceTest.java) )
 
 ---
 
