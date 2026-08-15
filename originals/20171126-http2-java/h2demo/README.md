@@ -54,8 +54,10 @@ sudo service nginx start
 Tomcat 실행은 아래와 같이 할 수 있다.
 
 ```bash
-# 이 디렉터리를 복사한 뒤, ../h2demo-boot-1.5.7/ 의 파일로 같은 경로를 덮어쓴다
-cp -r ../h2demo-boot-1.5.7/. .
+# 이 디렉터리를 복사한 뒤, ../h2demo-boot-1.5.7/ 의 소스 4개로 같은 경로를 덮어쓴다
+# (그 디렉터리의 README.md 는 설명 문서이므로 제외)
+cp ../h2demo-boot-1.5.7/pom.xml .
+cp -r ../h2demo-boot-1.5.7/src/. src/
 ./mvnw spring-boot:run
 ```
 
