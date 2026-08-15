@@ -1,5 +1,5 @@
 > 이 디렉터리는 삭제된 `benelog/h2demo` 저장소의 master branch 스냅샷이다 (마지막 커밋 `b68d57c`, 2026-08-14).
-> `h2-boot-1.5.7` branch 에만 있던 파일은 옆의 [`../h2demo-boot-1.5.7/`](../h2demo-boot-1.5.7/) 에 따로 보관했다.
+> `h2-boot-1.5.7` branch 에만 있던 파일은 옆의 [`../h2-demo-boot-1.5.7/`](../h2-demo-boot-1.5.7/) 에 따로 보관했다.
 > 원래 저장소를 가리키던 링크는 이 디렉터리 기준의 상대 경로로 바꿨다.
 
 ## 발표자료
@@ -46,22 +46,22 @@ sudo service nginx start
 
 
 ### Spring Boot 1.5.7 + Tomcat 8.5
-- [pom.xml](../h2demo-boot-1.5.7/pom.xml) : 의존성 선언
-- [Http2DemoApplication.java](../h2demo-boot-1.5.7/src/main/java/net/h2demo/Http2DemoApplication.java) : h2 프로토콜 업그레이드 선언
-- [HomeController.java](../h2demo-boot-1.5.7/src/main/java/net/h2demo/HomeController.java) : `/` 주소로 요청이 오면 index.html으로 연결
+- [pom.xml](../h2-demo-boot-1.5.7/pom.xml) : 의존성 선언
+- [Http2DemoApplication.java](../h2-demo-boot-1.5.7/src/main/java/net/h2demo/Http2DemoApplication.java) : h2 프로토콜 업그레이드 선언
+- [HomeController.java](../h2-demo-boot-1.5.7/src/main/java/net/h2demo/HomeController.java) : `/` 주소로 요청이 오면 index.html으로 연결
 - [index.html](src/main/resources/templates/index.html) : 보여줄 페이지
 
 Tomcat 실행은 아래와 같이 할 수 있다.
 
 ```bash
-# 이 디렉터리를 복사한 뒤, ../h2demo-boot-1.5.7/ 의 소스 4개로 같은 경로를 덮어쓴다
+# 이 디렉터리를 복사한 뒤, ../h2-demo-boot-1.5.7/ 의 소스 4개로 같은 경로를 덮어쓴다
 # (그 디렉터리의 README.md 는 설명 문서이므로 제외)
-cp ../h2demo-boot-1.5.7/pom.xml .
-cp -r ../h2demo-boot-1.5.7/src/. src/
+cp ../h2-demo-boot-1.5.7/pom.xml .
+cp -r ../h2-demo-boot-1.5.7/src/. src/
 ./mvnw spring-boot:run
 ```
 
-혹은 IDE에서 [Http2DemoApplication.java](../h2demo-boot-1.5.7/src/main/java/net/h2demo/Http2DemoApplication.java) 을 실행한다.
+혹은 IDE에서 [Http2DemoApplication.java](../h2-demo-boot-1.5.7/src/main/java/net/h2demo/Http2DemoApplication.java) 을 실행한다.
 
 ### 검증
 웹브라우져와 아래 예제로 h2, h2c 연결이 제대로 되었는지 검증할 수 있다.
