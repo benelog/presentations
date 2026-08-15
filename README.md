@@ -19,6 +19,7 @@
 | 2020-05-07 | 엔티티 클래스 설계와 퍼시스턴스 프레임워크 | 우아한형제들 세미나 | [`20200507-entity-design/slides.md`](20200507-entity-design/slides.md) | [보기](https://benelog.github.io/presentations/20200507-entity-design/) | [PDF](https://benelog.github.io/presentations/20200507-entity-design/slides.pdf) |
 | 2017-11-26 | HTTP/2 세대의 Java | [KSUG(한국 스프링 사용자 모임) 세미나](https://www.ksug.org/seminar/20171126/) | [`20171126-http2-java/slides.md`](20171126-http2-java/slides.md) | [보기](https://benelog.github.io/presentations/20171126-http2-java/) | [PDF](https://benelog.github.io/presentations/20171126-http2-java/slides.pdf) |
 | 2017-04-23 | Spring/KSUG에 대한 기억 몇가지 | [Spring Camp 2017](https://springcamp.ksug.org/2017/) | [`20170423-spring-camp-2017/slides.md`](20170423-spring-camp-2017/slides.md) | [보기](https://benelog.github.io/presentations/20170423-spring-camp-2017/) | [PDF](https://benelog.github.io/presentations/20170423-spring-camp-2017/slides.pdf) |
+| 2015-10-22 | 네이버의 오픈소스 프로젝트가 성장한 과정 | 삼성SDS Open IT 세미나 | [`20151022-naver-opensource-growth/slides.md`](20151022-naver-opensource-growth/slides.md) | [보기](https://benelog.github.io/presentations/20151022-naver-opensource-growth/) | [PDF](https://benelog.github.io/presentations/20151022-naver-opensource-growth/slides.pdf) |
 | 2015-05-22 | Java 애플리케이션 트러블 슈팅 사례 & Pinpoint | [제11회 D2 오픈세미나 (Java 애플리케이션 트러블 슈팅 편)](https://d2.naver.com/helloworld/1286587) | [`20150522-java-troubleshooting-pinpoint/slides.md`](20150522-java-troubleshooting-pinpoint/slides.md) | [보기](https://benelog.github.io/presentations/20150522-java-troubleshooting-pinpoint/) | [PDF](https://benelog.github.io/presentations/20150522-java-troubleshooting-pinpoint/slides.pdf) |
 | 2014-11-27 | Spring Batch와 함께 하는 TDD | KSUG(한국 스프링 사용자 모임) 세미나 | [`20141127-spring-batch-tdd/slides.md`](20141127-spring-batch-tdd/slides.md) | [보기](https://benelog.github.io/presentations/20141127-spring-batch-tdd/) | [PDF](https://benelog.github.io/presentations/20141127-spring-batch-tdd/slides.pdf) |
 | 2014-08-01 | Robolectric을 활용한 안드로이드 테스팅 | [제9회 D2 오픈세미나 in 대구](https://d2.naver.com/helloworld/870369) | [`20140801-robolectric/slides.md`](20140801-robolectric/slides.md) | [보기](https://benelog.github.io/presentations/20140801-robolectric/) | [PDF](https://benelog.github.io/presentations/20140801-robolectric/slides.pdf) |
@@ -42,6 +43,8 @@ Slidev 로 옮기기 전의 원본은 `originals/` 에 발표일 기준 이름�
   `20140801-robolectric/bookmarker/` 는 그 발표의 예제 안드로이드 프로젝트로, 지금은 삭제된 `benelog/bookmarker` 저장소에서 옮겨왔다.
   `20171126-http2-java/h2-demo/` 도 그 발표의 데모 프로젝트로, 지금은 삭제된 `benelog/h2demo` 저장소에서 옮겨왔다
   (`h2-demo-boot-1.5.7/` 는 그 저장소의 `h2-boot-1.5.7` branch 에만 있던 파일).
+  `20151022-naver-opensource-growth/` 는 AsciiDoc(slidy) 로 만든 원본과 발표 후 받은 피드백 메모 사진으로,
+  지금은 삭제된 `benelog/external-presentation` 저장소에서 옮겨왔다.
 
 `originals/` 는 숫자로 시작하지 않으므로 `scripts/build.sh` 의 빌드 대상(`[0-9]*/slides.md`)에 잡히지 않는다.
 
