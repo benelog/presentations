@@ -36,7 +36,7 @@ event_type: public
 
 ### 1.1 예제 위치
 
-## SVN, Maven, Eclipse 활용
+#### SVN, Maven, Eclipse 활용
 
 - SVN
   - [https://dev.naver.com/svn/naverapis/trunk/naver-java-client-samples/](https://dev.naver.com/svn/naverapis/trunk/naver-java-client-samples/)
@@ -49,7 +49,7 @@ event_type: public
 
 ### 1.2 공통 모듈
 
-## URL 연결 담당 클래스
+#### URL 연결 담당 클래스
 
 - ResourceConnector.java : GET 요청 공통 interface
 - SimpleConnector.java : JDK의 URLConnection 활용
@@ -60,7 +60,7 @@ event_type: public
 
 ### 1.3 검색 API
 
-## RSS 라이브러리 ROME 활용
+#### RSS 라이브러리 ROME 활용
 
 - SearchApiClient.java
 - SearchApiClientTest.java
@@ -72,7 +72,7 @@ event_type: public
 
 ### 1.3 검색 API
 
-## RSS 라이브러리 ROME 활용
+#### RSS 라이브러리 ROME 활용
 
 - Spring RestTemplate + ROME 활용
   - NaverSearchHttpMessageConverter.java
@@ -83,7 +83,7 @@ event_type: public
 
 ### 1.4 단축 URL API
 
-## JAXB2 활용
+#### JAXB2 활용
 
 - ShortUrlApiClientJaxbImpl.java
 - ShortUrlApiClientJaxbImplTest.java
@@ -95,7 +95,7 @@ event_type: public
 
 ### 1.4 단축 URL API
 
-## JacksonJson Object mapping 활용
+#### JacksonJson Object mapping 활용
 
 - ShortUrlApiClientJsonMapperImpl.java
 - ShortUrlApiClientJsonMapperImplTest.java
@@ -110,7 +110,7 @@ event_type: public
 
 ### 1.4 단축 URL API
 
-## JacksonJson Streaming 활용
+#### JacksonJson Streaming 활용
 
 - LinkProcessorJsonStreamImpl.java
 - LinkProcessorJsonStreamImplTest.java
@@ -135,7 +135,7 @@ event_type: public
 
 ### 2.1 어느 클라이언트 코드
 
-## 무엇을 걱정해야 할까?
+#### 무엇을 걱정해야 할까?
 
 ```java
 public  User findUser(String userId) {
@@ -150,7 +150,7 @@ public  User findUser(String userId) {
 
 ### 2.2 예외에 대비하라
 
-## Timeout을 설정하라
+#### Timeout을 설정하라
 
 - 전체 Application의 스레드 풀을 고갈시킬 수도 있다.
   - (501 error)
@@ -161,7 +161,7 @@ public  User findUser(String userId) {
 
 ### 2.2 예외에 대비하라
 
-## Timeout을 설정하라
+#### Timeout을 설정하라
 
 - JDK URLConnection
 
@@ -178,7 +178,7 @@ public InputStream open(String url) throws IOException {
 
 ### 2.2 예외에 대비하라
 
-## Timeout을 설정하라
+#### Timeout을 설정하라
 
 - Apache HttpClient 3.x
 
@@ -198,7 +198,7 @@ this.httpClient = new HttpClient(connManager);
 
 ### 2.2 예외에 대비하라
 
-## Timeout을 설정하라
+#### Timeout을 설정하라
 
 - Apache HttpComponent 4.x
 
@@ -218,7 +218,7 @@ this.httpClient = client;
 
 ### 2.2 예외에 대비하라
 
-## 예외 상황을 테스트하라
+#### 예외 상황을 테스트하라
 
 - 예외메시지 파싱을 테스트하라.
   - 예외 메시지 파일을 따로 저장해서 테스트
@@ -231,7 +231,7 @@ this.httpClient = client;
 
 ### 2.3 성능을 높이고 메모리를 아껴라
 
-## 불필요한 중간 객체를 생성하지 마라
+#### 불필요한 중간 객체를 생성하지 마라
 
 - 과도한 로깅
 - 파싱 모듈에서도 Stream을 바로 활용해라.
@@ -240,7 +240,7 @@ this.httpClient = client;
 
 ### 2.3 성능을 높이고 메모리를 아껴라
 
-## 명시적으로 DOM을 쓰지 마라
+#### 명시적으로 DOM을 쓰지 마라
 
 - Event based인 SAX에 비해서 비효율적.
 - XStream은 Stream based의 처리
@@ -251,7 +251,7 @@ this.httpClient = client;
 
 ### 2.3 성능을 높이고 메모리를 아껴라
 
-## Connection Pool을 시도해라
+#### Connection Pool을 시도해라
 
 - Apache HttpClient 3.x
   - MultiThreadedHttpConnectionManager 활용
@@ -266,7 +266,7 @@ this.httpClient = client;
 
 ### 2.3 성능을 높이고 메모리를 아껴라
 
-## 여러 API를 함께 쓴다면 병렬 실행을 고려해라
+#### 여러 API를 함께 쓴다면 병렬 실행을 고려해라
 
 - JDK concurrent API (ExecutorService)
 - Apache HttpClient의 HttpAsyncClient
@@ -277,7 +277,7 @@ this.httpClient = client;
 
 ### 2.4 쓰레드 안정성을 늘 의식해라
 
-## 쓰레드 안전하지 않은 객체를 파악하라
+#### 쓰레드 안전하지 않은 객체를 파악하라
 
 - HttpClient 3.x
   - MultiThreadedHttpConnectionManager를 사용하지 않을 때의 HttpClient
@@ -289,7 +289,7 @@ this.httpClient = client;
 
 ### 2.4 쓰레드 안정성을 늘 의식해라
 
-## 쓰레드 안전하지 않은 객체를 파악하라
+#### 쓰레드 안전하지 않은 객체를 파악하라
 
 - JAXB2
   - Marshaller, Unmarshaller
@@ -300,7 +300,7 @@ this.httpClient = client;
 
 ### 2.4 쓰레드 안정성을 늘 의식해라
 
-## 쓰레드 안전한 객체는 매번 생성하지 말라.
+#### 쓰레드 안전한 객체는 매번 생성하지 말라.
 
 - Apache HttpClient 3.x
   - MultiThreadedHttpConnectionManager를 사용할 때의 HttpClient
@@ -312,7 +312,7 @@ this.httpClient = client;
 
 ### 2.4 쓰레드 안정성을 늘 의식해라
 
-## 쓰레드 안전한 객체는 매번 생성하지 말라.
+#### 쓰레드 안전한 객체는 매번 생성하지 말라.
 
 - JAXB2
   - JAXBContext
@@ -323,7 +323,7 @@ this.httpClient = client;
 
 ### 2.4 쓰레드 안정성을 늘 의식해라
 
-## 쓰레드 안전한 객체는 매번 생성하지 말라.
+#### 쓰레드 안전한 객체는 매번 생성하지 말라.
 
 - 사례 : Spring의 RestTemplate을 매번 생성한다면?
   - RestTemplate의 기본 생성자는 StringHttpMessageConverter를 생성
@@ -335,7 +335,7 @@ this.httpClient = client;
 
 ### 2.4 쓰레드 안정성을 늘 의식해라
 
-## 쓰레드 안전한 객체는 매번 생성하지 말라.
+#### 쓰레드 안전한 객체는 매번 생성하지 말라.
 
 - 사례 : Spring의 RestTemplate을 매번 생성한다면?
   - Thread dump
@@ -354,7 +354,7 @@ at org.springframework.http.converter.StringHttpMessageConverter.
 
 ### 2.4 쓰레드 안정성을 늘 의식해라
 
-## 라이브러리를 늘 의심해라
+#### 라이브러리를 늘 의심해라
 
 - 문서에 스레드 안정성에 대한 언급이 없으면 안전하지 않다고 가정해라.
 - 먼저 검색해봐라.
@@ -363,7 +363,7 @@ at org.springframework.http.converter.StringHttpMessageConverter.
 
 ### 2.4 쓰레드 안정성을 늘 의식해라
 
-## 라이브러리를 늘 의심해라
+#### 라이브러리를 늘 의심해라
 
 - 사례 : XStream 1.3.1의 버그
   - 'Infinite loop due to unsafe collection usage'
@@ -377,7 +377,7 @@ at org.springframework.http.converter.StringHttpMessageConverter.
 
 ### 2.5 모듈별 역할과 책임을 구분하라
 
-## 추상화 계층을 활용해라
+#### 추상화 계층을 활용해라
 
 - 구현체를 갈아 끼울 수 있는 계층 활용
 - 예) Spring OXM
@@ -388,7 +388,7 @@ at org.springframework.http.converter.StringHttpMessageConverter.
 
 ### 2.5 모듈별 역할과 책임을 구분하라
 
-## 통신모듈과 파싱 모듈을 구분해서 구현해라.
+#### 통신모듈과 파싱 모듈을 구분해서 구현해라.
 
 - 변화 대응 속도가 빨라진다.
   - 예) 통신 모듈 사용 라이브러리를 바꿀 때.
@@ -400,7 +400,7 @@ at org.springframework.http.converter.StringHttpMessageConverter.
 
 ### 2.6 다시 보는 어느 클라이언트 코드
 
-## 무엇을 걱정해야 할까?
+#### 무엇을 걱정해야 할까?
 
 ```java
 public  User findUser(String userId) {
@@ -435,7 +435,7 @@ ParseUtils에서는 반복적으로 처음부터 문자열을 검색하지는 �
 
 ### 3.1 Java URLConnection
 
-## 기본 JDK 포함
+#### 기본 JDK 포함
 
 - 의존성 추가가 없음.
 - HTTP의 용어와 직관적으로 대응되지는 않음.
@@ -448,7 +448,7 @@ ParseUtils에서는 반복적으로 처음부터 문자열을 검색하지는 �
 
 ### 3.2 Apache HttpClient 3.x
 
-## 많이 쓰였던 라이브러리
+#### 많이 쓰였던 라이브러리
 
 - 레거시 코드에 많이 보임
 - Dependency
@@ -465,7 +465,7 @@ ParseUtils에서는 반복적으로 처음부터 문자열을 검색하지는 �
 
 ### 3.3 Apache HttpComponent 4.x
 
-## 3.x의 새 얼굴
+#### 3.x의 새 얼굴
 
 - API 대거 개선. 3.x대와 호환성이 없음
 - Dependency
@@ -488,7 +488,7 @@ ParseUtils에서는 반복적으로 처음부터 문자열을 검색하지는 �
 
 ### 3.3 Apache HttpComponent 4.x
 
-## 3.x의 새 얼굴
+#### 3.x의 새 얼굴
 
 - 명확한 Thread safety 문서화
 
@@ -507,7 +507,7 @@ public class SingleClientConnManager implements ClientConnectionManager {
 
 ### 3.4 Jetty HttpClient
 
-## Async 실행을 기본적으로 지원
+#### Async 실행을 기본적으로 지원
 
 - dependency
 
@@ -536,7 +536,7 @@ public class SingleClientConnManager implements ClientConnectionManager {
 
 ### 정리
 
-## 검증된 라이브러리로 안전하게, 효율적으로, 유연하게
+#### 검증된 라이브러리로 안전하게, 효율적으로, 유연하게
 
 - 안전하게
   - 쓰레드 안정성, Timeout, 예외 테스트
@@ -549,7 +549,7 @@ public class SingleClientConnManager implements ClientConnectionManager {
 
 ### 정리
 
-## 검증된 라이브러리로 안전하게, 효율적으로, 유연하게
+#### 검증된 라이브러리로 안전하게, 효율적으로, 유연하게
 
 - 추천 라이브러리
   - Http Component 4.x, Jetty HttpClient

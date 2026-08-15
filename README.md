@@ -10,8 +10,8 @@
 행사 발표가 아닌 개인 연구 자료라서 [benelog.net 기술 공유 페이지](https://benelog.net/activities/) 동기화 대상에서 빠진다
 (`scripts/sync_activities.py`).
 
-| 날짜 | 제목 | 행사 | 소스 | 슬라이드 | PDF |
-|------|------|------|------|---------|-----|
+| 날짜 | 제목 | 행사 | 소스 | HTML | PDF |
+|------|------|------|------|------|-----|
 | 2026-05-28 | 25년 전의 진로 선택과 AI 시대의 변화 | 연세대학교 응용통계학과 신입생 세미나 | [`20260528-yonsei-stats-rc101/slides.md`](20260528-yonsei-stats-rc101/slides.md) | [보기](https://benelog.github.io/presentations/20260528-yonsei-stats-rc101/) | [PDF](https://benelog.github.io/presentations/20260528-yonsei-stats-rc101/slides.pdf) |
 | 2026-04-26 | AI agent에게 개인적인 일 시키기 | 대학 동창 모임 | [`20260426-ai-gent/slides.md`](20260426-ai-gent/slides.md) | [보기](https://benelog.github.io/presentations/20260426-ai-gent/) | [PDF](https://benelog.github.io/presentations/20260426-ai-gent/slides.pdf) |
 | 2022-04-13 | 컴퓨터 프로그래밍과 진로 | 연세대학교 응용통계학과 신입생 세미나 | [`20220413-yonsei-stats-rc101/slides.md`](20220413-yonsei-stats-rc101/slides.md) | [보기](https://benelog.github.io/presentations/20220413-yonsei-stats-rc101/) | [PDF](https://benelog.github.io/presentations/20220413-yonsei-stats-rc101/slides.pdf) |
