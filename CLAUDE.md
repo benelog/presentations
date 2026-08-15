@@ -44,5 +44,6 @@ title: 발표 제목
 - **한글 typo 보존.** 컨텐츠 편집과 typo 교정은 별도 커밋으로.
 - **`dist/` 는 빌드 산출물.** 커밋하지 않는다 (`.gitignore` 처리됨).
 - **새 발표는 `YYYYMMDD-slug/` 패턴으로.** `build.sh` 가 이 패턴(`[0-9]*/slides.md`)으로 자동 인식한다.
+- **원본은 `originals/` 에 발표일 이름으로.** 파일 하나면 `originals/YYYYMMDD-slug.pptx`, 디렉터리 통째면 `originals/YYYYMMDD-slug/` (reveal.js·remark 자료). 숫자로 시작하지 않아 빌드 대상에서 빠진다.
 - **테마는 상대 경로 참조.** Slidev 는 entry 파일 디렉터리를 루트로 삼으므로 headmatter 에 `theme: ../themes/green`.
 - **이전에는 Marp 로 빌드했고, 그 전에는 Google Slides API (`gws` CLI) 로 관리했음.** Marp 테마(`themes/green.css`)와 `gws` 관련 파일은 제거됨.
