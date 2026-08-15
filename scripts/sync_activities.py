@@ -3,10 +3,10 @@
 
 각 `YYYYMMDD-slug/slides.md` 의 headmatter 를 읽어 '## 발표' 섹션의 표를 통째로 다시 만든다.
 
-  발표 날짜 : 디렉터리명 앞 8자리
-  발표 제목 : 슬라이드의 첫 `# ` 제목 (랜딩 페이지와 같은 기준)
-  행사      : `event:` — `event_url:` 이 있으면 행사 소개 페이지로 링크
-  PDF       : 배포된 slides.pdf
+  발표 날짜      : 디렉터리명 앞 8자리
+  행사           : `event:` — `event_url:` 이 있으면 행사 소개 페이지로 링크
+  발표 자료(HTML): 슬라이드의 첫 `# ` 제목 (랜딩 페이지와 같은 기준) 을 배포된 슬라이드로 링크
+  PDF            : 배포된 slides.pdf
 
 `event_type: private` 인 발표(사적인 모임 등)는 대상에서 제외한다.
 
@@ -27,8 +27,8 @@ DEFAULT_TARGET = os.path.join(ROOT, '..', 'benelog.net', 'content', 'activities.
 BASE_URL = 'https://benelog.github.io/presentations'
 
 HEADER = [
-    '| 발표 날짜 | 발표 제목 | 행사 | PDF |',
-    '|-----------|-----------|------|-----|',
+    '| 발표 날짜 | 행사 | 발표 자료(HTML) | PDF |',
+    '|-----------|------|-----------------|-----|',
 ]
 
 
@@ -69,8 +69,8 @@ def render_rows(decks):
     rows = []
     for d in decks:
         event = '[%s](%s)' % (d['event'], d['event_url']) if d['event_url'] else d['event']
-        rows.append('| %s | [%s](%s/%s/) | %s | [다운로드](%s/%s/slides.pdf) |'
-                    % (d['date'], d['title'], BASE_URL, d['dir'], event, BASE_URL, d['dir']))
+        rows.append('| %s | %s | [%s](%s/%s/) | [다운로드](%s/%s/slides.pdf) |'
+                    % (d['date'], event, d['title'], BASE_URL, d['dir'], BASE_URL, d['dir']))
     return rows
 
 
