@@ -64,13 +64,13 @@ return results;
 ### 1. `RowMapperResultSetExtractor`
 
 - List의 아이템 개수를 모를 때에도 LinkedList 대신 ArrayList로 변경
-  - 받아 쓰는 쪽에서 List.get(i)로 접근하는 경우가 더 많이 때문에 바꾼 것으로 추정됨. `	1q	`
+  - 받아 쓰는 쪽에서 List.get(i)로 접근하는 경우가 더 많기 때문에 바꾼 것으로 추정됨.
 
 ---
 
 ### 2. AbstractCachingViewResolver
 
-- ConcurrentHash과 LinkedHashMap을 함께 사용하여 Thread safe한 LRU Cache 구현
+- ConcurrentHashMap과 LinkedHashMap을 함께 사용하여 Thread safe한 LRU Cache 구현
   - LinkedHashMap.removeEldestEntry를 override
 - https://github.com/spring-projects/spring-framework/commit/06c6cbb6b92
 
@@ -101,7 +101,7 @@ private final Map<Object, View> viewCreationCache =
 
 ---
 
-### 3. `ObjectUtils.nullSafeEqauls()` 관련 최적화
+### 3. `ObjectUtils.nullSafeEquals()` 관련 최적화
 
 - https://github.com/spring-projects/spring-framework/pull/1076/commits
   - 해당 메서드가 굉장히 자주 호출됨.
@@ -197,7 +197,7 @@ http://stackoverflow.com/questions/26014943/serialize-only-mentioned-fields-in-s
 - 현 MS, 구 [네이버](http://recruit.navercorp.com/naver/job/list/developer) 소속 개발자
 - [Spring-Test-MVC 프로젝트 소개](http://d2.naver.com/helloworld/1341)
   - [StatusResultMatchers](https://github.com/spring-projects/spring-framework/blob/master/spring-test/src/main/java/org/springframework/test/web/servlet/result/StatusResultMatchers.java#L33)
-  - Spring Test MVC에 프로젝트에 기여.
+  - Spring Test MVC 프로젝트에 기여.
   - Spring framework 3.2에 정식 포함됨
 
 ---
@@ -241,7 +241,7 @@ http://stackoverflow.com/questions/26014943/serialize-only-mentioned-fields-in-s
 
 - [Spring Batch 내부에 Enum에 명시되지 않은 DB를 JobRepository 로 쓸 수 없음](https://jira.spring.io/browse/BATCH-2175)
   - [이를 우회하는 PR 날림](https://github.com/spring-projects/spring-batch/pull/277)
-  - PR는 반영되지 않음. 더 나은 방법으로 Spring Batch의 리더 Michael Minella가 해결해 줌
+  - PR은 반영되지 않음. 더 나은 방법으로 Spring Batch의 리더 Michael Minella가 해결해 줌
   - 3.0에 반영되었으나 친절하게 2.2.x에도 Backport patch해 주심.
 
 ---

@@ -26,7 +26,7 @@ image: ./jump-1920.jpg
 - 우분투에서 작업하기가 어렵다
   - LibreOffice, KingOffice의 한계
     - 호환성이 완벽하지 않다
-    - 사용성이 PowerPoint에 뭇 미친다
+    - 사용성이 PowerPoint에 못 미친다
 - 공통 작업이 어렵다
   - 두 명이 동시에 파일을 고치면 합칠 때 괴롭다
 - 문서간의 붙여넣기가 깔끔하게 안 된다.
@@ -71,13 +71,13 @@ image: ./jump-1920.jpg
 
 ### Html5 템플릿
 
-- Goole
+- Google
   - <http://code.google.com/p/html5slides/>
   - <https://code.google.com/p/io-2012-slides/>
   - markdown을 HTML로 변환하는 스크립트 제공
 - Mozilla : <https://github.com/codepo8/mozilla-presentation-templates>
 - <http://slides.html5rocks.com>
-- 나만의 위한 템플릿은 이를 참고로 따로 만들어야함.
+- 나만을 위한 템플릿은 이를 참고로 따로 만들어야함.
 
 ---
 
@@ -87,7 +87,7 @@ image: ./jump-1920.jpg
 - impress.js : <http://bartaz.github.io/impress.js>
 - deck.js : <https://github.com/imakewebthings/deck.js>
 - shower : <https://github.com/shower/shower>
-- 빌드 없이 바로 브라우져에서 결과 확인
+- 빌드 없이 바로 브라우저에서 결과 확인
 - 전환효과, 화면크기, 테마 등 추상화된 커스터마이징 지점
 
 ---
@@ -102,7 +102,7 @@ image: ./jump-1920.jpg
   - <http://prezi.com/>
   - <http://slides.com/> : reveal.js 기반
   - <https://swipe.to/>
-- 내부 자료를 올리면 보안담당자에게 혼날것 같다
+- 내부 자료를 올리면 보안담당자에게 혼날 것 같다
 
 ---
 
@@ -204,7 +204,7 @@ image: ./jump-1920.jpg
 
 ### 결론
 
-- Reveals.js가 내가 쓰려는 용도에 맞다
+- reveal.js가 내가 쓰려는 용도에 맞다
   - 배치가 단순한 목록 위주의 장표에는 충분
   - Markdown 지원
   - 발표자 노트 등 풍부한 부가 기능
@@ -220,7 +220,7 @@ image: ./jump-1920.jpg
 
 ### 프레임워크 자원 읽기
 
-프로젝트를 복사하기 귀찮다면 데모페이지의 자원을 읽도록 선언할수도 있음
+프로젝트를 복사하기 귀찮다면 데모페이지의 자원을 읽도록 선언할 수도 있음
 
 ```html
 <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/reveal.min.css">
@@ -266,7 +266,7 @@ Reveal.initialize({
 
 - 구분자 지정 예
   - 슬라이드 사이는 "---"
-  - 서브 슬라이브 사이는 "--"
+  - 서브 슬라이드 사이는 "--"
 - dev 브랜치에서는 'data-separator-vertical' 이름을 쓴다
   - 2014년 7월 4일 시점 기준
   - 2.7.3 까지는 'data-vertical'이라는 속성명 이용
@@ -434,10 +434,10 @@ gradle publishGhPages
 
 - 만족스러운 내용 편집 과정
   - 본문은 Markdown으로 작성해서 내용에 집중할 수 있었다
-  - 슬라이드 내용을 재배치 할때 깔끔한 Copy & Paste
+  - 슬라이드 내용을 재배치할 때 깔끔한 Copy & Paste
   - 슬라이드를 나눌 때도 "---"등의 구분자를 넣는 작업으로 끝
 - 효율성을 높이기 위해 고민이 계속 필요하다
-  - HTML + Markdown down의 적절한 역할분담
+  - HTML + Markdown의 적절한 역할분담
     - 배경 이미지, 정렬 기준이 다른 페이지가 중간에 들어갈 경우 Markdown만으로 해결하기에는 어렵다
 
 ---
@@ -455,7 +455,7 @@ gradle publishGhPages
 - 이 발표 자료 예제 : <http://github.com/benelog/docs>
   - [슬라이드 내용 Markdown 파일](https://github.com/benelog/docs/blob/master/content/goodbye-powerpoint/slides.md)
   - [Gradle 스크립트](https://github.com/benelog/docs/blob/master/build.gradle)
-  - [Python로 서버 실행 + 웹브라우저 열기](https://github.com/benelog/docs/blob/master/start-py.sh)
+  - [Python으로 서버 실행 + 웹브라우저 열기](https://github.com/benelog/docs/blob/master/start-py.sh)
 - Reveal.js 강의
   - 생활코딩의 <http://opentutorials.org/module/390/4016>
   - <http://htmlcheats.com/reveal-js/reveal-js-tutorial-reveal-js-for-beginners/>
