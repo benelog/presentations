@@ -660,6 +660,12 @@ public class Phonebook {
 </bean>
 ```
 
+---
+
+### 3.1 Spring programming model
+
+#### Gemfire 에서 Spring IoC활용 사례
+
 실제 운영설정
 
 ```xml

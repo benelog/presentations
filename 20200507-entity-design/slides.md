@@ -141,6 +141,13 @@ public class Application extends WebMvcConfigurerAdapter {
             <th>생성자</th>
             <th>이메일</th>
         </tr>
+```
+
+---
+
+### `repos.jsp` (이어서)
+
+```html
         <c:forEach var="item" items="${repos}">
         <tr>
             <td>${item.name}</td>

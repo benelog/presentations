@@ -73,6 +73,10 @@ public String user(@RequestParam String name){
 
 Debug가 false라면 제대로 동작하지 않는다
 
+---
+
+### 관례를 고려하지 않은 컴파일 옵션 변경
+
 ```xml
 <plugins>
     <plugin>
@@ -173,6 +177,10 @@ URI template 활용 (Spring 3.1 이상)
 ```java
 return "redirect:form.html?entityId={entityId}";
 ```
+
+---
+
+### View의 Cache를 의식하지 않은 ViewName
 
 RedirectAttributes (Spring 3.1 이상)
 
@@ -585,7 +593,13 @@ public void deleteUser(String id) {
 public @interface OrderTx {
 
 }
+```
 
+---
+
+### Annotation의 속성선언을 매번 반복
+
+```java
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Transactional("account")

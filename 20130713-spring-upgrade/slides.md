@@ -152,6 +152,10 @@ public interface WebArgumentResolver {
 }
 ```
 
+---
+
+### ArgumentResolver
+
 - MethodArgumentResolver
 
 ```java
@@ -278,6 +282,11 @@ public String onPost(RedirectAttributes attrs) {
 }
 ```
 
+---
+
+### ViewResolver의 Cache
+
+- 3.1의 이후 해결책
   - URI Template
 
 ```java
@@ -399,10 +408,23 @@ public class HomeMvcTest {
 	private WebApplicationContext wac;
 
 	private MockMvc mvc;
+```
 
+---
+
+### MVC Test
+
+```java
 	@Before
 	public void setup() {
 		this.mvc = webAppContextSetup(this.wac).build();
+	}
+
+	@Test
+	public void home() throws Exception {
+	    mvc.perform(get("/"))
+		   .andExpect(status().isOk())
+		   .andExpect(view().name("home"));
 	}
 ```
 
@@ -411,13 +433,6 @@ public class HomeMvcTest {
 ### MVC Test
 
 ```java
-	@Test
-	public void home() throws Exception {
-	    mvc.perform(get("/"))
-		   .andExpect(status().isOk())
-		   .andExpect(view().name("home"));
-	}
-
 	@Test
 	public void imageJson() throws Exception {
 	    mvc.perform(get("/viewImage/cloud.json"))

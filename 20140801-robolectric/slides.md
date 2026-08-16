@@ -165,6 +165,13 @@ public class ViewParseUtils {
 		String dateString = view.getText().toString();
 
 		Calendar inputDate = Calendar.getInstance();
+```
+
+---
+
+### 왜 유용한가?
+
+```java
 		try {
 			inputDate.setTime(dateFormat.parse(dateString));
 		} catch (ParseException e) {
@@ -247,6 +254,13 @@ public void strangeButValidDate(){
 	Calendar parsed = ViewParseUtils.parseDate(input, format);
 	assertDate(parsed, 2014, 1, 3);
 }
+```
+
+---
+
+#### Robolectric을 이용
+
+```java
 @Test
 public void wrongDateFormat(){
 	input.setText("2013/5/3");
@@ -456,7 +470,13 @@ public class PixelUtilsTest {
 		ShadowLog.stream = System.out;
 		this.context = Robolectric.application;
 	}
+```
 
+---
+
+### DisplayMetricsDensity
+
+```java
 	@Test
 	public void shouldGetDpFromPixel(){
 		Robolectric.setDisplayMetricsDensity(1.5f);
@@ -488,7 +508,13 @@ public void shouldChangeScreenBrightness() {
 
 	assertThat(lp.screenBrightness, is(brightness));
 }
+```
 
+---
+
+### View 의존 테스트
+
+```java
 private <T extends Activity> T createActivity(Class<T> activityClass) {
 	ActivityController<T> controller = Robolectric.buildActivity(activityClass);
 	controller.create();
@@ -569,7 +595,13 @@ public void setUp() {
 	cookieManager = CookieManager.getInstance();
 	cookieManager.removeAllCookie();
 }
+```
 
+---
+
+### ShadowCookieManager 재구현
+
+```java
 public void testRemoveExpiredCookie() {
 	cookieManager.setCookie(url, "name=value; Expires=Wed, 11 Jul 2035 10:18:14 GMT");
 	cookieManager.setCookie(url, "name2=value2; Expires=Wed, 13 Jul 2011 10:18:14 GMT");

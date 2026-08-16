@@ -407,6 +407,13 @@ buildscript {
     classpath 'org.ajoberstar:gradle-git:0.6.3'
   }
 }
+```
+
+---
+
+### Github Pages로 발행
+
+```groovy
 apply plugin: 'github-pages'
 githubPages {
   repoUri = 'git@github.com:benelog/docs.git'
