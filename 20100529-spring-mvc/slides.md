@@ -635,14 +635,11 @@ public class Phonebook {
   public String getPhoneNumber(String name) {
     return phoneNumbersByName.get(name);
   }
-  public void setPhoneNumber(String name,
-                       String phoneNumber) {
+  public void setPhoneNumber(String name, String phoneNumber) {
     phoneNumbersByName.put(name, phoneNumber);
   }
 }
 ```
-
-[http://community.gemstone.com/display/gemfire/Integrating+GemFire+with+the+Spring+IoC+Container](http://community.gemstone.com/display/gemfire/Integrating+GemFire+with+the+Spring+IoC+Container)
 
 ---
 
