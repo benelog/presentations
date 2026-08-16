@@ -119,10 +119,25 @@ GitHub Pages 는 SPA rewrite 를 지원하지 않아 history 모드에서는 `/2
 
 - `themes/green/styles/green.css` — 슬라이드 캔버스/타이포그래피 전체 스타일 (`.slidev-layout` 기준)
 - `themes/green/global-top.vue` — 우하단 페이지 번호 (Marp의 `paginate: true` 대체)
-- `themes/green/setup/shiki.ts` — 코드 하이라이트 테마 (one-dark-pro)
+- `themes/green/global-bottom.vue` — 코드 블럭 세로 맞춤 (아래 참고)
+- `themes/green/setup/shiki.ts` — 코드 하이라이트 테마 (one-dark-pro) + 코드 블럭 폭 측정
 - `themes/green/package.json` — `slidev.defaults` 로 `canvasWidth: 1280` (16:9, 1280×720) 지정
 
 레이아웃은 Slidev 내장 레이아웃(`image`, `image-right`, `two-cols` 등)을 그대로 쓸 수 있다.
 새 테마 추가: `themes/foo/` 디렉터리를 만들고 headmatter에서 `theme: ../themes/foo` 로 참조.
+
+### 코드 블럭 크기 자동 맞춤
+
+코드 블럭은 고정 크기가 아니라 **장표마다 들어갈 수 있는 최대 크기**로 렌더된다. 최대 24px(본문 26px), 최소 12px.
+
+- **가로** — `setup/shiki.ts` 가 블럭의 최장 줄 길이를 모노스페이스 칸 수로 세어 `--code-cols` 로 `<pre>` 에 박아준다
+  (탭은 4칸, 한글·CJK 는 2칸). `green.css` 가 이 값으로 폰트 크기를 계산하므로 긴 줄도 잘리지 않는다.
+- **세로** — 남는 높이는 나머지 요소들의 높이에 달려 있어서 CSS 로는 알 수 없다. `global-bottom.vue` 가 렌더 후
+  실제로 측정해서, 장표가 넘치면 그 장표의 코드 블럭 전체를 `--code-scale` 로 함께 줄인다.
+
+Slidev 가 `.slidev-code` 의 font-size/padding 을 `!important` 로 지정하므로, 코드 크기 조정은 반드시
+`--slidev-code-*` 변수를 통해야 한다. `pre { font-size: ... }` 같은 선언은 먹지 않는다.
+
+`npm run check` 는 세로 잘림만 본다. 테마의 코드 관련 값을 건드렸다면 가로 잘림도 함께 확인할 것.
 
 PDF 출력 시 headless Chromium 이 Google Fonts 에서 폰트를 fetch 하므로 시스템에 한글 폰트가 없어도 깨지지 않는다.

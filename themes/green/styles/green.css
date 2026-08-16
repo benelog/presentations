@@ -19,6 +19,14 @@
   --code-bg:      #f1f3f5;       /* blog inline-code bg */
   --rule:         rgba(8, 8, 8, 0.10);
   --rule-strong:  rgba(8, 8, 8, 0.20);
+
+  /* Code block auto-fit. Canvas is 1280×720 with 84px side / 64+72px top-bottom
+     padding, so a full-width block has 1112px to work with. */
+  --code-size-max:  24px;    /* ceiling — reads next to the 26px body text */
+  --code-size-min:  12px;    /* floor — never smaller than Slidev's default */
+  --code-fit-width: 1108px;  /* 1112px column − 4px rule */
+  --code-pad-x:     0.95em;  /* side padding; the 1.9 in the fit is its two sides */
+  --code-advance:   0.62;    /* JetBrains Mono advance width, in em */
 }
 
 /* ── Slide canvas ─────────────────────────────────────────────────────── */
@@ -176,17 +184,41 @@
   padding: 0.08em 0.4em;
   border-radius: 3px;
 }
-.slidev-layout pre {
+/* Slidev's own `.slidev-code` rule sets font-size/padding/line-height with
+   !important, so every fenced-block decision has to be made through these
+   variables rather than a bare `pre` selector. They are declared on the block
+   itself, not on the layout, so `--code-cols` resolves per block. */
+.slidev-layout .slidev-code {
+  --slidev-code-font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  --slidev-code-line-height: 1.5;
+  --slidev-code-padding: 0.7em var(--code-pad-x);
+  --slidev-code-radius: 6px;
+
+  /* Each block is set as large as it can be while keeping its longest line
+     unwrapped, capped so code never outgrows the prose around it. Slides that
+     still run long are scaled down as a whole by `--code-scale`, which
+     global-bottom.vue measures. `--code-cols` comes from setup/shiki.ts; the
+     fallback covers a <pre> that Shiki did not render. */
+  --slidev-code-font-size: max(
+    var(--code-size-min),
+    calc(
+      min(
+        var(--code-size-max),
+        calc(var(--code-fit-width) / (var(--code-cols, 80) * var(--code-advance) + 1.9))
+      ) * var(--code-scale, 1)
+    )
+  );
+
+  /* Padding and margin are in em so a block scaled to the floor takes up the
+     same room it did before auto-fit, keeping dense slides intact. */
+  margin: 0.55em 0;
   background: #1f2329 !important;
   color: #ece6d6;
-  margin: 0.4em 0;
-  padding: 1em 1.25em;
-  border-radius: 6px;
   border-left: 4px solid var(--accent);
-  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
-  font-size: 0.78em;
-  line-height: 1.55;
-  overflow-x: auto;
+  tab-size: 4;
+}
+.slidev-layout .slidev-code-wrapper {
+  --slidev-code-margin: 0;
 }
 .slidev-layout pre code {
   background: transparent;
