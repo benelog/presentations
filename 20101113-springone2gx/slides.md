@@ -612,6 +612,12 @@ public class ContactView implements IContactView {
   public ContactView(Composite parent) {
 ```
 
+---
+
+### 3.1 지난 10년
+
+**다른 영역에서의 Dependency Injection**
+
 - RoboGuice (Android)
 
 ```java
