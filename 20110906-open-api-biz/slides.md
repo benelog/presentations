@@ -28,17 +28,6 @@ source: https://cafe.naver.com/openapibiz
 
 ---
 
-### 강사 소개
-
-#### 나해빈
-
-- NHN 생산성혁신랩 과장
-- 생산성 향상 도구 개발/연구, 개발자 교육
-- Email : haebin.na@nhn.com
-- Blog : [http://haebin.tumblr.com/](http://haebin.tumblr.com/)
-
----
-
 ### NHN 생산성혁신랩
 
 - 내부/외부 개발자 지원 조직
@@ -1761,9 +1750,3 @@ access_secret값은 암호화하는데 사용하는 값이고 request 요청에 
 
 참고로... access_key값은 request을 보내는 signature에 포함이 되지만 이는 암호화되어 포함된 것이라
 일반적으로 노출되지 않습니다"
-
----
-
-### 카페
-
-[https://cafe.naver.com/openapibiz](https://cafe.naver.com/openapibiz)
