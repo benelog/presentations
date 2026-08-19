@@ -92,7 +92,7 @@ source: https://cafe.naver.com/openapibiz
 
 ---
 
-### 1교시. Open API의 개념
+## 1교시. Open API의 개념
 
 - 09:00 ~ 09:10 : 강사 소개, 카페 가입 안내, 과정 소개, 참고자료 소개
 - 09:10 ~ 09:20 : 수강생 질문, 강의 진행 상의 요구사항 파악
@@ -302,7 +302,7 @@ Service Level Agreement
 
 ---
 
-### 2교시. Open API와 매쉬업 사례
+## 2교시. Open API와 매쉬업 사례
 
 - 10:00 ~ 10:10 : 질문과 토론
 - 10:10 ~ 10:20 : Open API 사례. 국내, 국외 사례 사이트
@@ -428,7 +428,7 @@ yahoo pipe
 
 ---
 
-### 3교시. Open API와 관련된 스펙(1)
+## 3교시. Open API와 관련된 스펙(1)
 
 11:00 ~ 11:50
 
@@ -440,7 +440,7 @@ yahoo pipe
 
 ---
 
-### 4교시. Open API와 관련된 스펙(2)
+## 4교시. Open API와 관련된 스펙(2)
 
 13:00 ~ 13:50
 
@@ -646,7 +646,7 @@ Micro-format
 
 ---
 
-### 5교시. 개발자 소통
+## 5교시. 개발자 소통
 
 외부 개발자들의 지원방안을 정리해봅니다.
 주로 [http://dna.daum.net/ko/developer-support-handbook/](http://dna.daum.net/ko/developer-support-handbook/) 의 내용을 참조하고,
@@ -767,7 +767,7 @@ Google 지도 API
 
 ---
 
-### 6교시. 보안과 인증
+## 6교시. 보안과 인증
 
 Open API provider 개발에서 감안해야 할 보인지침과 암호화, 인증방식에 대해서 알아봅니다.
 프로젝트의 보안 기술의 적용 정책수립에 도움이 되는 참고정보를 얻도록 합니다.
@@ -960,11 +960,15 @@ HMAC = Hashed MAC
 
 ---
 
-### 7교시. 운영과 모니터링
+## 7교시. 운영과 모니터링
 
 운영을 하면서 생길만한 이슈에 대비하는 정책과 중요한 모니터링 항목을 도출 할 수 있다.
 
-전사 차원의 공통 기반 : 공통 관심사 도출
+---
+
+### 전사 차원의 공통 기반
+
+공통 관심사 도출
 
 - 인증
 - 접근 통제
@@ -1061,7 +1065,7 @@ Open API의 리스크에서 인용된 뉴스 기사를 보고 느낀 점을 공�
 
 ---
 
-### 1교시. Open API 설계 원칙
+## 1교시. Open API 설계 원칙
 
 - 09:00 ~ 09:10 : 이름 짓기의 원칙
 - 09:10 ~ 09:20 : REST API 설계 원칙
@@ -1224,7 +1228,7 @@ HTTP에서 제공하는 기본적인 4가지의 method를 사용함
 
 ---
 
-### 2교시. 구현 기술의 선택
+## 2교시. 구현 기술의 선택
 
 - 10:00 ~ 10:10 : 언어의 선택
 - 10:10 ~ 10:20 : Open 소스 활용 정책
@@ -1370,7 +1374,7 @@ HTTP에서 제공하는 기본적인 4가지의 method를 사용함
 
 ---
 
-### 3교시. Spring framework 개요
+## 3교시. Spring framework 개요
 
 - Spring과 JavaEE 표준 : [http://benelog.egloos.com/2703581](http://benelog.egloos.com/2703581)
 - Spring과 Cloud : [http://benelog.egloos.com/2765024](http://benelog.egloos.com/2765024)
@@ -1379,7 +1383,7 @@ HTTP에서 제공하는 기본적인 4가지의 method를 사용함
 
 ---
 
-### 4교시. Provider 구현
+## 4교시. Provider 구현
 
 Open API Provider 기술의 장단점을 이해하고, 프로젝트 적용할 때 이슈로 관리해야할 포인트를 집어낼 수 있다
 
@@ -1530,7 +1534,7 @@ Wink
 
 ---
 
-### 5교시. Consumer 구현
+## 5교시. Consumer 구현
 
 Library - Java
 
@@ -1559,7 +1563,7 @@ Api client 사례
 
 ---
 
-### 6교시. 테스트
+## 6교시. 테스트
 
 open API의 테스트에 쓸만한 기법과 기술들을 알아보고 이를 통해 프로젝트의 위험성을
 조기에 예방하는 정책을 세우는데 참고합니다.
@@ -1630,7 +1634,7 @@ Java PaaS & Cloud 개발환경
 
 ---
 
-### 7교시. 실습. Consumer 구현사례
+## 7교시. 실습. Consumer 구현사례
 
 Daum 지도 API 실습
 
