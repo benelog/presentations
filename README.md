@@ -27,6 +27,7 @@
 | 2014-06-08 | 스프링 어플리케이션의 문제해결 사례 & 안티 패턴 | Spring Camp 2014 | [`20140608-spring-anti-patterns/slides.md`](20140608-spring-anti-patterns/slides.md) | [보기](https://benelog.github.io/presentations/20140608-spring-anti-patterns/) | [PDF](https://benelog.github.io/presentations/20140608-spring-anti-patterns/slides.pdf) |
 | 2013-07-13 | Spring 3.0 -> 3.1 -> 3.2 따라잡기 | [제5회 hello world 오픈 세미나](https://d2.naver.com/helloworld/416268) | [`20130713-spring-upgrade/slides.md`](20130713-spring-upgrade/slides.md) | [보기](https://benelog.github.io/presentations/20130713-spring-upgrade/) | [PDF](https://benelog.github.io/presentations/20130713-spring-upgrade/slides.pdf) |
 | 2012-10-22 | Open API Client 개발 | [제4회 NHN 오픈세미나 (NHN 오픈 API 특집)](https://d2.naver.com/helloworld/172098) | [`20121022-open-api-client/slides.md`](20121022-open-api-client/slides.md) | [보기](https://benelog.github.io/presentations/20121022-open-api-client/) | [PDF](https://benelog.github.io/presentations/20121022-open-api-client/slides.pdf) |
+| 2011-09-06 | Open API Business 과정 | 삼성 SDS 멀티캠퍼스 강의 | [`20110906-open-api-biz/slides.md`](20110906-open-api-biz/slides.md) | [보기](https://benelog.github.io/presentations/20110906-open-api-biz/) | [PDF](https://benelog.github.io/presentations/20110906-open-api-biz/slides.pdf) |
 | 2010-11-13 | SpringOne2GX 2010 참석 후기 | KSUG(한국 스프링 사용자 모임) 세미나 | [`20101113-springone2gx/slides.md`](20101113-springone2gx/slides.md) | [보기](https://benelog.github.io/presentations/20101113-springone2gx/) | [PDF](https://benelog.github.io/presentations/20101113-springone2gx/slides.pdf) |
 | 2010-08-14 | Effective & Agile Java | 소프트웨어 마에스트로 멘토링 | [`20100814-effective-agile-java/slides.md`](20100814-effective-agile-java/slides.md) | [보기](https://benelog.github.io/presentations/20100814-effective-agile-java/) | [PDF](https://benelog.github.io/presentations/20100814-effective-agile-java/slides.pdf) |
 | 2010-05-29 | 웹 프레임워크의 Web tier 처리방식과 Spring MVC | KSUG(한국 스프링 사용자 모임) 세미나 | [`20100529-spring-mvc/slides.md`](20100529-spring-mvc/slides.md) | [보기](https://benelog.github.io/presentations/20100529-spring-mvc/) | [PDF](https://benelog.github.io/presentations/20100529-spring-mvc/slides.pdf) |
@@ -45,6 +46,8 @@ Slidev 로 옮기기 전의 원본은 `originals/` 에 발표일 기준 이름�
   (`h2-demo-boot-1.5.7/` 는 그 저장소의 `h2-boot-1.5.7` branch 에만 있던 파일).
   `20151022-naver-opensource-growth/` 는 AsciiDoc(slidy) 로 만든 원본과 발표 후 받은 피드백 메모 사진으로,
   지금은 삭제된 `benelog/external-presentation` 저장소에서 옮겨왔다.
+  `20110906-open-api-biz/` 는 강의 때 쓰던 네이버 카페 [openapibiz](https://cafe.naver.com/openapibiz) 의
+  게시글을 markdown 으로 내려받은 아카이브다 (`benelog/open-api-class` 저장소에서 옮겨왔다).
 
 `originals/` 는 숫자로 시작하지 않으므로 `scripts/build.sh` 의 빌드 대상(`[0-9]*/slides.md`)에 잡히지 않는다.
 
