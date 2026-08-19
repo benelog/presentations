@@ -1365,10 +1365,42 @@ HTTP에서 제공하는 기본적인 4가지의 method를 사용함
 
 ## 3교시. Spring framework 개요
 
+자료 : [spring-summary.pdf](./035-spring-summary.pdf)
+
+---
+
+### Spring Summary
+
+1. Spring, What & Why?
+    - Spring
+    - 기원
+    - 왜 쓰는가?
+    - 오해
+    - 성공요인
+2. 핵심 개념
+    - Aspect Oriented Programming
+    - Dependency Injection
+    - Portable Service abstraction
+
+---
+
+### Spring Summary
+
+3. 응용 모듈
+    - Spring web MVC
+    - Spring Security
+    - Spring batch
+    - 기타
+4. 사업
+    - 인수 합병
+    - Cloud
+
+---
+
+### Spring framework 참고 자료
+
 - Spring과 JavaEE 표준 : [http://benelog.egloos.com/2703581](http://benelog.egloos.com/2703581)
 - Spring과 Cloud : [http://benelog.egloos.com/2765024](http://benelog.egloos.com/2765024)
-
-자료 : [spring-summary.pdf](./035-spring-summary.pdf)
 
 ---
 
