@@ -1,12 +1,14 @@
 ---
 theme: ../themes/green
-title: Open API Business 과정
+title: 오픈 API 기술의 이해
 event: 삼성 SDS 멀티캠퍼스 강의
 event_type: public
 source: https://cafe.naver.com/openapibiz
 ---
 
-# Open API Business 과정
+# 오픈 API 기술의 이해
+
+Open API Business 과정
 
 2011-09-06 ~ 2011-09-07
 
@@ -540,11 +542,18 @@ RSS
 - Netscape사에서 뉴스 포멧을 전달하기 위한 목적으로 최초 도입
 - Blog, Cafe, SNS , 검색 API에서 대부분 지원
 - 웹브라우저, RSS reader사이트 등에서 읽을 수 있음
+  - 예) Google Reader 앱 : [http://www.appbrain.com/app/google-reader/com.google.android.apps.reader](http://www.appbrain.com/app/google-reader/com.google.android.apps.reader)
 - 사례
   - [http://en.blog.wordpress.com/](http://en.blog.wordpress.com/)
   - [http://googleblog.blogspot.com/](http://googleblog.blogspot.com/)
-- Validation
+
+---
+
+### 피드 포멧
+
+Validation
   - [http://feedvalidator.org/](http://feedvalidator.org/)
+  - 검증 예 : [http://feedvalidator.org/check.cgi?url=http%3A%2F%2Frss.egloos.com%2Fblog%2Fbenelog](http://feedvalidator.org/check.cgi?url=http%3A%2F%2Frss.egloos.com%2Fblog%2Fbenelog)
 
 ---
 
@@ -568,6 +577,8 @@ ATOM
 - 스펙정리 : www.xmlrpc.com
 - SOAP의 원시형태에 가까움
 - 주로 블로그 API에 많이 쓰임.
+  - [http://section.blog.naver.com/sub/NoticeTip.nhn?board=/read/1000003488/10000000000003416085](http://section.blog.naver.com/sub/NoticeTip.nhn?board=/read/1000003488/10000000000003416085)
+  - [http://eslife.tistory.com/481](http://eslife.tistory.com/481)
 
 ---
 
@@ -605,6 +616,7 @@ KML
 
 - 지도 공간에 대한 XML형태 (Keyhole Markup Language)
 - code.google.com/apis/kml/documentation/KML_Samples.kml
+- 지도에서 보기 : [http://maps.google.com/maps?q=http%3A%2F%2Fcode.google.com/apis/kml/documentation/KML_Samples.kml](http://maps.google.com/maps?q=http%3A%2F%2Fcode.google.com/apis/kml/documentation/KML_Samples.kml)
 
 GEO RSS
 
@@ -662,6 +674,7 @@ Micro-format
 
 - 코드 개발터 : API를 사용해보기 위한 대화식 장소
   - [http://code.google.com/apis/ajax/playground/](http://code.google.com/apis/ajax/playground/)
+  - [http://code.google.com/p/google-ajax-examples/source/browse/#svn/trunk/interactive_samples](http://code.google.com/p/google-ajax-examples/source/browse/#svn/trunk/interactive_samples)
   - [http://mapstraction.appspot.com/](http://mapstraction.appspot.com/)
 - 개발자 안내서 : 좌담식으로 쓰여진 API 사용 지침
 - 튜토리얼 : API를 사용하는 다른 방법을 논의하는 튜토리얼 또는 스크린캐스트
@@ -773,8 +786,15 @@ Open API provider 개발에서 감안해야 할 보인지침과 암호화, 인�
 - 컨텐츠 입력 API에서는 XSS filtering도 중요
   - White list 방식이 바람직
   - Lucy XSS Filter : http://dev.naver.com/projects/lucy-xss
+    - 참고 : [http://deview.naver.com/2010/file/ThePlatform2010DeView.pdf](http://deview.naver.com/2010/file/ThePlatform2010DeView.pdf) 43페이지
+
+---
+
+### 보안지침
+
 - 구체적인 구현기술이나 미들웨어가 노출되지 않도록한다.
   - 사례1 : Struts2 Security bug
+    - http://sebug.net/exploit/19954/
   - 사례2 : Apache 보안 취약점
 
 ---
@@ -824,8 +844,9 @@ Open API provider 개발에서 감안해야 할 보인지침과 암호화, 인�
 - 장점 : 암복호화를 위해 하나의 키만 사용, 암호화 및 복호화 속도가 빠름
 - 단점 : 키관리의 어려움. 키분배의 문제. 다양한 응용의 어려움
 - 알고리즘 : DES, AES, SEED, 3DES, SEA, RC4, Blowfish, IDEA, FEAL
+- 참고 : [http://kowon.dongseo.ac.kr/~lbg/web_lecture/it/lec3/lec3.htm](http://kowon.dongseo.ac.kr/~lbg/web_lecture/it/lec3/lec3.htm)
 
-<img src="./015-img1-image1.jpg" style="height:200px" />
+<img src="./015-img1-image1.jpg" style="height:150px" />
 
 (이미지 출처 : [http://cryptocat.tistory.com/2](http://cryptocat.tistory.com/2) )
 
@@ -1257,6 +1278,7 @@ HTTP에서 제공하는 기본적인 4가지의 method를 사용함
 - Ruby On Rails : Twitter, 미투데이. 웹개발 통합 프레임웍, 종합선물세트
 - Backend 성능에서는 불만족스러운 경우가 많음
   - [http://www.infoq.com/articles/twitter-java-use](http://www.infoq.com/articles/twitter-java-use)
+  - [http://engineering.twitter.com/2011/04/twitter-search-is-now-3x-faster_1656.html](http://engineering.twitter.com/2011/04/twitter-search-is-now-3x-faster_1656.html)
 
 ---
 
@@ -1313,7 +1335,7 @@ HTTP에서 제공하는 기본적인 4가지의 method를 사용함
 - 오픈소스 사업 모델
   - 컨설팅 + 기술지원
   - Enterprise Tomcat expert : [http://www.tomcatexpert.com/](http://www.tomcatexpert.com/)
-  - Pizza-hut migration 사례
+  - [Pizza-hut migration 사례](http://vmblog.com/archive/2010/03/31/world-s-largest-pizza-hut-franchisee-selects-springsource-tc-server-for-modern-java-architecture-within-vmware-environment.aspx)
 
 ---
 
@@ -1324,7 +1346,7 @@ HTTP에서 제공하는 기본적인 4가지의 method를 사용함
   - Struts2보안 bug 패치 사례
     - 2010년 5월31일날 보고 했다. : [http://securityreason.com/exploitalert/8435](http://securityreason.com/exploitalert/8435)
     - 2010년 6월 20일날 소스 고침 : [http://svn.apache.org/viewvc?view=revision&revision=956389](http://svn.apache.org/viewvc?view=revision&revision=956389)
-    - 2010년 8월16일에 release된 2.2.1에 포함
+    - 2010년 8월16일에 release된 2.2.1에 포함 : [http://struts.apache.org/2.2.1/docs/version-notes-221.html](http://struts.apache.org/2.2.1/docs/version-notes-221.html)
 
 ---
 
@@ -1432,6 +1454,8 @@ Spring MVC의 REST 지원 기능을 Open API개발에 사용 가능
 
 [http://benelog.egloos.com/2703581](http://benelog.egloos.com/2703581)
 
+참조 : [http://blog.springsource.com/2009/03/08/rest-in-spring-3-mvc/](http://blog.springsource.com/2009/03/08/rest-in-spring-3-mvc/)
+
 "스프링 3.0에서도 Spring web MVC에서 나름대로의 스펙을 가진 REST지원 기능이 있습니다.
 사실 위의 @Path와 @PathParam 은 스프링의 @RequestMapping, @RequsetParams 아노테이션과
 무척 유사해보이는, 비슷한 프로그래밍 모델을 가지고 있습니다.
@@ -1454,6 +1478,15 @@ UI페이지와 REST요청을 같이 처리해야하는 어플리케이션에서�
 REST 방식을 깊이까지 쓰는 어플리케이션이라면 JAX-RS 구현체를 쓰는 것처럼 말이죠.
 스프링은 언제나 그래왔듯이 선택에 대한 것이라는 말을 덧붙였습니다.
 (Spring is (and always was) about choice)"
+
+---
+
+### JAX-RS와 SpringMVC의 REST지원의 관계
+
+"그리고 JAX-RS 스펙은 Java EE6에서 독립적인 스펙이고, 다른 웹스펙과도 연관관계가 없고,
+JSF와 프로그래밍 모델도 다르다고 유겐할러는 설명했습니다.
+스프링은 그런 관련성이 있는 스펙들을 일관성 있게 묶어가고 있다는 것을 대비시켜 보이기 위해서
+굳이 그런 언급을 한 것이 아닐까하는 생각도 들었습니다."
 
 ---
 
@@ -1481,6 +1514,11 @@ Apache CXF
 - OpenSource WebServices Framework
 - JAX-WS ,JAX-RS 지원
 - [http://www.ibm.com/developerworks/kr/series/ws-pojo-springcxf.html](http://www.ibm.com/developerworks/kr/series/ws-pojo-springcxf.html)
+- [http://oldprogrammer.tistory.com/26](http://oldprogrammer.tistory.com/26)
+
+---
+
+### JAX-RS, JAX-WS 구현체
 
 JBoss RESTEasy
 
@@ -1489,14 +1527,14 @@ JBoss RESTEasy
 - Embedded Container와 JUnit을 이용한 단위 테스트 지원
 - GZIP Compression, Server-Side Caching, Browser Cache
 
----
-
-### JAX-RS, JAX-WS 구현체
-
 Restlet
 
 - [http://www.restlet.org/](http://www.restlet.org/)
 - JAX-RS 지원, Servlet기반 경량 프레임웍
+
+---
+
+### JAX-RS, JAX-WS 구현체
 
 Jersey
 
@@ -1504,7 +1542,10 @@ Jersey
 - Sun Glassfish에 탑재
 - [[REST] jersey로 REST구현하기](http://blog.openframework.or.kr/73)
 - [[REST] Jersey로 xml과 json데이터를 추출하기](http://blog.openframework.or.kr/67)
+- [[jersey] 1.0.2 릴리즈](http://blog.openframework.or.kr/104)
+- [[JSON] Jackson JSON Processor](http://blog.openframework.or.kr/105)
 - [Jersey and Spring](http://blogs.sun.com/enterprisetechtips/entry/jersey_and_spring)
+- [http://openframework.or.kr/Wiki.jsp?page=Jeysey_start1](http://openframework.or.kr/Wiki.jsp?page=Jeysey_start1)
 
 ---
 
@@ -1519,6 +1560,7 @@ Wink
 
 - [http://incubator.apache.org/wink/](http://incubator.apache.org/wink/)
 - REST- Server와 Client를 같이 제공
+- [Apache Wink를 Jackson JSON 프로세서와 함께 사용하기](https://www.ibm.com/developerworks/kr/library/wa-aj-jackson/index.html)
 
 ---
 
@@ -1647,6 +1689,7 @@ Java PaaS & Cloud 개발환경
 ### 성능 테스트 : 도구
 
 - Grinder ( http://grinder.sourceforge.net/ )
+  - 스크립트 예제 : [http://grinder.sourceforge.net/g3/script-gallery.html](http://grinder.sourceforge.net/g3/script-gallery.html)
 
 참고 : NHN의 테스트 자동화
 
