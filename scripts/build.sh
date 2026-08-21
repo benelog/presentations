@@ -3,7 +3,7 @@ set -Eeuo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DIST="$ROOT/dist"
-BASE_PATH="${BASE_PATH:-/presentations}"
+BASE_PATH="${BASE_PATH:-}"
 
 # 증분 빌드: dist/ 를 지우지 않고, 소스가 바뀐 덱만 다시 빌드한다.
 # (덱 디렉터리 + themes/ + build.sh + package-lock.json 의 해시를 dist/<덱>/.build-hash 에 기록)
