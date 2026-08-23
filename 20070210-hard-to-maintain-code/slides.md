@@ -1,0 +1,199 @@
+---
+theme: ../themes/green
+title: 유지보수를 힘들게 하는 것들
+event: SDS 프레임웍 공부모임
+event_url: https://wiki.benelog.net/SDS-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8D-%EA%B3%B5%EB%B6%80%EB%AA%A8%EC%9E%84.html
+event_type: private
+source: https://github.com/benelog/devnote/wiki/%EC%9C%A0%EC%A7%80%EB%B3%B4%EC%88%98%EB%A5%BC-%ED%9E%98%EB%93%A4%EA%B2%8C-%ED%95%98%EB%8A%94-%EA%B2%83%EB%93%A4(SDS)
+---
+
+# 유지보수를 힘들게 하는 것들
+
+2007-02-10
+
+정상혁
+
+---
+
+### 목차
+
+1. 아키텍쳐의 의도에 맞지 않는 코드
+2. 부적절한 API 사용
+3. Java 언어 자체의 부적절한 사용
+4. 언어를 초월해서 바람직하지 못한 코드
+5. 유지보수자에 마음가짐
+
+---
+
+## 아키텍쳐의 의도에 맞지 않는 코드
+
+---
+
+### MVC의 역할에 맞지 않는 코드
+
+* Action servlet(Controller)에 Business Logic이 있는 경우
+
+web-tier에 business logic이 있을 경우 안 좋은점
+
+1. business component 만의 테스트가 어려워짐
+2. transaction 관리 등이 어려움
+3. 원격 EJB환경의 경우 원격호출의 비용을 증가시킴 (참고: session-facade pattern)
+
+---
+
+### web tier는 얇게
+
+> In a well-designed J2EE Web application, the web tier will be very thin.
+> It will only contain code that's necessary to invoke middle-tier business
+> interfaces on user actions and to display the result.
+>
+> — J2EE Design and Development, Rod Johnson
+
+---
+
+### View layer에 business 로직을 넣을 경우
+
+화면마다 중복된 로직이 들어가서 로직의 변경시에 관련 view layer를 모두 변경
+
+---
+
+### Component간의 의존성을 심하게 만든 코드
+
+* 변경의 유연성, 배포독립성 떨어뜨림.
+* Component?
+    - 독립적으로 배포가능
+    - 기능이 명세화 (Interface)
+
+---
+
+## 부적절한 API 사용
+
+JSTL, Struts, Systemier에 대한 API문서를 찾지 않고
+있는 코드에서 copy&paste만함.
+
+---
+
+### 예시
+
+1. Systmier Query service : 동적쿼리나 페이징쿼리를 꼭 필요하지 않은 경우에도 사용
+2. jstl: c:url 태그 미활용
+3. Struts: html태그 미활용
+4. 표준에서 jsp내에서 scriptlet (`<% %>`)을 사용하지 않기로 했으나 사용
+
+---
+
+### jstl 태그 미활용
+
+```html
+<a href="<%= request.getContextPath() %>/servlet/info.UserInfo">
+```
+
+```html
+<c:url value="/servlet/info.UserInfo"/>
+```
+
+```html
+<%session.getAttribute("aaa")%>
+```
+
+```html
+<c:out value='${aa}' scope="sessoin"/>
+```
+
+---
+
+## Java 언어 자체의 부적절한 사용
+
+---
+
+### 예시
+
+* block안에서만 사용하는 temp variable을 block밖에 선언
+
+    객체를 항상 블럭 시작점에 선언
+
+* Exception 을 그냥 버리는 것
+
+---
+
+### 지역변수의 유효범위
+
+참조: Effective java 항목29. 지역변수의 유효범위를 최소화하라
+
+> 지역변수의 유효범위를 최소화하는 가장 좋은 방법은
+> 쓰기 바로 전에 선언하는 것이다.
+
+---
+
+## 언어를 초월해서 바람직하지 못한 코드
+
+---
+
+### 중복된 코드
+
+* 수정비용, 오류가능성을 높임
+* 중복의 종류 : 실용주의 프로그래머 2장, 앤드류 헌트, 데이비드 토마스
+
+1. 강요된 중복 - 표준이나 환경에 의한 중복
+2. 부주의한 중복 - 설계시 실수
+3. 참을성 없는 중복 - copy&paste가 편하다고 느꼈을때
+4. 개발자간의 중복 - 의사소통의 부족
+
+---
+
+### 상수 선언되어 있지 않은 코드값
+
+> 자신이 쓴 코드를 한번 살펴보라. 0과 1을 제외한 숫자를 직접 사용한 곳이 있는가?
+> 있다면 빨리 고치도록 하라.
+>
+> — 김익환, 대한민국에서는 소프트웨어가 없다.
+
+```java
+void method (PlanVO pvo){
+    pvo.set(3); //? 무슨 코드라는 거지?
+    dao.update(pvo);
+}
+```
+
+* 환경설정파일이나 Java 5 이상이라면 enum형을 이용하는 것도 좋음
+
+---
+
+### 마음에 안 드는 코딩콘벤션, 이름
+
+* Java의 코딩 Convention에 맞지 않는 코드
+
+    예) 대문자로 시작하는 메소드명, 상수필드가 아닌데 대문자로 쓴것
+
+    - JLS(Java Language Specification) 6.8
+      [http://java.sun.com/docs/books/jls/second_edition/html/names.doc.html#73307](http://java.sun.com/docs/books/jls/second_edition/html/names.doc.html#73307)
+    - Code Conventions for the Java<sup>TM</sup> Programming Language
+      [http://java.sun.com/docs/codeconv/html/CodeConvTOC.doc.html](http://java.sun.com/docs/codeconv/html/CodeConvTOC.doc.html)
+    - Effective Java (Joshua Bloch) 항목 38 참조
+
+---
+
+### 프로젝트 표준에 맞지 않는 코드
+
+프로젝트 표준이 정해져 있다면 Java의 권장 Coding Convention보다 우선적.
+
+예) 영문약자를 쓰는 것이 표준인데 gubun, gbn과 같은 변수명
+
+---
+
+## 유지보수자에 마음가짐
+
+내가 잘 못 짠 코드도 아닌데..
+
+---
+
+### 개선시도
+
+* 개발초기의 코드리뷰, 짝 프로그래밍
+
+    API에 대한 지식, 코드정리 기술을 서로 전파
+
+* 비지니스 Component의 Unit test 작성 유도
+
+> 완전한 테스트를 실행시키지 않는 것보다는
+> 불완전한 테스트라도 작성하고 실행시키는 것이 더 낫다.

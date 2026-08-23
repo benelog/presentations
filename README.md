@@ -32,12 +32,14 @@
 | 2010-08-14 | Effective & Agile Java | 소프트웨어 마에스트로 멘토링 | [`20100814-effective-agile-java/slides.md`](20100814-effective-agile-java/slides.md) | [보기](https://presentations.benelog.net/20100814-effective-agile-java/) | [PDF](https://presentations.benelog.net/20100814-effective-agile-java/slides.pdf) |
 | 2010-05-29 | 웹 프레임워크의 Web tier 처리방식과 Spring MVC | KSUG(한국 스프링 사용자 모임) 세미나 | [`20100529-spring-mvc/slides.md`](20100529-spring-mvc/slides.md) | [보기](https://presentations.benelog.net/20100529-spring-mvc/) | [PDF](https://presentations.benelog.net/20100529-spring-mvc/slides.pdf) |
 | 2010-02-20 | Spring Roo와 함께 하는 쾌속 웹개발 | KSUG(한국 스프링 사용자 모임) 세미나 | [`20100220-spring-roo/slides.md`](20100220-spring-roo/slides.md) | [보기](https://presentations.benelog.net/20100220-spring-roo/) | [PDF](https://presentations.benelog.net/20100220-spring-roo/slides.pdf) |
+| 2007-02-10 | 유지보수를 힘들게 하는 것들 | [SDS 프레임웍 공부모임](https://wiki.benelog.net/SDS-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8D-%EA%B3%B5%EB%B6%80%EB%AA%A8%EC%9E%84.html) | [`20070210-hard-to-maintain-code/slides.md`](20070210-hard-to-maintain-code/slides.md) | [보기](https://presentations.benelog.net/20070210-hard-to-maintain-code/) | [PDF](https://presentations.benelog.net/20070210-hard-to-maintain-code/slides.pdf) |
 
 ## 원본 자료
 
 Slidev 로 옮기기 전의 원본은 `originals/` 에 발표일 기준 이름으로 보관한다.
 
 - 파일 하나짜리 원본(pptx/odp/pdf)은 `originals/YYYYMMDD-slug.<ext>`
+  — `20070210-hard-to-maintain-code.asciidoc` 는 [benelog/devnote wiki](https://github.com/benelog/devnote/wiki) 에서 옮겨온 문서 원본이다.
 - 디렉터리 통째로인 원본(reveal.js, remark 로 만든 HTML 자료)은 `originals/YYYYMMDD-slug/`
   — 지금은 삭제된 `benelog/docs` 저장소에서 옮겨온 자료들이다.
   `20140705-goodbye-powerpoint/` 에는 그 발표가 설명하는 빌드 스크립트(`build.gradle`, `start-py.sh` 등)도 함께 두었다.
