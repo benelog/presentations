@@ -357,7 +357,7 @@ List<UserDTO> dtos = query.list(
 * DTO와 혼용해서 쓰여 왔다.
     * [Core J2EE Pattern 1판(2001년)](https://www.amazon.com/Core-J2EE-Patterns-Practices-Strategies/dp/0130648841)에서는 TO(Transfer Object)를 VO라고 적었었음
     * DTO와 동일한 의미라고 밝힌 서적도 있음.
-        * [Expert One-to-One J2EE Development(로드존슨, 2004)](https://www.amazon.com/Expert-One-One-Development-without/dp/0764558315) : (265페이지) 'Value objects are sometimes referred to as Data Transfer Object(DTOs)'
+        * [Expert One-on-One J2EE Design and Development(로드 존슨, 2002)](https://www.amazon.com/Expert-One-One-Design-Development/dp/0764543857) : (265페이지) 'Value objects are sometimes referred to as Data Transfer Objects (DTOs)'
         * [Professional Java EE Design Patterns(2014)](https://www.amazon.com/Professional-Java-EE-Design-Patterns-ebook/dp/B00R7S6AFC) : (12장) 'The DTO is also referred to as the Value Object'
         * [The Java EE Architect's Handbook, Second Edition(2014)](https://www.amazon.com/Java-Architects-Handbook-Second-applications/dp/0972954880) : (5장) 'My definition of "value object" is very close to a Data Transfer Object (DTO)'
 * [Data Holder](https://wiki.c2.com/?DataHolder)의 의미로 폭넓게 생각하는 경향도 있음.
