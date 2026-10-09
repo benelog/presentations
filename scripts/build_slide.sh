@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 # Build a single presentation directory to dist/<name>/.
 # Usage: bash scripts/build_slide.sh <directory>
-#   e.g. bash scripts/build_slide.sh 20260426-ai-gent
+#   e.g. bash scripts/build_slide.sh 20260528-yonsei-stats-rc101
 set -Eeuo pipefail
 
 if [ $# -lt 1 ]; then
   echo "Usage: $0 <directory>" >&2
-  echo "  e.g. $0 20260426-ai-gent" >&2
+  echo "  e.g. $0 20260528-yonsei-stats-rc101" >&2
   exit 1
 fi
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 INPUT="${1%/}"
 
-# Accept either "20260426-ai-gent" (relative to repo root), a relative path
+# Accept either "20260528-yonsei-stats-rc101" (relative to repo root), a relative path
 # from cwd, or an absolute path.
 if [ -d "$ROOT/$INPUT" ]; then
   DIR="$ROOT/$INPUT"

@@ -3,7 +3,6 @@ theme: ../themes/green
 title: Spring/KSUG에 대한 기억 몇가지
 event: Spring Camp 2017
 event_url: https://springcamp.ksug.org/2017/
-event_type: public
 ---
 
 # Spring/KSUG에 대한 기억 몇가지

@@ -6,14 +6,11 @@
 
 시간 역순(최신 발표가 먼저)으로 정렬. 발표한 행사는 각 `slides.md` headmatter의 `event:` 필드에 기록하고,
 행사 소개 페이지가 남아 있으면 `event_url:` 필드에 적어 행사명에 링크를 건다.
-행사 형태는 `event_type:` (`public` / `private`) 으로 구분한다 — `private` 은 사적인 모임에서 한 발표나
-행사 발표가 아닌 개인 연구 자료라서 [benelog.net 저술 및 대외 활동 페이지](https://benelog.net/works/) 동기화 대상에서 빠진다
-(`scripts/sync_activities.py`).
+모든 발표는 [benelog.net 저술 및 대외 활동 페이지](https://benelog.net/works/)에 동기화된다 (`scripts/sync_activities.py`).
 
 | 날짜 | 제목 | 행사 | 소스 | HTML | PDF |
 |------|------|------|------|------|-----|
 | 2026-05-28 | 25년 전의 진로 선택과 AI 시대의 변화 | 연세대학교 응용통계학과 신입생 세미나 | [`20260528-yonsei-stats-rc101/slides.md`](20260528-yonsei-stats-rc101/slides.md) | [보기](https://presentations.benelog.net/20260528-yonsei-stats-rc101/) | [PDF](https://presentations.benelog.net/20260528-yonsei-stats-rc101/slides.pdf) |
-| 2026-04-26 | AI agent에게 개인적인 일 시키기 | 대학 동창 모임 | [`20260426-ai-gent/slides.md`](20260426-ai-gent/slides.md) | [보기](https://presentations.benelog.net/20260426-ai-gent/) | [PDF](https://presentations.benelog.net/20260426-ai-gent/slides.pdf) |
 | 2022-04-13 | 컴퓨터 프로그래밍과 진로 | 연세대학교 응용통계학과 신입생 세미나 | [`20220413-yonsei-stats-rc101/slides.md`](20220413-yonsei-stats-rc101/slides.md) | [보기](https://presentations.benelog.net/20220413-yonsei-stats-rc101/) | [PDF](https://presentations.benelog.net/20220413-yonsei-stats-rc101/slides.pdf) |
 | 2021-09-14 | 네이버 개발자 업무와 기술 플랫폼 | 연세대학교 응용통계학과 대학원생 세미나 | [`20210914-yonsei-stats-bk/slides.md`](20210914-yonsei-stats-bk/slides.md) | [보기](https://presentations.benelog.net/20210914-yonsei-stats-bk/) | [PDF](https://presentations.benelog.net/20210914-yonsei-stats-bk/slides.pdf) |
 | 2020-05-07 | 엔티티 클래스 설계와 퍼시스턴스 프레임워크 | 우아한형제들 세미나 | [`20200507-entity-design/slides.md`](20200507-entity-design/slides.md) | [보기](https://presentations.benelog.net/20200507-entity-design/) | [PDF](https://presentations.benelog.net/20200507-entity-design/slides.pdf) |
@@ -23,7 +20,6 @@
 | 2015-05-22 | Java 애플리케이션 트러블 슈팅 사례 & Pinpoint | [제11회 D2 오픈세미나 (Java 애플리케이션 트러블 슈팅 편)](https://d2.naver.com/helloworld/1286587) | [`20150522-java-troubleshooting-pinpoint/slides.md`](20150522-java-troubleshooting-pinpoint/slides.md) | [보기](https://presentations.benelog.net/20150522-java-troubleshooting-pinpoint/) | [PDF](https://presentations.benelog.net/20150522-java-troubleshooting-pinpoint/slides.pdf) |
 | 2014-11-27 | Spring Batch와 함께 하는 TDD | KSUG(한국 스프링 사용자 모임) 세미나 | [`20141127-spring-batch-tdd/slides.md`](20141127-spring-batch-tdd/slides.md) | [보기](https://presentations.benelog.net/20141127-spring-batch-tdd/) | [PDF](https://presentations.benelog.net/20141127-spring-batch-tdd/slides.pdf) |
 | 2014-08-01 | Robolectric을 활용한 안드로이드 테스팅 | [제9회 D2 오픈세미나 in 대구](https://d2.naver.com/helloworld/870369) | [`20140801-robolectric/slides.md`](20140801-robolectric/slides.md) | [보기](https://presentations.benelog.net/20140801-robolectric/) | [PDF](https://presentations.benelog.net/20140801-robolectric/slides.pdf) |
-| 2014-07-05 | 파워포인트 떠나기 | 개인 연구 자료 (행사 발표 아님) | [`20140705-goodbye-powerpoint/slides.md`](20140705-goodbye-powerpoint/slides.md) | [보기](https://presentations.benelog.net/20140705-goodbye-powerpoint/) | [PDF](https://presentations.benelog.net/20140705-goodbye-powerpoint/slides.pdf) |
 | 2014-06-08 | 스프링 어플리케이션의 문제해결 사례 & 안티 패턴 | Spring Camp 2014 | [`20140608-spring-anti-patterns/slides.md`](20140608-spring-anti-patterns/slides.md) | [보기](https://presentations.benelog.net/20140608-spring-anti-patterns/) | [PDF](https://presentations.benelog.net/20140608-spring-anti-patterns/slides.pdf) |
 | 2013-07-13 | Spring 3.0 -> 3.1 -> 3.2 따라잡기 | [제5회 hello world 오픈 세미나](https://d2.naver.com/helloworld/416268) | [`20130713-spring-upgrade/slides.md`](20130713-spring-upgrade/slides.md) | [보기](https://presentations.benelog.net/20130713-spring-upgrade/) | [PDF](https://presentations.benelog.net/20130713-spring-upgrade/slides.pdf) |
 | 2012-10-22 | Open API Client 개발 | [제4회 NHN 오픈세미나 (NHN 오픈 API 특집)](https://d2.naver.com/helloworld/172098) | [`20121022-open-api-client/slides.md`](20121022-open-api-client/slides.md) | [보기](https://presentations.benelog.net/20121022-open-api-client/) | [PDF](https://presentations.benelog.net/20121022-open-api-client/slides.pdf) |
@@ -42,7 +38,6 @@ Slidev 로 옮기기 전의 원본은 `originals/` 에 발표일 기준 이름�
   — `20070210-hard-to-maintain-code.asciidoc` 는 [benelog/devnote wiki](https://github.com/benelog/devnote/wiki) 에서 옮겨온 문서 원본이다.
 - 디렉터리 통째로인 원본(reveal.js, remark 로 만든 HTML 자료)은 `originals/YYYYMMDD-slug/`
   — 지금은 삭제된 `benelog/docs` 저장소에서 옮겨온 자료들이다.
-  `20140705-goodbye-powerpoint/` 에는 그 발표가 설명하는 빌드 스크립트(`build.gradle`, `start-py.sh` 등)도 함께 두었다.
   `20140801-robolectric/bookmarker/` 는 그 발표의 예제 안드로이드 프로젝트로, 지금은 삭제된 `benelog/bookmarker` 저장소에서 옮겨왔다.
   `20171126-http2-java/h2-demo/` 도 그 발표의 데모 프로젝트로, 지금은 삭제된 `benelog/h2demo` 저장소에서 옮겨왔다
   (`h2-demo-boot-1.5.7/` 는 그 저장소의 `h2-boot-1.5.7` branch 에만 있던 파일).

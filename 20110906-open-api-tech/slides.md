@@ -2,7 +2,6 @@
 theme: ../themes/green
 title: 오픈 API 기술의 이해
 event: 삼성 SDS 멀티캠퍼스 강의
-event_type: public
 source: https://cafe.naver.com/openapibiz
 ---
 

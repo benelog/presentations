@@ -3,7 +3,6 @@ theme: ../themes/green
 title: 유지보수를 힘들게 하는 것들
 event: SDS 프레임웍 공부모임
 event_url: https://wiki.benelog.net/SDS-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8D-%EA%B3%B5%EB%B6%80%EB%AA%A8%EC%9E%84.html
-event_type: private
 source: https://github.com/benelog/devnote/wiki/%EC%9C%A0%EC%A7%80%EB%B3%B4%EC%88%98%EB%A5%BC-%ED%9E%98%EB%93%A4%EA%B2%8C-%ED%95%98%EB%8A%94-%EA%B2%83%EB%93%A4(SDS)
 ---
 

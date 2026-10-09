@@ -2,7 +2,6 @@
 theme: ../themes/green
 title: Spring Roo와 함께 하는 쾌속 웹개발
 event: 공감 세미나
-event_type: public
 event_url: https://blog.outsider.ne.kr/437
 ---
 

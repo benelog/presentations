@@ -6,7 +6,7 @@
 
 ```
 presentations/
-├── 20260426-ai-gent/
+├── 20260528-yonsei-stats-rc101/
 │   └── slides.md
 ├── YYYYMMDD-slug/
 │   └── slides.md
@@ -27,7 +27,6 @@ theme: ../themes/green
 title: 발표 제목
 event: 발표한 행사 이름
 event_url: 행사 소개 페이지 URL   # 선택. 있으면 랜딩 페이지에서 행사명에 링크가 걸린다
-event_type: public               # public | private. private 은 사적인 모임 발표
 source: 원본 발표 자료 URL        # 선택. SlideShare 등 (행사 소개 링크와는 별개)
 ---
 

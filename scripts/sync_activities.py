@@ -8,8 +8,6 @@
   발표 자료(HTML): 슬라이드의 첫 `# ` 제목 (랜딩 페이지와 같은 기준) 을 배포된 슬라이드로 링크
   PDF            : 배포된 slides.pdf
 
-`event_type: private` 인 발표(사적인 모임 등)는 대상에서 제외한다.
-
 사용법:
     python3 scripts/sync_activities.py [--check] [--target <works.md 경로>]
 
@@ -52,8 +50,6 @@ def collect_decks():
         if not re.match(r'^\d{8}-', name) or not os.path.isfile(slides):
             continue
         head, body = read_headmatter(slides)
-        if head.get('event_type') == 'private':
-            continue
         title = next((l[2:].strip() for l in body if l.startswith('# ')), name)
         decks.append({
             'dir': name,

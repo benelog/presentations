@@ -2,7 +2,6 @@
 theme: ../themes/green
 title: 네이버의 오픈소스 프로젝트가 성장한 과정
 event: 삼성SDS Open IT 세미나
-event_type: public
 ---
 
 # 네이버의 오픈소스 프로젝트가 성장한 과정
