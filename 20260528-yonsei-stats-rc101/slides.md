@@ -306,9 +306,9 @@ backgroundSize: contain
 * ['먼저 온 미래' 감상문](https://diary.benelog.net/2025/future-came-first/)
 
 ### 과거 발표
-* [프로그래밍과 진로](https://benelog.github.io/presentations/20220413-yonsei-stats-rc101/slides.pdf) (2022년 4월 13일 연세대학교 RC101 초청세미나)
+* [프로그래밍과 진로](https://presentations.benelog.net/20220413-yonsei-stats-rc101/slides.pdf) (2022년 4월 13일 연세대학교 RC101 초청세미나)
     * [질의&응답](https://github.com/benelog/presentations/blob/main/20220413-yonsei-stats-rc101/qna.md)
-* [네이버 개발자 업무와 기술 플랫폼](https://benelog.github.io/presentations/20210914-yonsei-stats-bk/slides.pdf) (2021년 09월 14일 연세대학교 통계데이터사이언스학과 BK산학 세미나)
+* [네이버 개발자 업무와 기술 플랫폼](https://presentations.benelog.net/20210914-yonsei-stats-bk/slides.pdf) (2021년 09월 14일 연세대학교 통계데이터사이언스학과 BK산학 세미나)
 
 ---
 

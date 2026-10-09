@@ -106,7 +106,7 @@ backgroundSize: contain
 ### 회사에서 해온 일
 
 * Web 응용 어플리케이션 개발, 공통 모듈 개발
-    * 보다 자세한 내용은 [대학원생 대상의 세미나](https://benelog.github.io/presentations/20210914-yonsei-stats-bk/) 참조
+    * 보다 자세한 내용은 [대학원생 대상의 세미나](https://presentations.benelog.net/20210914-yonsei-stats-bk/) 참조
 * 기술 스택
     * Java, SQL의 비중이 가장 높았음
 

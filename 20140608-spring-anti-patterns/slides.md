@@ -736,7 +736,7 @@ viewName만 리턴하는 Controller : 개선
 
 Spring 3.0 -> 3.1 -> 3.2 따라잡기 참고
 
-[https://benelog.github.io/presentations/20130713-spring-upgrade/](https://benelog.github.io/presentations/20130713-spring-upgrade/)
+[https://presentations.benelog.net/20130713-spring-upgrade/](https://presentations.benelog.net/20130713-spring-upgrade/)
 
 ---
 
