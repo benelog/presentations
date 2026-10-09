@@ -18,7 +18,8 @@ works.md 의 `## 발표` 섹션 표를 통째로 다시 만든다. 표 외의 �
 | 발표 날짜 | 디렉터리명 앞 8자리 (`20130713-spring-upgrade` → `2013.07.13`) |
 | 발표 제목 | 슬라이드의 첫 `# ` 제목 (headmatter 의 `title:` 이 아니라 랜딩 페이지와 같은 기준) |
 | 행사 | `event:` — `event_url:` 이 있으면 그 행사 소개 페이지로 링크 |
-| PDF | `https://benelog.github.io/presentations/<디렉터리>/slides.pdf` |
+| 발표 자료(HTML) 링크 | `https://presentations.benelog.net/<디렉터리>/` |
+| PDF | `https://presentations.benelog.net/<디렉터리>/slides.pdf` |
 
 - 정렬은 시간 역순. presentations 저장소의 README 표와 같은 순서다.
 

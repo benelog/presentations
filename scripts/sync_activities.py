@@ -22,7 +22,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEFAULT_TARGET = os.path.join(ROOT, '..', 'benelog.net', 'content', 'works.md')
-BASE_URL = 'https://benelog.github.io/presentations'
+BASE_URL = 'https://presentations.benelog.net'
 
 HEADER = [
     '| 발표 날짜 | 행사 | 발표 자료(HTML) | PDF |',
