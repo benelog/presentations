@@ -41,11 +41,11 @@ source: https://www.slideshare.net/...              # 원본 발표 자료 URL (
 1. 위 `--check` 결과를 확인한다. '이미 동기화되어 있습니다' 면 여기서 끝내고 그 사실만 알린다.
 2. `python3 scripts/sync_activities.py` 를 실행해 `../benelog.net/content/works.md` 를 갱신한다.
 3. `git -C ../benelog.net diff` 로 표 외의 내용이 바뀌지 않았는지 확인한다.
-4. benelog.net 저장소에서 커밋하고 push 한다. **기본 브랜치는 `master`** 다.
+4. benelog.net 저장소에서 커밋하고 push 한다. **기본 브랜치는 `main`** 이다.
    ```bash
    git -C ../benelog.net add content/works.md
    git -C ../benelog.net commit -m "<무엇이 바뀌었는지 한 줄로>"
-   git -C ../benelog.net push origin master
+   git -C ../benelog.net push origin main
    ```
 5. 표에 새로 들어가거나 빠진 발표를 요약해서 알린다.
 
