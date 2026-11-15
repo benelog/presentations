@@ -1,0 +1,17 @@
+<mxfile host="drawio">
+  <diagram id="pipe-filters" name="Step">
+    <mxGraphModel grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="880" pageHeight="420" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c1" value="Step" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4283A3;strokeColor=#222222;strokeWidth=1.5;fontFamily=Helvetica;fontSize=34;fontStyle=1;fontColor=#000000;" parent="1" vertex="1"><mxGeometry x="0" y="160" width="260" height="100" as="geometry" /></mxCell>
+        <mxCell id="c2" value="ItemReader" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFCC00;strokeColor=#222222;strokeWidth=1.5;fontFamily=Helvetica;fontSize=32;fontStyle=1;fontColor=#000000;" parent="1" vertex="1"><mxGeometry x="520" y="0" width="360" height="100" as="geometry" /></mxCell>
+        <mxCell id="c3" value="ItemProcessor" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFCC00;strokeColor=#222222;strokeWidth=1.5;fontFamily=Helvetica;fontSize=32;fontStyle=1;fontColor=#000000;" parent="1" vertex="1"><mxGeometry x="520" y="160" width="360" height="100" as="geometry" /></mxCell>
+        <mxCell id="c4" value="ItemWriter" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFCC00;strokeColor=#222222;strokeWidth=1.5;fontFamily=Helvetica;fontSize=32;fontStyle=1;fontColor=#000000;" parent="1" vertex="1"><mxGeometry x="520" y="320" width="360" height="100" as="geometry" /></mxCell>
+        <mxCell id="c5" value="" style="shape=flexArrow;html=1;fillColor=#000000;strokeColor=none;width=14;endWidth=20;endSize=9;endArrow=block;startArrow=none;" parent="1" edge="1"><mxGeometry relative="1" as="geometry"><mxPoint x="490" y="55" as="sourcePoint" /><mxPoint x="300" y="150" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="c6" value="" style="shape=flexArrow;html=1;fillColor=#000000;strokeColor=none;width=14;endWidth=20;endSize=9;endArrow=block;startArrow=block;startWidth=20;startSize=9;" parent="1" edge="1"><mxGeometry relative="1" as="geometry"><mxPoint x="285" y="210" as="sourcePoint" /><mxPoint x="495" y="210" as="targetPoint" /></mxGeometry></mxCell>
+        <mxCell id="c7" value="" style="shape=flexArrow;html=1;fillColor=#000000;strokeColor=none;width=14;endWidth=20;endSize=9;endArrow=block;startArrow=none;" parent="1" edge="1"><mxGeometry relative="1" as="geometry"><mxPoint x="300" y="270" as="sourcePoint" /><mxPoint x="490" y="365" as="targetPoint" /></mxGeometry></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

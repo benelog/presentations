@@ -36,7 +36,7 @@ source: https://www.slideshare.net/benelog/spring-batch-tdd
 
 **급하게 준비**
 
-- 번개(벼락) 사진
+<img src="./lightning.jpg" style="height:360px" alt="번개 사진" />
 
 사진 출처 : [http://blog.naver.com/khg2120/104069215](http://blog.naver.com/khg2120/104069215)
 
@@ -46,20 +46,25 @@ source: https://www.slideshare.net/benelog/spring-batch-tdd
 
 **그리고 통합 주제에 대한 동경**
 
-- benelog의 me2day 글 캡처
-  - "어제 봤을 때 이 책이 컴퓨터 분야 판매 1위라서.. 스프링이고 TDD고 다 소용없이 이런 책을 써야 한다..고 글을 적으려고 했는데, 오늘보니 안드로이드 책에 밀려서 2위를 기록 중이다.. '스타2를 하면서 안드로이드 배우기.'라는 책을 쓰면 대박이 터질지도;" (10/08/07 20:37, 스타크래프트 2 자유의 날개 공식 가이드북, me2book)
-  - "스타2를 눌러버린 토비의 스프링3 '멘토와 함께 스타2를 하면서 안드로이드와 Spring 3를 배우기'가 나온다면 확실한 대박" (10/08/09 10:44)
+<img src="./me2day-posts.png" style="width:900px" alt="benelog의 me2day 글 캡처: '어제 봤을 때 이 책이 컴퓨터 분야 판매 1위라서.. 스프링이고 TDD고 다 소용없이 이런 책을 써야 한다..고 글을 적으려고 했는데, 오늘보니 안드로이드 책에 밀려서 2위를 기록 중이다.. 스타2를 하면서 안드로이드 배우기.라는 책을 쓰면 대박이 터질지도;' (10.08.07 20:37), '스타2를 눌러버린 토비의 스프링3 멘토와 함께 스타2를 하면서 안드로이드와 Spring 3를 배우기가 나온다면 확실한 대박' (10.08.09 10:44)" />
 
 ---
 
 ### 1.2 TDD
+
+<div style="display:flex; gap:40px; align-items:flex-start">
+<div style="flex:1">
 
 **나는 왜 TDD를 하는가?**
 
 - 재미, 집중
 - 디버깅 시간을 줄이려고
 
-참고 : 내가 생각하는 TDD [http://benelog.egloos.com/2766714](http://benelog.egloos.com/2766714)
+참고 : 내가 생각하는 TDD [https://blog.benelog.net/2766714.html](https://blog.benelog.net/2766714.html)
+
+</div>
+<img src="./traffic-light.jpg" style="height:410px" alt="신호등 사진" />
+</div>
 
 사진 출처 : [http://www.flickr.com/photos/titicat/2986232393/](http://www.flickr.com/photos/titicat/2986232393/)
 
@@ -95,7 +100,10 @@ source: https://www.slideshare.net/benelog/spring-batch-tdd
 
 **어떤 Batch의 테스트 경험**
 
-- 옛날 다이얼 전화기, 벽시계 사진
+<div style="display:flex; gap:40px; align-items:center">
+  <img src="./dial-phone.jpg" style="height:300px" alt="옛날 다이얼 전화기 사진" />
+  <img src="./wall-clock.jpg" style="height:300px" alt="벽시계 사진" />
+</div>
 
 사진 출처 : [http://www.imageafter.com/](http://www.imageafter.com/)
 
@@ -160,11 +168,7 @@ source: https://www.slideshare.net/benelog/spring-batch-tdd
 - Bulk data processing을 위한 구조
 - Chunk 단위로 운반하면서 흘려 보냄
 
-다이어그램: Step과 ItemReader, ItemProcessor, ItemWriter의 관계
-
-- ItemReader → Step
-- Step ↔ ItemProcessor
-- Step → ItemWriter
+<img src="./pipe-filters.png" style="height:300px" alt="Step과 ItemReader, ItemProcessor, ItemWriter의 관계" />
 
 ---
 
@@ -183,16 +187,16 @@ source: https://www.slideshare.net/benelog/spring-batch-tdd
 
 ### 2.2 개별 작업 영역
 
+<div style="display:flex; gap:40px; align-items:flex-start">
+<div style="flex:1">
+
 **처리 흐름**
 
 - ItemProcessor는 선택적
 
-시퀀스 다이어그램: Step, ItemReader, ItemWriter
-
-- execute() → Step
-- Step → ItemReader: read() 호출, item 반환 (반복)
-- Step → ItemWriter: write(items)
-- Step → ExitStatus 반환
+</div>
+<img src="./chunk-sequence.png" style="height:440px" alt="Step, ItemReader, ItemWriter 사이의 처리 흐름 시퀀스 다이어그램" />
+</div>
 
 ---
 
@@ -240,11 +244,7 @@ source: https://www.slideshare.net/benelog/spring-batch-tdd
 
 **JobRepository, JobLauncher**
 
-클래스 다이어그램:
-
-- JobLauncher — Job (1 : \*) — Step
-- Step은 ItemReader, ItemProcessor, ItemWriter를 각각 1:1로 참조
-- JobLauncher, Job, Step 모두 JobRepository와 연결
+<img src="./reference-model.png" style="width:1000px" alt="JobLauncher, Job, Step, JobRepository와 ItemReader, ItemProcessor, ItemWriter의 관계" />
 
 ---
 
@@ -252,21 +252,7 @@ source: https://www.slideshare.net/benelog/spring-batch-tdd
 
 **JobRepository 테이블스키마**
 
-ER 다이어그램:
-
-- BATCH_JOB_INSTANCE — PK: JOB_INSTANCE_ID / VERSION, JOB_NAME, JOB_KEY
-- BATCH_JOB_PARAMS — FK1: JOB_INSTANCE_ID / TYPE_CD, KEY_NAME, STRING_VAL, DATE_VAL, LONG_VAL, DOUBLE_VAL
-- BATCH_JOB_EXECUTION — PK: JOB_EXECUTION_ID / VERSION, FK1: JOB_INSTANCE_ID, CREATE_TIME, START_TIME, END_TIME, STATUS, EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED
-
----
-
-### 2.3 작업 처리 인프라
-
-**JobRepository 테이블스키마**
-
-- BATCH_STEP_EXECUTION — PK: STEP_EXECUTION_ID / VERSION, STEP_NAME, FK1: JOB_EXECUTION_ID, START_TIME, END_TIME, STATUS, COMMIT_COUNT, READ_COUNT, FILTER_COUNT, WRITE_COUNT, READ_SKIP_COUNT, WRITE_SKIP_COUNT, PROCESS_SKIP_COUNT, ROLLBACK_COUNT, EXIT_CODE, EXIT_MESSAGE, LAST_UPDATED
-- BATCH_JOB_EXECUTION_CONTEXT — PK,FK1: JOB_EXECUTION_ID / SHORT_CONTEXT, SERIALIZED_CONTEXT
-- BATCH_STEP_EXECUTION_CONTEXT — PK,FK1: STEP_EXECUTION_ID / SHORT_CONTEXT, SERIALIZED_CONTEXT
+<img src="./meta-data-erd.png" style="height:418px" alt="JobRepository 메타데이터 테이블 ER 다이어그램: BATCH_JOB_INSTANCE, BATCH_JOB_PARAMS, BATCH_JOB_EXECUTION, BATCH_STEP_EXECUTION, BATCH_JOB_EXECUTION_CONTEXT, BATCH_STEP_EXECUTION_CONTEXT" />
 
 ---
 
